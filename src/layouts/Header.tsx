@@ -1,3 +1,4 @@
+import Logo from "./Logo"
 
 import styled from "styled-components"
 
@@ -29,7 +30,7 @@ const Header: any = () => {
        <div>   
        <HeaderBox>
         <LogoBox>
-        <LogoText>out</LogoText><LogoHighlight>SHOE</LogoHighlight><LogoText>tanding shop</LogoText>s
+        <Logo />
         </LogoBox>
         
         </HeaderBox> 
