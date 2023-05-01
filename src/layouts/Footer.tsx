@@ -20,7 +20,7 @@ const Footer: any = () => {
     return (
     <div>
         <FooterBox>
-            <FooterText>© outSHOEtanding. ALL Rights Reserved</FooterText>
+            <FooterText>© outSHOEtanding.  ALL Rights Reserved</FooterText>
         </FooterBox>
     </div>
     )
