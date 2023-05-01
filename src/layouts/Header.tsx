@@ -13,18 +13,7 @@ const LogoBox = styled.div`
 text-align: left;
 `
 
-const LogoText = styled.span`
-color: white;
-font-weight: 700;
-font-size: 20px;
 
-`
-const LogoHighlight = styled.span`
-color: yellow;
-font-weight: 700;
-font-size: 22px;
-
-`
 const Header: any = () => {
     return (
        <div>   
