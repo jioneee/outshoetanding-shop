@@ -6,8 +6,9 @@ const HeaderBox = styled.div`
 box-sizing: border-box;
 width:100%;
 height:50px;
-border: solid black 2px;
-background-color: black;
+padding:10px;
+/* border: solid black 2px; */
+background-color:rgba(0,2,0,70%);
 `
 const LogoBox = styled.div`
 text-align: left;

@@ -8,7 +8,7 @@ width:100%;
 height:100px;
 bottom: 0%;
 border: solid white 2px;
-background-color: #E0E0E0;
+background-color: rgba(0,2,0,10%);;
 `
 
 const FooterText = styled.span`
