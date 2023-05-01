@@ -1,5 +1,5 @@
-import Header from '../src/layouts/Header'
-import Footer from '../src/layouts/Footer'
+import Header from './layouts/Header'
+import Footer from './layouts/Footer'
 
 import './App.css';
 

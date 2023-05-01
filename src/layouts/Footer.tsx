@@ -1,3 +1,4 @@
+import CopyrightOutlinedIcon from '@mui/icons-material/CopyrightOutlined';
 import styled from "styled-components"
 
 const FooterBox = styled.div`
@@ -20,7 +21,7 @@ const Footer: any = () => {
     return (
     <div>
         <FooterBox>
-            <FooterText>© outSHOEtanding. ALL Rights Reserved</FooterText>
+        <CopyrightOutlinedIcon /><FooterText> outSHOEtanding. All Rights Reserved</FooterText>
         </FooterBox>
     </div>
     )
