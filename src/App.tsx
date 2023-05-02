@@ -1,6 +1,6 @@
 import Header from './layouts/Header'
 import Footer from './layouts/Footer'
-import SwipeableTextMobileStepper from './components/carousel';
+import SwipeableTextMobileStepper from './components/UI/carousel';
 
 import './App.css';
 

@@ -1,4 +1,4 @@
-import Logo from "./Logo"
+import Logo from "../components/UI/Logo"
 
 import styled from "styled-components"
 
