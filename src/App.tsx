@@ -9,8 +9,9 @@ import './App.css';
 
 const Container = styled.div`
 box-sizing: border-box;
+display: flex;
 width: 800px;
-margin: 50px;
+margin: 50px auto;
 text-align: center;
 align-items: center;
 `
@@ -24,8 +25,6 @@ function App() {
       <Container>
       <SwipeableTextMobileStepper />
       </Container>
-     
-   
       <Footer />
       
     </div>
