@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const FooterBox = styled.div`
 position: absolute;
-box-sizing: border-box;
 width:100%;
 height:100px;
 bottom: 0%;
