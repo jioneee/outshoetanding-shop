@@ -2,12 +2,15 @@ import styled from "styled-components";
 
 const ProductListWrap = styled.div`
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 `;
 
 const ProductListItem = styled.div`
   box-sizing: border-box;
-  height: 100px;
-  width: 100px;
+  margin: 20px;
+  height: 250px;
+  width: 250px;
   border: 1px solid black;
 `;
 
@@ -19,19 +22,20 @@ interface ProductImg {
 const ProductImage: ProductImg[] = [
   {
     title: "shoes1",
-    image: "",
+    image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/%EC%97%90%EC%96%B4-%ED%8F%AC%EC%8A%A4-1-07-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-TttlGpDb.png',
   },
   {
     title: "shoes2",
-    image: "",
+    image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
   },
   {
     title: "shoes3",
-    image: "",
+    image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
   },
+  
 ];
 
-const ProductList: React.FC = () => {
+const ProductList = () => {
   return (
     <div>
       <ProductListWrap>
