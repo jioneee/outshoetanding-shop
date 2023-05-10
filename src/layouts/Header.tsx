@@ -1,4 +1,5 @@
 import Logo from "../components/UI/Logo"
+import { ButtonS, ButtonM, ButtonL } from "../components/UI/button"
 
 import styled from "styled-components"
 
@@ -22,7 +23,9 @@ const Header: any = () => {
         <LogoBox>
         <Logo />
         </LogoBox>
-        
+        <ButtonS></ButtonS>
+        <ButtonM></ButtonM>
+        <ButtonL></ButtonL>
         </HeaderBox> 
        </div>
     )
