@@ -1,6 +1,5 @@
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
-// import PageContainer from './layouts/PageContainer';
 import SwipeableTextMobileStepper from './components/UI/carousel';
 import ProductList from './components/ProductList';
 import GlobalStyle from './components/style/globalStyle';
@@ -23,9 +22,9 @@ align-items: center;
 function App() {
   return (
     <div className="App">
+      <GlobalStyle />
       <Header />
       <Container>
-      <GlobalStyle />
       <SwipeableTextMobileStepper />
       <ProductList />
       </Container>
