@@ -3,10 +3,10 @@ import Footer from './layouts/Footer';
 // import PageContainer from './layouts/PageContainer';
 import SwipeableTextMobileStepper from './components/UI/carousel';
 import ProductList from './components/ProductList';
+import GlobalStyle from './components/style/globalStyle';
 
 import styled from 'styled-components';
 
-import './App.css';
 
 const Container = styled.div`
 box-sizing: border-box;
@@ -25,6 +25,7 @@ function App() {
     <div className="App">
       <Header />
       <Container>
+      <GlobalStyle />
       <SwipeableTextMobileStepper />
       <ProductList />
       </Container>

@@ -14,6 +14,8 @@ const ProductListItem = styled.div`
   border: 1px solid black;
 `;
 
+
+
 interface ProductImg {
   title: string;
   image: string;
@@ -35,6 +37,11 @@ const ProductImage: ProductImg[] = [
   
 ];
 
+// const ProductListItem =({image}) => {
+//     return <div>{image}</div> 
+// }
+
+
 const ProductList = () => {
   return (
     <div>
@@ -48,6 +55,8 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+
 
 // import styled from "styled-components";
 
