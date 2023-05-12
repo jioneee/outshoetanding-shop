@@ -4,6 +4,7 @@ const ProductListWrap = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 const ProductListItem = styled.div`
