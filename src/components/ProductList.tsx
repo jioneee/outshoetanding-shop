@@ -10,8 +10,13 @@ const ProductListItem = styled.div`
   box-sizing: border-box;
   margin: 20px;
   height: 250px;
-  width: 250px;
-  border: 1px solid black;
+  max-width: 250px;
+  border: 1px solid gray;
+  img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain; /* ensures the aspect ratio is maintained */
+  }
 `;
 
 
@@ -34,20 +39,30 @@ const ProductImage: ProductImg[] = [
     title: "shoes3",
     image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
   },
-  
+
+
 ];
 
-// const ProductListItem =({image}) => {
-//     return <div>{image}</div> 
-// }
 
-
+// const ProductList = () => {
+//   return (
+//     <div>
+//       <ProductListWrap>
+//         {ProductImage.map((img) => (
+//           <ProductListItem title={img.title} image={img.image} />
+//         ))}
+//       </ProductListWrap>
+//     </div>
+//   );
+// };
 const ProductList = () => {
   return (
     <div>
       <ProductListWrap>
         {ProductImage.map((img) => (
-          <ProductListItem title={img.title} key={img.image} />
+          <ProductListItem>
+            <img src={img.image} alt={img.title} />
+          </ProductListItem>
         ))}
       </ProductListWrap>
     </div>

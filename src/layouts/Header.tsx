@@ -33,9 +33,9 @@ const Header: any = () => {
         <Logo />
         </LogoBox>
         <IconBox>
-        <HomeIcon style={{ color: 'white', fontSize: 30 }}>home</HomeIcon>
-        <ShoppingCartIcon style={{ color: 'white' , fontSize: 30  }}>cart</ShoppingCartIcon>
-        <PersonIcon style={{ color: 'white' , fontSize: 30  }}>my</PersonIcon>
+        <HomeIcon style={{ color: 'white', fontSize: 30, margin:5 }}>home</HomeIcon>
+        <ShoppingCartIcon style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
+        <PersonIcon style={{ color: 'white' , fontSize: 30, margin:5  }}>my</PersonIcon>
         </IconBox>
         {/* <ButtonS></ButtonS>
         <ButtonM></ButtonM>

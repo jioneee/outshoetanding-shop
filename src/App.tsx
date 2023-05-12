@@ -11,12 +11,13 @@ const Container = styled.div`
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
-width: 800px;
+width: 900px;
 margin: 50px auto;
 text-align: center;
 align-items: center;
+background-color: black;
+/* z-index: -1; */
 `
-
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header />
-      <Container>
+      {/* <SwipeableTextMobileStepper /> */}
+      <Container className='container'>
       <SwipeableTextMobileStepper />
       <ProductList />
       </Container>
