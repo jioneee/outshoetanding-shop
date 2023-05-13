@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+const TagBox = styled.div`
+  box-sizing: border-box;
+  margin:10px 20px;
+  width:100px;
+  height: 50px;
+  border: 1px solid gray;
+  color:white;
+  font-size: 30px;
+`
+
 const ProductListWrap = styled.div`
   margin: 0 auto;
   display: flex;
@@ -19,6 +29,8 @@ const ProductListItem = styled.div`
     object-fit: contain; /* ensures the aspect ratio is maintained */
   }
 `;
+
+
 
 
 
@@ -74,7 +86,9 @@ const ProductImage: ProductImg[] = [
 const ProductList = () => {
   return (
     <div>
+      <TagBox>New</TagBox>
       <ProductListWrap>
+      
         {ProductImage.map((img) => (
           <ProductListItem>
             <img src={img.image} alt={img.title} />
