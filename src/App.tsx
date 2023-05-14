@@ -1,7 +1,7 @@
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import SwipeableTextMobileStepper from './components/UI/carousel';
-import ProductList from './components/ProductList';
+import ProductList from './components/Product/ProductList';
 import GlobalStyle from './components/style/globalStyle';
 
 import styled from 'styled-components';
