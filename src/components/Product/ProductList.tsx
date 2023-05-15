@@ -1,3 +1,5 @@
+import ProductBrand from "./ProductBrand";
+
 import styled from "styled-components";
 
 const TagBox = styled.div`
@@ -95,6 +97,7 @@ const ProductList = () => {
           </ProductListItem>
         ))}
       </ProductListWrap>
+          <ProductBrand />
     </div>
   );
 };
