@@ -4,17 +4,22 @@ const TabBox = styled.div`
  box-sizing: border-box;
  background-color: gray;
  width: 100%;
+
  ul {
- display: block;
+ display: flex;
+ flex-direction: row;
  list-style:none;
  box-sizing: border-box;  
  width:100%;
- height: auto;
+ height: 50px;
+ 
  }
  li{
  box-sizing: border-box;  
  width:100%;
  height: auto;
+ border: 1px solid white;
+ 
  }
 
 `
@@ -24,12 +29,14 @@ const ProductBrand = () => {
     <div>
         <TabBox>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
+                <li>NIKE</li>
+                <li>ADIDAS</li>
+                <li>NEWBALANCE</li>
+            </ul>
+            <ul>
+                <li>CONVERSE</li>
+                <li>VANS</li>
+                <li>ASICS</li>
             </ul>
         </TabBox>
     </div>
