@@ -1,4 +1,4 @@
-import ProductBrand from "./ProductBrand";
+import ProductBrand from "./ProductBrandTab";
 
 import styled from "styled-components";
 
