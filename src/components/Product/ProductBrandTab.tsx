@@ -30,6 +30,13 @@ const TabBox = styled.div`
 
 `
 
+const TabContentBox = styled.div`
+      margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`
+
 const ProductBrandTab = () => {
     const [currentTab, setCurrentTab] = useState(0)
 
@@ -49,9 +56,17 @@ const ProductBrandTab = () => {
     <div>
         <TabBox>
             <ul>
-                {brandArr.map((el, index) => (<li key={index} className={index === currentTab ? "focused": "none"} onClick={()=> clickTabHandler(index)}>{el.name}</li>))}
-
+                {brandArr.map((el, index) => (
+                <li key={index} className={index === currentTab ? "focused": "none"} 
+                onClick={()=> clickTabHandler(index)}>
+                    {el.name}
+                </li> ))}
+           
+                
             </ul>
+            <TabContentBox>
+            {brandArr[currentTab].content}
+           </TabContentBox>
 
         </TabBox>
     </div>
