@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Nike, Adidas, NewBalance, Converse, Vans, Asics } from "./BrandShoes";
 
 import styled from "styled-components";
 
@@ -37,18 +38,18 @@ const ProductBrandTab = () => {
     }
 
     const brandArr = [
-        {name: 'NIKE'},
-        {name: 'ADIDAS'},
-        {name: 'NEWBALANCE'},
-        {name: 'CONVERSE'},
-        {name: 'VANS'},
-        {name: 'ASICS'},
+        {name: 'NIKE', content: <Nike />},
+        {name: 'ADIDAS', content: <Adidas />},
+        {name: 'NEWBALANCE', content: <NewBalance />},
+        {name: 'CONVERSE', content: <Converse />},
+        {name: 'VANS', content: <Vans />},
+        {name: 'ASICS', content: <Asics />},
     ]
     return (
     <div>
         <TabBox>
             <ul>
-                {brandArr.map((el, index) => (<li className={index === currentTab ? "focused": "none"} onClick={clickTabHandler}>{el.name}</li>))}
+                {brandArr.map((el, index) => (<li key={index} className={index === currentTab ? "focused": "none"} onClick={()=> clickTabHandler(index)}>{el.name}</li>))}
 
             </ul>
 
