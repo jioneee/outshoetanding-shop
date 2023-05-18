@@ -23,10 +23,15 @@ const TabBox = styled.div`
  height: auto;
  border: 1px solid white;
  cursor: pointer;
+ &:hover{
+    background-color: #f8f847;
+  }
  }
  .focused{
  background-color: yellow;
+ border:2px solid gray;
  }
+
 
 `
 
@@ -35,6 +40,7 @@ const TabContentBox = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
 `
 
 const ProductBrandTab = () => {
