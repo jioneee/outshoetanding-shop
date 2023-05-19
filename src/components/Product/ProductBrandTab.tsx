@@ -36,10 +36,11 @@ const TabBox = styled.div`
 `
 
 const TabContentBox = styled.div`
-      margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+margin: 50px auto;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+background-color: gray;
 
 `
 
@@ -70,11 +71,12 @@ const ProductBrandTab = () => {
            
                 
             </ul>
-            <TabContentBox>
-            {brandArr[currentTab].content}
-           </TabContentBox>
+
 
         </TabBox>
+        <TabContentBox>
+            {brandArr[currentTab].content}
+           </TabContentBox>
     </div>
     )
 }

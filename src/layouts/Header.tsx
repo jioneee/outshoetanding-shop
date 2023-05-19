@@ -6,6 +6,9 @@ import PersonIcon from '@mui/icons-material/Person';
 
 import styled from "styled-components"
 
+const HeaderContainer = styled.div`
+  
+`
 const HeaderBox = styled.div`
 display:flex;
 flex-direction: row;
@@ -13,6 +16,9 @@ box-sizing: border-box;
 width:100%;
 height:50px;
 padding:10px;
+position: fixed;
+top: 0;
+z-index: 9999;
 /* border: solid black 2px; */
 background-color:rgba(0,2,0,70%);
 `
@@ -27,7 +33,8 @@ const IconBox = styled.span`
 
 const Header: any = () => {
     return (
-       <div>   
+       <div>
+        <HeaderContainer>
        <HeaderBox>
         <LogoBox>
         <Logo />
@@ -41,6 +48,7 @@ const Header: any = () => {
         <ButtonM></ButtonM>
         <ButtonL></ButtonL> */}
         </HeaderBox > 
+        </HeaderContainer>   
        </div>
     )
 }
