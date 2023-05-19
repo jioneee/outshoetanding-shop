@@ -76,7 +76,7 @@ const ProductBrandTab = () => {
         </TabBox>
         <TabContentBox>
             {brandArr[currentTab].content}
-           </TabContentBox>
+        </TabContentBox>
     </div>
     )
 }

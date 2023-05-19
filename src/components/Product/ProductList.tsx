@@ -97,7 +97,7 @@ const ProductList = () => {
           </ProductListItem>
         ))}
       </ProductListWrap>
-          <ProductBrand />
+      <ProductBrand />
     </div>
   );
 };
