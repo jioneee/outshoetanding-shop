@@ -4,12 +4,13 @@ import styled from "styled-components";
 
 const TagBox = styled.div`
   box-sizing: border-box;
-  margin:10px 20px;
+  margin:10px 5px;
   width:100px;
   height: 50px;
-  border: 1px solid gray;
+  border: 2px solid black;
   color:white;
   font-size: 30px;
+  background-color: gray;
 `
 
 const ProductListWrap = styled.div`
@@ -17,6 +18,7 @@ const ProductListWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: black;
 `;
 
 const ProductListItem = styled.div`
@@ -25,6 +27,7 @@ const ProductListItem = styled.div`
   height: 250px;
   max-width: 250px;
   border: 1px solid gray;
+
   img {
     width: 250px;
     height: 250px;

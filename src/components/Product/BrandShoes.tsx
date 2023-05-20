@@ -5,6 +5,7 @@ const ProductListWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: gray;
 `;
 
 const ProductListItem = styled.div`

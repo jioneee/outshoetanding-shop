@@ -40,7 +40,7 @@ margin: 50px auto;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-background-color: gray;
+/* background-color: gray; */
 
 `
 

@@ -1,8 +1,8 @@
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
-import SwipeableTextMobileStepper from './components/UI/carousel';
-import ProductList from './components/Product/ProductList';
+
 import GlobalStyle from './components/style/globalStyle';
+import Main from './pages/Main';
 
 import styled from 'styled-components';
 
@@ -15,7 +15,7 @@ width: 900px;
 margin: 50px auto;
 text-align: center;
 align-items: center;
-background-color: black;
+/* background-color:rgba(0,2,0,70%) ; */
 /* z-index: -1; */
 `
 
@@ -25,10 +25,8 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header />
-      {/* <SwipeableTextMobileStepper /> */}
       <Container className='container'>
-      <SwipeableTextMobileStepper />
-      <ProductList />
+      <Main />
       </Container>
       <Footer />
       
