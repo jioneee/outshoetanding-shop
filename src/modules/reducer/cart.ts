@@ -1,6 +1,6 @@
 import { ADD_COUNT, DEC_COUNT } from "../actionTypes/cart";
 import { CartActionType } from "../actions";
-
+import { CartStateType } from "../initialStates/initialStateType";
 
 export default createReducer<CartStateType, CartActionType>(initialState, {
     [ADD_COUNT]: (state: any, action: any) => {
