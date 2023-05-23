@@ -5,3 +5,9 @@ import { addCount, decCount } from "./cart";
 export type CartActionType = 
 | ActionType<typeof addCount>
 | ActionType<typeof decCount>
+
+
+// export type CartActionType = {
+//     type: string;
+//     payload: number;
+//   };
