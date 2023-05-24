@@ -5,7 +5,22 @@ import { CartActionType } from "../actions";
 import { CartStateType } from "../initialStates/initialStateType";
 import { initialState } from "../initialStates/initialState";
 
-// export default createReducer<CartStateType, CartActionType>(initialState, {
+export default createReducer<CartStateType, CartActionType>(initialState, {
+    [ADD_COUNT]: (state, action) => {
+      return {
+        ...state,
+        count: state.count + action.payload,
+      };
+    },
+    [DEC_COUNT]: (state, action) => {
+      return {
+        ...state,
+        count: state.count - action.payload,
+      };
+    },
+  });
+
+  // export default createReducer<CartStateType, CartActionType>(initialState, {
 //     [ADD_COUNT]: (state , action) => {
 //         const newState: CartActionType = {
 //             ...state,
@@ -23,19 +38,3 @@ import { initialState } from "../initialStates/initialState";
 // },
 
 // })
-
-
-export default createReducer<CartStateType, CartActionType>(initialState, {
-    [ADD_COUNT]: (state, action) => {
-      return {
-        ...state,
-        count: state.count + action.payload,
-      };
-    },
-    [DEC_COUNT]: (state, action) => {
-      return {
-        ...state,
-        count: state.count - action.payload,
-      };
-    },
-  });
