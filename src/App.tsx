@@ -1,3 +1,4 @@
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import { useState, ChangeEvent, MouseEvent } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addCount,decCount } from './modules/actions/cart';
@@ -5,10 +6,10 @@ import { RootState } from './modules/reducer';
 
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
+import ShoppingCart from './pages/ShoppingCart';
 
-import GlobalStyle from './components/style/globalStyle';
 import Main from './pages/Main';
-
+import GlobalStyle from './components/style/globalStyle';
 import styled from 'styled-components';
 
 
@@ -49,18 +50,27 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
       <GlobalStyle />
-      <Header />
+        <Header />
+        <Container className='container'>
+        <Routes>
+          
+            <Route path="/" element={< Main />}></Route>
+            <Route path="/cart" element={<ShoppingCart />}></Route>
 
-      <Container className='container'>
-      <Main />
-      <input value={txt} type={"number"} onChange={onChangeTxt}/>
-      <button onClick={onClickAdd}>덧셈</button>
-      <button onClick={onClickDec}>뺄셈</button>
+        </Routes>
+        </Container>
+        <input value={txt} type={"number"} onChange={onChangeTxt}/>
+            <button onClick={onClickAdd}>덧셈</button>
+            <button onClick={onClickDec}>뺄셈</button>
+            <div>{count}</div>
+        <Footer />
 
-      <div>{count}</div>
-      </Container>
-      <Footer />
+
+      </BrowserRouter>
+
+ 
       
     </div>
   );
