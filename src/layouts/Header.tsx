@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import Logo from "../components/UI/Logo"
 // import { ButtonS, ButtonM, ButtonL } from "../components/UI/button"
 import HomeIcon from '@mui/icons-material/Home';
@@ -25,13 +26,20 @@ background-color:rgba(0,2,0,70%);
 const LogoBox = styled.div`
 text-align: left;
 `
-
+const IconContainer = styled.span`
+   margin-left: auto;
+`
 const IconBox = styled.span`
-  margin-left: auto;
+  cursor: pointer;
 `
 
 
 const Header: any = () => {
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate('/cart')
+  }
+
     return (
        <div>
         <HeaderContainer>
@@ -39,11 +47,17 @@ const Header: any = () => {
         <LogoBox>
         <Logo />
         </LogoBox>
+        <IconContainer>
         <IconBox>
         <HomeIcon style={{ color: 'white', fontSize: 30, margin:5 }}>home</HomeIcon>
-        <ShoppingCartIcon style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
+        </IconBox>
+        <IconBox>
+        <ShoppingCartIcon onClick={handleClick} style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
+        </IconBox>
+        <IconBox>
         <PersonIcon style={{ color: 'white' , fontSize: 30, margin:5  }}>my</PersonIcon>
         </IconBox>
+        </IconContainer>
         {/* <ButtonS></ButtonS>
         <ButtonM></ButtonM>
         <ButtonL></ButtonL> */}
