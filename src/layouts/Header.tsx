@@ -36,8 +36,16 @@ const IconBox = styled.span`
 
 const Header: any = () => {
   const navigate = useNavigate()
-  const handleClick = () => {
+  const handleClickCart = () => {
     navigate('/cart')
+  }
+
+  const handleClickHome = () => {
+    navigate('/')
+  }
+
+  const handleClickMyPge = () => {
+    navigate('/mypage')
   }
 
     return (
@@ -49,13 +57,13 @@ const Header: any = () => {
         </LogoBox>
         <IconContainer>
         <IconBox>
-        <HomeIcon style={{ color: 'white', fontSize: 30, margin:5 }}>home</HomeIcon>
+        <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 30, margin:5 }}>home</HomeIcon>
         </IconBox>
         <IconBox>
-        <ShoppingCartIcon onClick={handleClick} style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
+        <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
         </IconBox>
         <IconBox>
-        <PersonIcon style={{ color: 'white' , fontSize: 30, margin:5  }}>my</PersonIcon>
+        <PersonIcon onClick={handleClickMyPge} style={{ color: 'white' , fontSize: 30, margin:5  }}>my</PersonIcon>
         </IconBox>
         </IconContainer>
         {/* <ButtonS></ButtonS>
