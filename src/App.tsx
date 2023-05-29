@@ -4,14 +4,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addCount,decCount } from './modules/actions/cart';
 import { RootState } from './modules/reducer';
 
+import theme from './theme';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import ShoppingCart from './pages/ShoppingCart';
 
 import Main from './pages/Main';
 import GlobalStyle from './components/style/globalStyle';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
+const Wrapper = styled.div`
+  @media ${({theme}) => theme.device.tablet} {
+    flex-direction: column;
+  }
+
+  width: 100%;
+`
 
 const Container = styled.div`
 box-sizing: border-box;
@@ -49,6 +57,8 @@ function App() {
   }
 
   return (
+    <ThemeProvider theme={theme}>
+      <Wrapper>
     <div className="App">
       <BrowserRouter>
       <GlobalStyle />
@@ -67,12 +77,14 @@ function App() {
             <div>{count}</div>
         <Footer />
 
-
+       
       </BrowserRouter>
 
  
       
     </div>
+    </Wrapper>
+    </ThemeProvider>
   );
 }
 
