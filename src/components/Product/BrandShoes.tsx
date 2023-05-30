@@ -21,6 +21,15 @@ const ProductListItem = styled.div`
   }
 `;
 
+const AddToCart = styled.button `
+  box-sizing: border-box;
+  font-weight: 500;
+  width: 70px;
+  height: 30px;
+  border: 0px;
+  margin:5px;
+`
+
 
 
 interface ProductImg {
@@ -77,9 +86,12 @@ export const Nike = () => {
     <ProductListWrap>
       
       {NikeImage.map((img) => (
+        <div>
         <ProductListItem>
           <img src={img.image} alt={img.title} />
         </ProductListItem>
+        <AddToCart>add to cart</AddToCart>
+        </div>
       ))}
     </ProductListWrap>
     </div>
