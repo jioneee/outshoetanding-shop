@@ -4,6 +4,7 @@ import Logo from "../components/UI/Logo"
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import styled from "styled-components"
 
@@ -62,7 +63,9 @@ const Header: any = () => {
         <LogoBox>
         <Logo />
         </LogoBox>
+        
         <IconContainer>
+        <MenuIcon style={{color: 'white', fontSize:40}}/>
         <IconBox>
         <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 30, margin:5 }}>home</HomeIcon>
         </IconBox>
