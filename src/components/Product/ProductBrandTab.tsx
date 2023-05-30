@@ -5,8 +5,10 @@ import styled from "styled-components";
 
 const TabBox = styled.div`
  box-sizing: border-box;
+ margin: 50px auto;
  background-color: gray;
  width: 100%;
+ font-weight: 500;
 
  ul {
  display: flex;

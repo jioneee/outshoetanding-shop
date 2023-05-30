@@ -32,6 +32,13 @@ const IconContainer = styled.span`
 const IconBox = styled.span`
   cursor: pointer;
 `
+const CartQuantity = styled.span`
+  box-sizing: border-box;
+  width:10px;
+  height:10px;
+  border-radius: 50%;
+  background-color: white;
+`
 
 
 const Header: any = () => {
@@ -61,6 +68,7 @@ const Header: any = () => {
         </IconBox>
         <IconBox>
         <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
+        <CartQuantity>1</CartQuantity>
         </IconBox>
         <IconBox>
         <PersonIcon onClick={handleClickMyPge} style={{ color: 'white' , fontSize: 30, margin:5  }}>my</PersonIcon>
