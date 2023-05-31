@@ -8,9 +8,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import styled from "styled-components"
 
+
 const HeaderContainer = styled.div`
-  
-`
+
+    
+  `
 const HeaderBox = styled.div`
 display:flex;
 flex-direction: row;
@@ -23,12 +25,23 @@ top: 0;
 z-index: 9999;
 /* border: solid black 2px; */
 background-color:rgba(0,2,0,70%);
+
+.Menu_Icon{
+  @media screen and (min-width: 769px){
+  display: none 
+}
+}
+
 `
 const LogoBox = styled.div`
 text-align: left;
+@media screen and (max-width:768px){
+  display: none 
+}
 `
 const IconContainer = styled.span`
    margin-left: auto;
+
 `
 const IconBox = styled.span`
   cursor: pointer;
@@ -63,9 +76,11 @@ const Header: any = () => {
         <LogoBox>
         <Logo />
         </LogoBox>
-        
-        <IconContainer>
+        <div className="Menu_Icon">
         <MenuIcon style={{color: 'white', fontSize:40}}/>
+        </div>
+        <IconContainer>
+     
         <IconBox>
         <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 30, margin:5 }}>home</HomeIcon>
         </IconBox>

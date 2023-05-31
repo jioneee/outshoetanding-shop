@@ -99,7 +99,7 @@ export const Nike = () => {
     <ProductListWrap>
       
       {NikeImage.map((img) => (
-        <div>
+        <div key={img.title}>
         <ProductListItem>
           <img src={img.image} alt={img.title} />
           <div className="price">Price: {img.price} 원</div>
