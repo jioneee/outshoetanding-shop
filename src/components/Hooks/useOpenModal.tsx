@@ -2,14 +2,14 @@ import { useState } from "react"
 
 const useOpenModal = () => {
     const [isOpenModal, setIsOpenModal] = useState(false)
-    const clickModal =() => {
+    const clickOpenModal =() => {
         setIsOpenModal(!isOpenModal)
     }
-    const closeModal = () => {
+    const clickCloseModal = () => {
         setIsOpenModal(isOpenModal)
     }
 
-    return {isOpenModal, clickModal, closeModal}
+    return {isOpenModal, clickOpenModal, clickCloseModal}
 }
 
 export default useOpenModal
