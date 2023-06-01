@@ -1,4 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
+
+import Modal from "../UI/Modal";
 
 const ProductListWrap = styled.div`
   margin: 0 auto;
@@ -93,7 +96,11 @@ const NikeImage: ProductImg[] = [
 
 
 export const Nike = () => {
-   
+   const [isOpenModal, setOpenModal] = useState<Boolean>(false)
+
+   const onClickModal = () => {
+    setOpenModal(!isOpenModal)
+   }
     return (
     <div>
     <ProductListWrap>
@@ -104,7 +111,8 @@ export const Nike = () => {
           <img src={img.image} alt={img.title} />
           <div className="price">Price: {img.price} 원</div>
         </ProductListItem>
-        <AddToCart>add to cart</AddToCart>
+        <AddToCart onClick={onClickModal}>add to cart <Modal></Modal></AddToCart>
+        
         </div>
       ))}
     </ProductListWrap>
