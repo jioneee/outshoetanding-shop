@@ -112,10 +112,11 @@ export const Nike = () => {
         </ProductListItem>
         <AddToCart onClick={clickOpenModal}>
           add to cart 
-          {isOpenModal && (<Modal onClick={clickCloseModal}/>)}</AddToCart>
+          </AddToCart>
         
         </div>
       ))}
+      {isOpenModal && (<Modal onClick={clickCloseModal}/>)}
     </ProductListWrap>
     </div>
     )
