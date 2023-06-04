@@ -4,7 +4,19 @@ interface Props {
     onClick: () => void;
   }
 const ModalContainer = styled.div`
-    ::after {
+
+position: relative;
+::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 1;
+  }
+    /* ::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -16,7 +28,7 @@ const ModalContainer = styled.div`
     mix-blend-mode: normal;
     opacity: 0.3;
    
-  }
+  } */
 `
 
 const ModalBox = styled.div`
@@ -24,7 +36,8 @@ const ModalBox = styled.div`
     height: auto;
     background-color: white;
     padding:10px;
-
+    position: relative;
+    z-index: 2;
    
 
 `
