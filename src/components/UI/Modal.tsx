@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import CloseIcon from '@mui/icons-material/Close';
+import useOpenModal from "../Hooks/useOpenModal";
+
 interface Props {
     onClick: () => void;
   }
@@ -29,7 +32,7 @@ position: relative;
     opacity: 0.3;
    
   } */
-`
+`  
 
 const ModalBox = styled.div`
     max-width:200px;
@@ -37,8 +40,7 @@ const ModalBox = styled.div`
     background-color: white;
     padding:10px;
     position: relative;
-    z-index: 2;
-   
+    z-index: 2;  
 
 `
 
@@ -57,12 +59,19 @@ const ModalQuantity = styled.button`
     
 `
 
-
 const Modal = ({onClick}: Props) => {
+  const {isOpenModal,clickCloseModal } = useOpenModal()
     return (
-    <div>
-    <ModalContainer>
-    <ModalBox>
+      <>
+      {!isOpenModal && (
+    <div >
+      
+    <ModalContainer>  
+   
+    <ModalBox >
+    <button onClick={clickCloseModal}>
+            <CloseIcon />
+          </button>
         <ModalHead>신발명</ModalHead>
         size :
         <ModalSize>230</ModalSize>
@@ -76,7 +85,10 @@ const Modal = ({onClick}: Props) => {
 
     </ModalBox>
     </ModalContainer>
+       
     </div>
+    )}
+    </>
     )
 }
 
