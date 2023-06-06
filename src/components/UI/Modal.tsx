@@ -61,6 +61,10 @@ const ModalQuantity = styled.button`
 
 const Modal = ({onClick}: Props) => {
   const {isOpenModal,clickCloseModal } = useOpenModal()
+  const handleModalClose = () => {
+    onClick();
+    clickCloseModal();
+  };
     return (
       <>
       {!isOpenModal && (
@@ -69,7 +73,7 @@ const Modal = ({onClick}: Props) => {
     <ModalContainer>  
    
     <ModalBox >
-    <button onClick={clickCloseModal}>
+    <button onClick={handleModalClose}>
             <CloseIcon />
           </button>
         <ModalHead>신발명</ModalHead>
