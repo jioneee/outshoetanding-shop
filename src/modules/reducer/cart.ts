@@ -1,6 +1,6 @@
 import { createReducer } from "typesafe-actions";
 
-import { ADD_COUNT, DEC_COUNT } from "../actionTypes/cart";
+import { ADD_COUNT, DEC_COUNT, MINUS_QUANTITY, PLUS_QUANTITY } from "../actionTypes/cart";
 import { CartActionType } from "../actions";
 import { CartStateType } from "../initialStates/initialStateType";
 import { initialState } from "../initialStates/initialState";
@@ -13,6 +13,18 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
       };
     },
     [DEC_COUNT]: (state, action) => {
+      return {
+        ...state,
+        count: state.count - action.payload,
+      };
+    },
+    [PLUS_QUANTITY]: (state, action) => {
+      return {
+        ...state,
+        count: state.count + action.payload,
+      };
+    },
+    [MINUS_QUANTITY]: (state, action) => {
       return {
         ...state,
         count: state.count - action.payload,
