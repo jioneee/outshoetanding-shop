@@ -21,13 +21,13 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     [PLUS_QUANTITY]: (state, action) => {
       return {
         ...state,
-        count: state.count + action.payload,
+        count: state.count + 1,
       };
     },
     [MINUS_QUANTITY]: (state, action) => {
       return {
         ...state,
-        count: state.count - action.payload,
+        count: state.count - 1,
       };
     },
   });

@@ -1,7 +1,13 @@
+import {MouseEvent } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../modules/reducer';
 import styled from "styled-components";
 
 import CloseIcon from '@mui/icons-material/Close';
 import useOpenModal from "../Hooks/useOpenModal";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import { minusQuantity, plusQuantity } from '../../modules/actions/cart';
 
 interface Props {
     onClick: () => void;
@@ -35,7 +41,7 @@ position: relative;
 `  
 
 const ModalBox = styled.div`
-    max-width:200px;
+    max-width:300px;
     height: auto;
     background-color: white;
     padding:10px;
@@ -55,16 +61,36 @@ const ModalSize = styled.button`
     margin:5px;
     font-weight: 300;
 `
-const ModalQuantity = styled.button`
-    
+const ModalButton = styled.button`
+  background: none;
+  border: none;
 `
 
 const Modal = ({onClick}: Props) => {
+  const dispatch = useDispatch()
+  const count = useSelector((state: RootState) => state.cart.count)
+
+
   const {isOpenModal,clickCloseModal } = useOpenModal()
   const handleModalClose = () => {
     onClick();
     clickCloseModal();
   };
+
+  const onClickPlus = (e: MouseEvent<HTMLButtonElement>) => {
+    dispatch(plusQuantity(1))
+
+  
+  }
+
+  const onClickMinus = (e: MouseEvent<HTMLButtonElement>) => {
+    if(count >=1){
+      dispatch(minusQuantity(1))
+    }
+
+
+
+  }
     return (
       <>
       {!isOpenModal && (
@@ -73,9 +99,9 @@ const Modal = ({onClick}: Props) => {
     <ModalContainer>  
    
     <ModalBox >
-    <button onClick={handleModalClose}>
+    <ModalButton onClick={handleModalClose}>
             <CloseIcon />
-          </button>
+          </ModalButton>
         <ModalHead>신발명</ModalHead>
         size :
         <ModalSize>230</ModalSize>
@@ -85,7 +111,13 @@ const Modal = ({onClick}: Props) => {
         <ModalSize>270</ModalSize>
         <ModalSize>280</ModalSize>
         <div></div>
-        수량 : <ModalQuantity></ModalQuantity>
+        수량 : 
+        
+        <ModalButton onClick={onClickPlus}><AddCircleOutlineIcon /></ModalButton>
+        {count}
+        <ModalButton onClick={onClickMinus}><RemoveCircleOutlineIcon /></ModalButton>
+       
+       
 
     </ModalBox>
     </ModalContainer>
