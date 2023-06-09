@@ -62,8 +62,15 @@ const ModalSize = styled.button`
     font-weight: 300;
 `
 const ModalButton = styled.button`
+  margin:10px;
   background: none;
   border: none;
+`
+const CartButton = styled.button`
+  width: 100px;
+  height: 30px;
+  background-color: #666;
+  border-color: #666;
 `
 
 const Modal = ({onClick}: Props) => {
@@ -116,6 +123,9 @@ const Modal = ({onClick}: Props) => {
         <ModalButton onClick={onClickPlus}><AddCircleOutlineIcon /></ModalButton>
         {count}
         <ModalButton onClick={onClickMinus}><RemoveCircleOutlineIcon /></ModalButton>
+        <br />
+        <CartButton>Cart</CartButton>
+
        
        
 
