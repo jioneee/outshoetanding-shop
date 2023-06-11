@@ -50,6 +50,7 @@ const ButtonBox = styled.div`
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+    float: right;
 `
 
 const SelectionOrder = styled.button`

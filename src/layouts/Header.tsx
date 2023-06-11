@@ -18,7 +18,7 @@ display:flex;
 flex-direction: row;
 box-sizing: border-box;
 width:100%;
-height:50px;
+height:55px;
 padding:10px;
 position: fixed;
 top: 0;
@@ -45,13 +45,22 @@ const IconContainer = styled.span`
 `
 const IconBox = styled.span`
   cursor: pointer;
+  /* position:absolute; */
 `
 const CartQuantity = styled.span`
   box-sizing: border-box;
+  margin-left:-15px;
+  margin-top: 0px;
   width:10px;
   height:10px;
   border-radius: 50%;
   background-color: white;
+`
+const CartCount = styled.span`
+  cursor: pointer;
+  /* position:absolute; */
+  padding:10px;
+  color: rgba(0,2,0,70%)
 `
 
 
@@ -85,8 +94,10 @@ const Header: any = () => {
         <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 30, margin:5 }}>home</HomeIcon>
         </IconBox>
         <IconBox>
-        <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
-        <CartQuantity>1</CartQuantity>
+          <CartCount>
+          <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white' , fontSize: 30, margin:5  }}>cart</ShoppingCartIcon>
+          <CartQuantity>1</CartQuantity>
+          </CartCount>
         </IconBox>
         <IconBox>
         <PersonIcon onClick={handleClickMyPge} style={{ color: 'white' , fontSize: 30, margin:5  }}>my</PersonIcon>
