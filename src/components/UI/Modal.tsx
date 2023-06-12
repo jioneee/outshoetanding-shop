@@ -120,9 +120,11 @@ const Modal = ({onClick}: Props) => {
         <div></div>
         수량 : 
         
-        <ModalButton onClick={onClickPlus}><AddCircleOutlineIcon /></ModalButton>
-        {count}
         <ModalButton onClick={onClickMinus}><RemoveCircleOutlineIcon /></ModalButton>
+        {count}
+        <ModalButton onClick={onClickPlus}><AddCircleOutlineIcon /></ModalButton>
+
+
         <br />
         <CartButton>Cart</CartButton>
 
