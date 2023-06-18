@@ -1,3 +1,5 @@
+// import { useSelector } from "react-redux"
+// import { RootState } from "../modules/reducer"
 import styled from "styled-components"
 
 const CartContainer = styled.div`
@@ -69,6 +71,8 @@ const  TotalOrder = styled.button`
 
 
 const ShoppingCart = () => {
+    // const state = useSelector((state : RootState) => state.cart.nikeItems)
+    // const {}
     return (
         <div>
             <CartContainer>
