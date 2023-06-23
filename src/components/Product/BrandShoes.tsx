@@ -24,7 +24,7 @@ const ProductListItem = styled.div`
   img {
     width: 250px;
     height: 250px;
-    object-fit: contain; /* ensures the aspect ratio is maintained */
+    object-fit: contain; 
   }
   .price {
     margin-top: 20px;

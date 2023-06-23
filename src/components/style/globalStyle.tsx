@@ -8,6 +8,7 @@ const GlobalStyle: any = createGlobalStyle`
 
   body {
     box-sizing: border-box;
+    font-family: 'Jua';
   }
   button {
     cursor: pointer;

@@ -11,6 +11,7 @@ root.render(
     <Provider store={store}>
     <React.StrictMode>
         <App />
+        <link href="https://fonts.googleapis.com/css?family=Jua:400" rel="stylesheet"></link>
     </React.StrictMode>
     </Provider>
 );
