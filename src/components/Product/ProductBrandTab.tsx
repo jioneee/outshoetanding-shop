@@ -8,8 +8,9 @@ const TabBox = styled.div`
  margin: 50px auto;
  background-color: gray;
  width: 100%;
- font-weight: 500;
-
+ font-size: 20px;
+ font-weight: normal;
+ line-height: 50px;
  ul {
  display: flex;
  flex-direction: row;

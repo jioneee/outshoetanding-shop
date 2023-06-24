@@ -28,7 +28,7 @@ const ProductListItem = styled.div`
   }
   .price {
     margin-top: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
 `;
 
