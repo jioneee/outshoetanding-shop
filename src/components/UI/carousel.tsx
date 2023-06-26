@@ -100,6 +100,7 @@ function SwipeableTextMobileStepper() {
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
+            color="inherit"
           >
             Next
             {theme.direction === 'rtl' ? (
@@ -110,7 +111,7 @@ function SwipeableTextMobileStepper() {
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0} color="inherit">
             {theme.direction === 'rtl' ? (
               <KeyboardArrowRight />
             ) : (

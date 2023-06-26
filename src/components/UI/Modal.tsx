@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import useOpenModal from "../Hooks/useOpenModal";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { minusQuantity, plusQuantity } from '../../modules/actions/cart';
+import { addCount, minusQuantity, plusQuantity } from '../../modules/actions/cart';
 
 interface Props {
     onClick: () => void;
@@ -126,8 +126,8 @@ const Modal = ({onClick}: Props) => {
 
 
         <br />
-        <CartButton>Cart</CartButton>
-
+        <CartButton >Cart</CartButton>
+        {/* onClick={() => dispatch(addCount())} */}
        
        
 

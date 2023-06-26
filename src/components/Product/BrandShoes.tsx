@@ -1,4 +1,5 @@
-// import { useState } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import Modal from "../UI/Modal";
@@ -163,7 +164,8 @@ const NikeImage: ProductImg[] = [
 
 export const Nike = () => {
  const {isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal()
-    return (
+ 
+ return (
     <div>
     <ProductListWrap>
       
@@ -205,6 +207,8 @@ export const Adidas = () => {
 }
 
 export const NewBalance = () => {
+
+
     return (
       <div>
       <ProductListWrap>
