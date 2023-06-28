@@ -38,6 +38,7 @@ background-color:rgba(0,2,0,70%);
 `
 const LogoBox = styled.div`
 text-align: left;
+cursor: pointer;
 @media screen and (max-width:768px){
   display: none 
 }
@@ -86,7 +87,7 @@ const Header:any = ({onClick}: Props) => {
        <div>
         <HeaderContainer>
        <HeaderBox>
-        <LogoBox>
+        <LogoBox onClick={handleClickHome}>
         <Logo />
         </LogoBox>
         <div className="Menu_Icon">
