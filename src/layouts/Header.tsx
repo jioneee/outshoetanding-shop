@@ -8,6 +8,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import styled from "styled-components"
 
+interface Props {
+  onClick: () => void;
+}
 
 const HeaderContainer = styled.div`
 
@@ -64,7 +67,8 @@ const CartCount = styled.span`
 `
 
 
-const Header: any = () => {
+
+const Header:any = ({onClick}: Props) => {
   const navigate = useNavigate()
   const handleClickCart = () => {
     navigate('/cart')
