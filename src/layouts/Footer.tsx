@@ -1,4 +1,3 @@
-import CopyrightOutlinedIcon from '@mui/icons-material/CopyrightOutlined';
 import styled from 'styled-components';
 
 const FooterBox = styled.div`
