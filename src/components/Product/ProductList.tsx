@@ -87,6 +87,28 @@ const ProductList = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductImg | null>(null);
   const [quantity, setQuantity] = useState<number>(1);
   const [size, setSize] = useState<string>('');
+
+  const handleAddToCart = () => {
+    if (selectedProduct && quantity > 0 && size !== '') {
+      const cartItem = {
+        product: selectedProduct,
+        quantity: quantity,
+        size: size,
+      };
+      const existingCartItems = localStorage.getItem('cartItems');
+      let cartItems = existingCartItems ? JSON.parse(existingCartItems) : [];
+
+      cartItems.push(cartItem);
+
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      setSelectedProduct(null);
+      setQuantity(1);
+      setSize('');
+    } else {
+    }
+  };
+
   return (
     <div>
       <TagBox>New</TagBox>
