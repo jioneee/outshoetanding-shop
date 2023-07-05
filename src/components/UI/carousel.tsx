@@ -10,9 +10,6 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
-
-
-
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
@@ -23,15 +20,12 @@ const images = [
   },
   {
     label: 'ADIDAS',
-    imgPath:
-      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
+    imgPath: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
   },
   {
     label: 'SALE INFO',
-    imgPath: 'http://localhost:3000/img/sale.png'
-
+    imgPath: 'http://localhost:3000/img/sale.png',
   },
-
 ];
 
 function SwipeableTextMobileStepper() {
@@ -52,7 +46,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 900, flexGrow: 1}}>
+    <Box sx={{ maxWidth: 900, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
@@ -66,17 +60,12 @@ function SwipeableTextMobileStepper() {
       >
         <Typography>{images[activeStep].label}</Typography>
       </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
+      <AutoPlaySwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
         {images.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
-                component="img"
+                component='img'
                 sx={{
                   height: 255,
                   display: 'block',
@@ -93,30 +82,17 @@ function SwipeableTextMobileStepper() {
       </AutoPlaySwipeableViews>
       <MobileStepper
         steps={maxSteps}
-        position="static"
+        position='static'
         activeStep={activeStep}
         nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-            color="inherit"
-          >
+          <Button size='small' onClick={handleNext} disabled={activeStep === maxSteps - 1} color='inherit'>
             Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
+            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0} color="inherit">
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
+          <Button size='small' onClick={handleBack} disabled={activeStep === 0} color='inherit'>
+            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
             Back
           </Button>
         }

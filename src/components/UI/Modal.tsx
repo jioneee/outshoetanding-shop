@@ -1,31 +1,30 @@
-import {MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../modules/reducer';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 import CloseIcon from '@mui/icons-material/Close';
-import useOpenModal from "../Hooks/useOpenModal";
+import useOpenModal from '../Hooks/useOpenModal';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { addCount, minusQuantity, plusQuantity } from '../../modules/actions/cart';
+import { minusQuantity, plusQuantity } from '../../modules/actions/cart';
 
 interface Props {
-    onClick: () => void;
-  }
+  onClick: () => void;
+}
 const ModalContainer = styled.div`
-
-position: relative;
-::after {
-    content: "";
+  position: relative;
+  ::after {
+    content: '';
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
   }
-    /* ::after {
+  /* ::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -38,106 +37,92 @@ position: relative;
     opacity: 0.3;
    
   } */
-`  
+`;
 
 const ModalBox = styled.div`
-    max-width:300px;
-    height: auto;
-    background-color: white;
-    padding:10px;
-    position: relative;
-    z-index: 2;  
-
-`
+  max-width: 300px;
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+`;
 
 const ModalHead = styled.div`
-   
-    font-size: large;
-    font-weight: 700;
-`
+  font-size: large;
+  font-weight: 700;
+`;
 const ModalSize = styled.button`
-    width: 50px;
-    height: 30px;
-    margin:5px;
-    font-weight: 300;
-`
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+  font-weight: 300;
+`;
 const ModalButton = styled.button`
-  margin:10px;
+  margin: 10px;
   background: none;
   border: none;
-`
+`;
 const CartButton = styled.button`
   width: 100px;
   height: 30px;
   background-color: #666;
   border-color: #666;
-`
+`;
 
-const Modal = ({onClick}: Props) => {
-  const dispatch = useDispatch()
-  const count = useSelector((state: RootState) => state.cart.count)
+const Modal = ({ onClick }: Props) => {
+  const dispatch = useDispatch();
+  const count = useSelector((state: RootState) => state.cart.count);
 
-
-  const {isOpenModal,clickCloseModal } = useOpenModal()
+  const { isOpenModal, clickCloseModal } = useOpenModal();
   const handleModalClose = () => {
     onClick();
     clickCloseModal();
   };
 
   const onClickPlus = (e: MouseEvent<HTMLButtonElement>) => {
-    dispatch(plusQuantity(1))
-
-  
-  }
+    dispatch(plusQuantity(1));
+  };
 
   const onClickMinus = (e: MouseEvent<HTMLButtonElement>) => {
-    if(count >=1){
-      dispatch(minusQuantity(1))
+    if (count >= 1) {
+      dispatch(minusQuantity(1));
     }
-
-
-
-  }
-    return (
-      <>
+  };
+  return (
+    <>
       {!isOpenModal && (
-    <div >
-      
-    <ModalContainer>  
-   
-    <ModalBox >
-    <ModalButton onClick={handleModalClose}>
-            <CloseIcon />
-          </ModalButton>
-        <ModalHead>신발명</ModalHead>
-        size :
-        <ModalSize>230</ModalSize>
-        <ModalSize>240</ModalSize>
-        <ModalSize>250</ModalSize>
-        <ModalSize>260</ModalSize>
-        <ModalSize>270</ModalSize>
-        <ModalSize>280</ModalSize>
-        <div></div>
-        수량 : 
-        
-        <ModalButton onClick={onClickMinus}><RemoveCircleOutlineIcon /></ModalButton>
-        {count}
-        <ModalButton onClick={onClickPlus}><AddCircleOutlineIcon /></ModalButton>
-
-
-        <br />
-        <CartButton >Cart</CartButton>
-        {/* onClick={() => dispatch(addCount())} */}
-       
-       
-
-    </ModalBox>
-    </ModalContainer>
-       
-    </div>
-    )}
+        <div>
+          <ModalContainer>
+            <ModalBox>
+              <ModalButton onClick={handleModalClose}>
+                <CloseIcon />
+              </ModalButton>
+              <ModalHead>신발명</ModalHead>
+              size :<ModalSize>230</ModalSize>
+              <ModalSize>240</ModalSize>
+              <ModalSize>250</ModalSize>
+              <ModalSize>260</ModalSize>
+              <ModalSize>270</ModalSize>
+              <ModalSize>280</ModalSize>
+              <div></div>
+              수량 :
+              <ModalButton onClick={onClickMinus}>
+                <RemoveCircleOutlineIcon />
+              </ModalButton>
+              {count}
+              <ModalButton onClick={onClickPlus}>
+                <AddCircleOutlineIcon />
+              </ModalButton>
+              <br />
+              <CartButton>Cart</CartButton>
+              {/* onClick={() => dispatch(addCount())} */}
+            </ModalBox>
+          </ModalContainer>
+        </div>
+      )}
     </>
-    )
-}
+  );
+};
 
-export default Modal
+export default Modal;
