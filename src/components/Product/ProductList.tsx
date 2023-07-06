@@ -1,4 +1,4 @@
-import ProductBrand from './ProductBrandTab';
+import ProductBrandTab from './ProductBrandTab';
 import { useState } from 'react';
 
 import styled from 'styled-components';
@@ -88,7 +88,7 @@ const ProductList = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [size, setSize] = useState<string>('');
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (): void => {
     if (selectedProduct && quantity > 0 && size !== '') {
       const cartItem = {
         product: selectedProduct,
@@ -119,7 +119,7 @@ const ProductList = () => {
           </ProductListItem>
         ))}
       </ProductListWrap>
-      <ProductBrand />
+      <ProductBrandTab handleAddToCart={handleAddToCart} />
     </div>
   );
 };

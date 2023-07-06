@@ -42,8 +42,11 @@ const TabContentBox = styled.div`
   flex-wrap: wrap;
   /* background-color: gray; */
 `;
+interface ProductBrandProps {
+  handleAddToCart: () => void;
+}
 
-const ProductBrandTab = () => {
+const ProductBrandTab: React.FC<ProductBrandProps> = () => {
   const [currentTab, setCurrentTab] = useState(0);
 
   const clickTabHandler = (index: any) => {
