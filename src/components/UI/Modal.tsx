@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../modules/reducer';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import { minusQuantity, plusQuantity } from '../../modules/actions/cart';
 
 interface Props {
   onClick: () => void;
+  onAddToCart: (quantity: number, size: string) => void;
 }
 const ModalContainer = styled.div`
   position: relative;
@@ -70,9 +71,10 @@ const CartButton = styled.button`
   border-color: #666;
 `;
 
-const Modal = ({ onClick }: Props) => {
+const Modal = ({ onClick, onAddToCart }: Props) => {
   const dispatch = useDispatch();
   const count = useSelector((state: RootState) => state.cart.count);
+  const [selectedSize, setSelectedSize] = useState<string>('');
 
   const { isOpenModal, clickCloseModal } = useOpenModal();
   const handleModalClose = () => {
@@ -89,6 +91,15 @@ const Modal = ({ onClick }: Props) => {
       dispatch(minusQuantity(1));
     }
   };
+
+  const handleSizeSelection = (size: string) => {
+    setSelectedSize(size);
+    console.log('size', selectedSize);
+  };
+
+  const handleCartClick = () => {
+    onAddToCart(count, selectedSize);
+  };
   return (
     <>
       {!isOpenModal && (
@@ -99,12 +110,12 @@ const Modal = ({ onClick }: Props) => {
                 <CloseIcon />
               </ModalButton>
               <ModalHead>신발명</ModalHead>
-              size :<ModalSize>230</ModalSize>
-              <ModalSize>240</ModalSize>
-              <ModalSize>250</ModalSize>
-              <ModalSize>260</ModalSize>
-              <ModalSize>270</ModalSize>
-              <ModalSize>280</ModalSize>
+              size :<ModalSize onClick={() => handleSizeSelection('230')}>230</ModalSize>
+              <ModalSize onClick={() => handleSizeSelection('240')}>240</ModalSize>
+              <ModalSize onClick={() => handleSizeSelection('250')}>250</ModalSize>
+              <ModalSize onClick={() => handleSizeSelection('260')}>260</ModalSize>
+              <ModalSize onClick={() => handleSizeSelection('270')}>270</ModalSize>
+              <ModalSize onClick={() => handleSizeSelection('280')}>280</ModalSize>
               <div></div>
               수량 :
               <ModalButton onClick={onClickMinus}>
@@ -115,7 +126,7 @@ const Modal = ({ onClick }: Props) => {
                 <AddCircleOutlineIcon />
               </ModalButton>
               <br />
-              <CartButton>Cart</CartButton>
+              <CartButton onClick={handleCartClick}>Cart</CartButton>
               {/* onClick={() => dispatch(addCount())} */}
             </ModalBox>
           </ModalContainer>

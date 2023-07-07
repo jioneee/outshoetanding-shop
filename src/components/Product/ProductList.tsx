@@ -32,7 +32,7 @@ const ProductListItem = styled.div`
   img {
     width: 250px;
     height: 250px;
-    object-fit: contain; /* ensures the aspect ratio is maintained */
+    object-fit: contain;
   }
 `;
 
@@ -105,6 +105,8 @@ const ProductList = () => {
       setSelectedProduct(null);
       setQuantity(1);
       setSize('');
+      console.log(`quantity: ${quantity}`);
+      console.log(`size: ${size}`);
     } else {
     }
   };
