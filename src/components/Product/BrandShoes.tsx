@@ -166,6 +166,7 @@ export const Nike = () => {
 };
 
 export const Adidas = () => {
+  const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
   return (
     <div>
       <ProductListWrap>
@@ -175,15 +176,17 @@ export const Adidas = () => {
               <img src={img.image} alt={img.title} />
               <div className='price'>Price: {img.price} 원</div>
             </ProductListItem>
-            <AddToCart>add to cart</AddToCart>
+            <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
         ))}
+        {isOpenModal && <Modal onClick={clickCloseModal} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
 };
 
 export const NewBalance = () => {
+  const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
   return (
     <div>
       <ProductListWrap>
@@ -193,15 +196,17 @@ export const NewBalance = () => {
               <img src={img.image} alt={img.title} />
               <div className='price'>Price: {img.price} 원</div>
             </ProductListItem>
-            <AddToCart>add to cart</AddToCart>
+            <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
         ))}
+        {isOpenModal && <Modal onClick={clickCloseModal} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
 };
 
 export const Converse = () => {
+  const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
   return (
     <div>
       <ProductListWrap>
@@ -211,15 +216,17 @@ export const Converse = () => {
               <img src={img.image} alt={img.title} />
               <div className='price'>Price: {img.price} 원</div>
             </ProductListItem>
-            <AddToCart>add to cart</AddToCart>
+            <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
         ))}
+        {isOpenModal && <Modal onClick={clickCloseModal} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
 };
 
 export const Vans = () => {
+  const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
   return (
     <div>
       <ProductListWrap>
@@ -229,15 +236,17 @@ export const Vans = () => {
               <img src={img.image} alt={img.title} />
               <div className='price'>Price: {img.price} 원</div>
             </ProductListItem>
-            <AddToCart>add to cart</AddToCart>
+            <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
         ))}
+        {isOpenModal && <Modal onClick={clickCloseModal} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
 };
 
 export const Asics = () => {
+  const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
   return (
     <div>
       <ProductListWrap>
@@ -247,9 +256,10 @@ export const Asics = () => {
               <img src={img.image} alt={img.title} />
               <div className='price'>Price: {img.price} 원</div>
             </ProductListItem>
-            <AddToCart>add to cart</AddToCart>
+            <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
         ))}
+        {isOpenModal && <Modal onClick={clickCloseModal} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );

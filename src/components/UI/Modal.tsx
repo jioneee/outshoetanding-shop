@@ -25,19 +25,6 @@ const ModalContainer = styled.div`
     background: rgba(0, 0, 0, 0.7);
     z-index: 1;
   }
-  /* ::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    
-    content: "";
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
-    mix-blend-mode: normal;
-    opacity: 0.3;
-   
-  } */
 `;
 
 const ModalBox = styled.div`
