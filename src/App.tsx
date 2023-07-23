@@ -13,26 +13,6 @@ import Main from './pages/Main';
 import GlobalStyle from './components/style/globalStyle';
 import styled, { ThemeProvider } from 'styled-components';
 
-const Wrapper = styled.div`
-  @media ${({ theme }) => theme.device.tablet} {
-    flex-direction: column;
-  }
-
-  width: 100%;
-`;
-
-const Container = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: 900px;
-  margin: 50px auto;
-  text-align: center;
-  align-items: center;
-  /* background-color:rgba(0,2,0,70%) ; */
-  /* z-index: -1; */
-`;
-
 function App() {
   const dispatch = useDispatch();
   const count = useSelector((state: RootState) => state.cart.count);
@@ -81,3 +61,23 @@ function App() {
 }
 
 export default App;
+
+const Wrapper = styled.div`
+  @media ${({ theme }) => theme.device.tablet} {
+    flex-direction: column;
+  }
+
+  width: 100%;
+`;
+
+const Container = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  margin: 50px auto;
+  text-align: center;
+  align-items: center;
+  /* background-color:rgba(0,2,0,70%) ; */
+  /* z-index: -1; */
+`;

@@ -3,6 +3,43 @@ import { Nike, Adidas, NewBalance, Converse, Vans, Asics } from './BrandShoes';
 
 import styled from 'styled-components';
 
+interface ProductBrandProps {
+  handleAddToCart: () => void;
+}
+
+const ProductBrandTab: React.FC<ProductBrandProps> = () => {
+  const [currentTab, setCurrentTab] = useState(0);
+
+  const clickTabHandler = (index: any) => {
+    setCurrentTab(index);
+  };
+
+  const brandArr = [
+    { name: 'NIKE', content: <Nike /> },
+    { name: 'ADIDAS', content: <Adidas /> },
+    { name: 'NEWBALANCE', content: <NewBalance /> },
+    { name: 'CONVERSE', content: <Converse /> },
+    { name: 'VANS', content: <Vans /> },
+    { name: 'ASICS', content: <Asics /> },
+  ];
+  return (
+    <div>
+      <TabBox>
+        <ul>
+          {brandArr.map((el, index) => (
+            <li key={index} className={index === currentTab ? 'focused' : 'none'} onClick={() => clickTabHandler(index)}>
+              {el.name}
+            </li>
+          ))}
+        </ul>
+      </TabBox>
+      <TabContentBox>{brandArr[currentTab].content}</TabContentBox>
+    </div>
+  );
+};
+
+export default ProductBrandTab;
+
 const TabBox = styled.div`
   box-sizing: border-box;
   margin: 50px auto;
@@ -42,39 +79,3 @@ const TabContentBox = styled.div`
   flex-wrap: wrap;
   /* background-color: gray; */
 `;
-interface ProductBrandProps {
-  handleAddToCart: () => void;
-}
-
-const ProductBrandTab: React.FC<ProductBrandProps> = () => {
-  const [currentTab, setCurrentTab] = useState(0);
-
-  const clickTabHandler = (index: any) => {
-    setCurrentTab(index);
-  };
-
-  const brandArr = [
-    { name: 'NIKE', content: <Nike /> },
-    { name: 'ADIDAS', content: <Adidas /> },
-    { name: 'NEWBALANCE', content: <NewBalance /> },
-    { name: 'CONVERSE', content: <Converse /> },
-    { name: 'VANS', content: <Vans /> },
-    { name: 'ASICS', content: <Asics /> },
-  ];
-  return (
-    <div>
-      <TabBox>
-        <ul>
-          {brandArr.map((el, index) => (
-            <li key={index} className={index === currentTab ? 'focused' : 'none'} onClick={() => clickTabHandler(index)}>
-              {el.name}
-            </li>
-          ))}
-        </ul>
-      </TabBox>
-      <TabContentBox>{brandArr[currentTab].content}</TabContentBox>
-    </div>
-  );
-};
-
-export default ProductBrandTab;

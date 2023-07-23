@@ -3,39 +3,6 @@ import { useState } from 'react';
 
 import styled from 'styled-components';
 
-const TagBox = styled.div`
-  box-sizing: border-box;
-  margin: 10px 5px;
-  width: 100px;
-  height: 50px;
-  border: 2px solid black;
-  color: white;
-  font-size: 30px;
-  background-color: gray;
-`;
-
-const ProductListWrap = styled.div`
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: black;
-`;
-
-const ProductListItem = styled.div`
-  box-sizing: border-box;
-  margin: 25px;
-  height: 250px;
-  max-width: 250px;
-  border: 1px solid gray;
-
-  img {
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-  }
-`;
-
 interface ProductImg {
   title: string;
   image: string;
@@ -128,50 +95,35 @@ const ProductList = () => {
 
 export default ProductList;
 
-// import styled from "styled-components";
+const TagBox = styled.div`
+  box-sizing: border-box;
+  margin: 10px 5px;
+  width: 100px;
+  height: 50px;
+  border: 2px solid black;
+  color: white;
+  font-size: 30px;
+  background-color: gray;
+`;
 
-// const ProductListWrap = styled.div`
-//     margin: 0 auto;
-// `
+const ProductListWrap = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: black;
+`;
 
-// const ProductListItem = styled.div`
-//     box-sizing: border-box;
-//     height:100px;
-//     width:100px;
-//     border: 1px solid black;
-// `
-// interface ProductImg {
-//     title: string;
-//     image: string;
-// }
-// // const ProductListItem = ({ title, image }: ProductListItemProps) => {
-// //     // Component implementation here
-// //   };
+const ProductListItem = styled.div`
+  box-sizing: border-box;
+  margin: 25px;
+  height: 250px;
+  max-width: 250px;
+  border: 1px solid gray;
 
-// const ProductImage :ProductImg[] = [
-//     {
-//         title: "shoes1",
-//         image: "",
-//     },
-//     {
-//         title: "shoes2",
-//         image: "",
-//     },
-//     {
-//         title: "shoes3",
-//         image: "",
-//     },
-// ];
-
-// const ProductList : any = () => {
-//     return (
-//        <div>
-//             <ProductListWrap>
-//             {ProductImage.map((img) => (<ProductListItem  title={img.title}  image={img.image} />))}
-
-//             </ProductListWrap>
-//         </div>
-//         )
-// };
-
-// export default ProductList
+  img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+  }
+`;

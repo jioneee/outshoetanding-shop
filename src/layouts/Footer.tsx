@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+const Footer: any = () => {
+  return (
+    <footer>
+      <FooterBox>
+        <FooterText> ⓒoutSHOEtanding. All Rights Reserved</FooterText>
+      </FooterBox>
+    </footer>
+  );
+};
+
+export default Footer;
+
 const FooterBox = styled.div`
   position: relative;
   width: 100%;
@@ -13,15 +25,3 @@ const FooterText = styled.span`
   text-align: right;
   color: black;
 `;
-
-const Footer: any = () => {
-  return (
-    <footer>
-      <FooterBox>
-        <FooterText> ⓒoutSHOEtanding. All Rights Reserved</FooterText>
-      </FooterBox>
-    </footer>
-  );
-};
-
-export default Footer;

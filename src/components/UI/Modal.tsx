@@ -13,50 +13,6 @@ interface Props {
   onClick: () => void;
   onAddToCart: (quantity: number, size: string) => void;
 }
-const ModalContainer = styled.div`
-  position: relative;
-  ::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-  }
-`;
-
-const ModalBox = styled.div`
-  max-width: 300px;
-  height: auto;
-  background-color: white;
-  padding: 10px;
-  position: relative;
-  z-index: 2;
-`;
-
-const ModalHead = styled.div`
-  font-size: large;
-  font-weight: 700;
-`;
-const ModalSize = styled.button`
-  width: 50px;
-  height: 30px;
-  margin: 5px;
-  font-weight: 300;
-`;
-const ModalButton = styled.button`
-  margin: 10px;
-  background: none;
-  border: none;
-`;
-const CartButton = styled.button`
-  width: 100px;
-  height: 30px;
-  background-color: #666;
-  border-color: #666;
-`;
 
 const Modal = ({ onClick, onAddToCart }: Props) => {
   const dispatch = useDispatch();
@@ -124,3 +80,48 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
 };
 
 export default Modal;
+
+const ModalContainer = styled.div`
+  position: relative;
+  ::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+`;
+
+const ModalBox = styled.div`
+  max-width: 300px;
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+`;
+
+const ModalHead = styled.div`
+  font-size: large;
+  font-weight: 700;
+`;
+const ModalSize = styled.button`
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+  font-weight: 300;
+`;
+const ModalButton = styled.button`
+  margin: 10px;
+  background: none;
+  border: none;
+`;
+const CartButton = styled.button`
+  width: 100px;
+  height: 30px;
+  background-color: #666;
+  border-color: #666;
+`;

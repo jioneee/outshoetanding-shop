@@ -2,6 +2,30 @@
 // import { RootState } from "../modules/reducer"
 import styled from 'styled-components';
 
+const ShoppingCart = () => {
+  // const state = useSelector((state : RootState) => state.cart.nikeItems)
+  // const {}
+  return (
+    <div>
+      <CartContainer>
+        <CartHeader>장바구니</CartHeader>
+        <Cartcontents>
+          <CartContentTitle>상품옵션</CartContentTitle>
+          <CartContent></CartContent>
+        </Cartcontents>
+        <DeleteSelection>선택 삭제</DeleteSelection>
+        <TotalBox></TotalBox>
+        <ButtonBox>
+          <SelectionOrder>선택 주문</SelectionOrder>
+          <TotalOrder>전체 주문</TotalOrder>
+        </ButtonBox>
+      </CartContainer>
+    </div>
+  );
+};
+
+export default ShoppingCart;
+
 const CartContainer = styled.div``;
 const CartHeader = styled.div`
   box-sizing: border-box;
@@ -65,27 +89,3 @@ const TotalOrder = styled.button`
   width: 100px;
   height: 30px;
 `;
-
-const ShoppingCart = () => {
-  // const state = useSelector((state : RootState) => state.cart.nikeItems)
-  // const {}
-  return (
-    <div>
-      <CartContainer>
-        <CartHeader>장바구니</CartHeader>
-        <Cartcontents>
-          <CartContentTitle>상품옵션</CartContentTitle>
-          <CartContent></CartContent>
-        </Cartcontents>
-        <DeleteSelection>선택 삭제</DeleteSelection>
-        <TotalBox></TotalBox>
-        <ButtonBox>
-          <SelectionOrder>선택 주문</SelectionOrder>
-          <TotalOrder>전체 주문</TotalOrder>
-        </ButtonBox>
-      </CartContainer>
-    </div>
-  );
-};
-
-export default ShoppingCart;

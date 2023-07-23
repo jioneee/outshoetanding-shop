@@ -12,56 +12,6 @@ interface Props {
   onClick: () => void;
 }
 
-const HeaderContainer = styled.div``;
-const HeaderBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  width: 100%;
-  height: 55px;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  /* border: solid black 2px; */
-  background-color: rgba(0, 2, 0, 70%);
-
-  .Menu_Icon {
-    @media screen and (min-width: 769px) {
-      display: none;
-    }
-  }
-`;
-const LogoBox = styled.div`
-  text-align: left;
-  cursor: pointer;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-const IconContainer = styled.span`
-  margin-left: auto;
-`;
-const IconBox = styled.span`
-  cursor: pointer;
-  /* position:absolute; */
-`;
-const CartQuantity = styled.span`
-  box-sizing: border-box;
-  margin-left: -15px;
-  margin-top: 0px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: white;
-`;
-const CartCount = styled.span`
-  cursor: pointer;
-  /* position:absolute; */
-  padding: 10px;
-  color: rgba(0, 2, 0, 70%);
-`;
-
 const Header: any = ({ onClick }: Props) => {
   const navigate = useNavigate();
   const handleClickCart = () => {
@@ -116,3 +66,53 @@ const Header: any = ({ onClick }: Props) => {
 };
 
 export default Header;
+
+const HeaderContainer = styled.div``;
+const HeaderBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  /* border: solid black 2px; */
+  background-color: rgba(0, 2, 0, 70%);
+
+  .Menu_Icon {
+    @media screen and (min-width: 769px) {
+      display: none;
+    }
+  }
+`;
+const LogoBox = styled.div`
+  text-align: left;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+const IconContainer = styled.span`
+  margin-left: auto;
+`;
+const IconBox = styled.span`
+  cursor: pointer;
+  /* position:absolute; */
+`;
+const CartQuantity = styled.span`
+  box-sizing: border-box;
+  margin-left: -15px;
+  margin-top: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+`;
+const CartCount = styled.span`
+  cursor: pointer;
+  /* position:absolute; */
+  padding: 10px;
+  color: rgba(0, 2, 0, 70%);
+`;

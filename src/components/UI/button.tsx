@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const ButtonS = () => {
+  return <Small>Small</Small>;
+};
+
+export const ButtonM = () => {
+  return <Middle>Middle</Middle>;
+};
+
+export const ButtonL = () => {
+  return <Large>Large</Large>;
+};
+
 const Small = styled.button`
   height: 30px;
   width: 60px;
@@ -23,15 +35,3 @@ const Large = styled.button`
   border-radius: 10%;
   color: white;
 `;
-
-export const ButtonS = () => {
-  return <Small>Small</Small>;
-};
-
-export const ButtonM = () => {
-  return <Middle>Middle</Middle>;
-};
-
-export const ButtonL = () => {
-  return <Large>Large</Large>;
-};
