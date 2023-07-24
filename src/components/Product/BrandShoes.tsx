@@ -3,42 +3,7 @@
 import styled from 'styled-components';
 
 import Modal from '../UI/Modal';
-import useOpenModal from '../Hooks/useOpenModal';
-
-const ProductListWrap = styled.div`
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: gray;
-  padding-bottom: 10px;
-`;
-
-const ProductListItem = styled.div`
-  box-sizing: border-box;
-  margin: 25px;
-  height: 250px;
-  max-width: 250px;
-  border: 1px solid gray;
-  img {
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-  }
-  .price {
-    margin-top: 20px;
-    /* font-weight: bold; */
-  }
-`;
-
-const AddToCart = styled.button`
-  box-sizing: border-box;
-  font-weight: bold;
-  width: 70px;
-  height: 30px;
-  border: 0px;
-  margin-top: 25px;
-`;
+import useOpenModal from '../../Hooks/useOpenModal';
 
 interface ProductImg {
   title: string;
@@ -264,3 +229,38 @@ export const Asics = () => {
     </div>
   );
 };
+
+const ProductListWrap = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: gray;
+  padding-bottom: 10px;
+`;
+
+const ProductListItem = styled.div`
+  box-sizing: border-box;
+  margin: 25px;
+  height: 250px;
+  max-width: 250px;
+  border: 1px solid gray;
+  img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+  }
+  .price {
+    margin-top: 20px;
+    /* font-weight: bold; */
+  }
+`;
+
+const AddToCart = styled.button`
+  box-sizing: border-box;
+  font-weight: bold;
+  width: 70px;
+  height: 30px;
+  border: 0px;
+  margin-top: 25px;
+`;

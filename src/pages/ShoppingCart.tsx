@@ -1,17 +1,16 @@
-// import { useSelector } from "react-redux"
-// import { RootState } from "../modules/reducer"
 import styled from 'styled-components';
 
+import CartBox from '../components/Product/CartBox';
+
 const ShoppingCart = () => {
-  // const state = useSelector((state : RootState) => state.cart.nikeItems)
-  // const {}
   return (
     <div>
       <CartContainer>
         <CartHeader>장바구니</CartHeader>
         <Cartcontents>
           <CartContentTitle>상품옵션</CartContentTitle>
-          <CartContent></CartContent>
+
+          <CartBox></CartBox>
         </Cartcontents>
         <DeleteSelection>선택 삭제</DeleteSelection>
         <TotalBox></TotalBox>
@@ -51,13 +50,13 @@ const CartContentTitle = styled.div`
   border-bottom: 2px solid black;
   background-color: #e3e0e0;
 `;
-const CartContent = styled.div`
-  box-sizing: border-box;
-  height: 100px;
-`;
+// const CartContent = styled.div`
+//   box-sizing: border-box;
+//   height: auto;
+// `;
 const DeleteSelection = styled.button`
   display: flex;
-  margin-top: 30px;
+  margin-top: 150px;
   width: 100px;
   height: 30px;
   align-items: flex-start;

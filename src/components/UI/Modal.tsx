@@ -4,7 +4,7 @@ import { RootState } from '../../modules/reducer';
 import styled from 'styled-components';
 
 import CloseIcon from '@mui/icons-material/Close';
-import useOpenModal from '../Hooks/useOpenModal';
+import useOpenModal from '../../Hooks/useOpenModal';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { minusQuantity, plusQuantity } from '../../modules/actions/cart';
