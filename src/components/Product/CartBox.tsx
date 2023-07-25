@@ -4,18 +4,21 @@ import { initialState } from '../../modules/initialStates/initialState';
 
 const CartBox: any = () => {
   return (
-    <Container>
-      <InputCheck type='checkbox'></InputCheck>
-      <ImageContain>
-        {initialState.cartItems.map((item) => (
-          <Img key={item.id} src={item.img} alt={item.name} />
-        ))}
-      </ImageContain>
-
-      <Title>title</Title>
-      <Size>size</Size>
-      <Quantity>quantity</Quantity>
-    </Container>
+    <>
+      {initialState.cartItems.map((item) => (
+        <Container>
+          <InputCheck type='checkbox'></InputCheck>
+          <ImageContain>
+            <Img key={item.id} src={item.img} alt={item.name} />
+          </ImageContain>
+          <ShoesInfo>
+            <Title>{item.name}</Title>
+            <Size>사이즈 : {item.size}</Size>
+            <Quantity>수량 : {item.quantity}</Quantity>
+          </ShoesInfo>
+        </Container>
+      ))}
+    </>
   );
 };
 
@@ -26,17 +29,26 @@ const Container = styled.div`
   flex-direction: row;
   border-bottom: 1px solid black;
 
-  height: 100px;
-  margin: 18px 0px;
-  padding: 10px;
+  height: 140px;
+  margin: 20px 0px;
 `;
 const InputCheck = styled.input`
   margin: 15px;
 `;
 const ImageContain = styled.span`
-  border: 1px solid black;
   margin: 15px;
-  height: 50px;
+  height: 150px;
+`;
+const Img = styled.img`
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+`;
+const ShoesInfo = styled.span`
+  display: flex;
+  flex-direction: row;
+  line-height: 110px;
 `;
 
 const Title = styled.p`
@@ -49,10 +61,4 @@ const Size = styled.span`
 `;
 const Quantity = styled.span`
   margin: 15px;
-`;
-
-const Img = styled.img`
-  width: 250px;
-  height: 250px;
-  object-fit: contain;
 `;
