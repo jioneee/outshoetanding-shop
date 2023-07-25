@@ -8,7 +8,7 @@ const CartBox: any = () => {
       <InputCheck type='checkbox'></InputCheck>
       <ImageContain>
         {initialState.cartItems.map((item) => (
-          <img key={item.id} src={item.img} alt={item.name} />
+          <Img key={item.id} src={item.img} alt={item.name} />
         ))}
       </ImageContain>
 
@@ -49,4 +49,10 @@ const Size = styled.span`
 `;
 const Quantity = styled.span`
   margin: 15px;
+`;
+
+const Img = styled.img`
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
 `;
