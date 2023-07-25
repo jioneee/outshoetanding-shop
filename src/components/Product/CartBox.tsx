@@ -1,10 +1,16 @@
 import styled from 'styled-components';
+// import { useSelector, useDispatch } from 'react-redux';
+import { initialState } from '../../modules/initialStates/initialState';
 
 const CartBox: any = () => {
   return (
     <Container>
       <InputCheck type='checkbox'></InputCheck>
-      <ImageContain>image</ImageContain>
+      <ImageContain>
+        {initialState.cartItems.map((item) => (
+          <img key={item.id} src={item.img} alt={item.name} />
+        ))}
+      </ImageContain>
 
       <Title>title</Title>
       <Size>size</Size>
