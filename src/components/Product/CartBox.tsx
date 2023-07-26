@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { useSelector, useDispatch } from 'react-redux';
 import { initialState } from '../../modules/initialStates/initialState';
 
 const CartBox: any = () => {
@@ -15,6 +14,7 @@ const CartBox: any = () => {
             <Title>{item.name}</Title>
             <Size>사이즈 : {item.size}</Size>
             <Quantity>수량 : {item.quantity}</Quantity>
+            <Price>{(item.price * item.quantity).toLocaleString('ko-kr')}원</Price>
           </ShoesInfo>
         </Container>
       ))}
@@ -52,13 +52,27 @@ const ShoesInfo = styled.span`
 `;
 
 const Title = styled.p`
+  box-sizing: border-box;
+  width: 230px;
+  height: 110px;
   margin: 15px;
   font-weight: bold;
+  font-size: large;
 `;
 
 const Size = styled.span`
+  width: 110px;
+  height: 110px;
   margin: 15px;
 `;
 const Quantity = styled.span`
+  width: 110px;
+  height: 110px;
+  margin: 15px;
+`;
+
+const Price = styled.span`
+  width: 110px;
+  height: 110px;
   margin: 15px;
 `;

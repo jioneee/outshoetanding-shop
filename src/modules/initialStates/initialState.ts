@@ -19,7 +19,7 @@ export const initialState: CartStateType = {
       id: 2,
       name: 'adidas Gazelle',
       img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
-      quantity: 1,
+      quantity: 2,
       size: 230,
       price: 70000,
     },
