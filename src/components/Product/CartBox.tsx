@@ -5,10 +5,10 @@ const CartBox: any = () => {
   return (
     <>
       {initialState.cartItems.map((item) => (
-        <Container>
+        <Container key={item.id}>
           <InputCheck type='checkbox'></InputCheck>
           <ImageContain>
-            <Img key={item.id} src={item.img} alt={item.name} />
+            <Img src={item.img} alt={item.name} />
           </ImageContain>
           <ShoesInfo>
             <Title>{item.name}</Title>
