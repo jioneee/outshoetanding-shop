@@ -47,7 +47,7 @@ const Header: any = ({ onClick }: Props) => {
                 <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 30, margin: 5 }}>
                   cart
                 </ShoppingCartIcon>
-                <CartQuantity>1</CartQuantity>
+                <CartQuantity>2</CartQuantity>
               </CartCount>
             </IconBox>
             <IconBox>
@@ -105,8 +105,8 @@ const CartQuantity = styled.span`
   box-sizing: border-box;
   margin-left: -15px;
   margin-top: 0px;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: white;
 `;
