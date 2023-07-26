@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import Logo from '../components/UI/Logo';
+import Logo from '../components/common/Logo';
 // import { ButtonS, ButtonM, ButtonL } from "../components/UI/button"
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';

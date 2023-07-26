@@ -2,7 +2,7 @@
 // import { useDispatch } from "react-redux";
 import styled from 'styled-components';
 
-import Modal from '../UI/Modal';
+import Modal from '../common/Modal';
 import useOpenModal from '../../Hooks/useOpenModal';
 
 interface ProductImg {

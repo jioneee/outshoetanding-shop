@@ -1,4 +1,4 @@
-import SwipeableTextMobileStepper from '../components/UI/carousel';
+import SwipeableTextMobileStepper from '../components/common/carousel';
 import ProductList from '../components/Product/ProductList';
 
 const Main = () => {
