@@ -61,8 +61,8 @@ const ProductList = () => {
       <TagBox>New</TagBox>
       <ProductListWrap>
         {ProductImage.map((img) => (
-          <ProductListItem>
-            <img key={img.id} src={img.image} alt={img.title} />
+          <ProductListItem key={img.id}>
+            <img src={img.image} alt={img.title} />
           </ProductListItem>
         ))}
       </ProductListWrap>
