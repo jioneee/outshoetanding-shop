@@ -1,8 +1,8 @@
 import { createReducer } from 'typesafe-actions';
 
-import { ADD_COUNT, DEC_COUNT, MINUS_QUANTITY, PLUS_QUANTITY } from '../actionTypes/cart';
+import { ADD_COUNT, DEC_COUNT, MINUS_QUANTITY, PLUS_QUANTITY, ADD_TO_CART } from '../actionTypes/cart';
 import { CartActionType } from '../actions';
-import { CartStateType } from '../initialStates/initialStateType';
+import { CartStateType, CartItemType } from '../initialStates/initialStateType';
 import { initialState } from '../initialStates/initialState';
 
 export default createReducer<CartStateType, CartActionType>(initialState, {
@@ -28,6 +28,16 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     return {
       ...state,
       count: state.count - 1,
+    };
+  },
+  [ADD_TO_CART]: (state, action) => {
+    const newItem: CartItemType = {
+      quantity: action.payload.quantity,
+      size: action.payload.size,
+    };
+    return {
+      ...state,
+      cart: [...state.cartItems, newItem],
     };
   },
 });

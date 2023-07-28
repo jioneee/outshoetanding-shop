@@ -3,3 +3,4 @@ export const DEC_COUNT = 'cart/DEC_COUNT';
 
 export const PLUS_QUANTITY = 'cart/PLUS_QUANTITY';
 export const MINUS_QUANTITY = 'cart/MINUS_QUANTITY';
+export const ADD_TO_CART = 'cart/ADD_TO_CART';

@@ -1,4 +1,4 @@
-import { ADD_COUNT, DEC_COUNT, PLUS_QUANTITY, MINUS_QUANTITY } from '../actionTypes/cart';
+import { ADD_COUNT, DEC_COUNT, PLUS_QUANTITY, MINUS_QUANTITY, ADD_TO_CART } from '../actionTypes/cart';
 
 export const addCount = (value: number) => {
   return { type: ADD_COUNT, payload: value };
@@ -16,11 +16,9 @@ export const minusQuantity = (value: number) => {
   return { type: MINUS_QUANTITY, payload: value };
 };
 
-export const ADD_TO_CART = 'ADD_TO_CART';
-
 export const addToCart = (quantity: number, size: string) => {
   return {
     type: ADD_TO_CART,
-    paload: { quantity, size },
+    payload: { quantity, size },
   };
 };
