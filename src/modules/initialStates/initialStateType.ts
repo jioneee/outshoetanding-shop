@@ -5,5 +5,5 @@ export type CartStateType = {
 
 export type CartItemType = {
   quantity: number;
-  size: number;
+  size: string;
 };

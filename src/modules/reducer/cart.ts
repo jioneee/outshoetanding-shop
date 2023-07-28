@@ -9,13 +9,13 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
   [ADD_COUNT]: (state, action) => {
     return {
       ...state,
-      count: state.count + action.payload,
+      count: state.count + (typeof action.payload === 'number' ? action.payload : 0),
     };
   },
   [DEC_COUNT]: (state, action) => {
     return {
       ...state,
-      count: state.count - action.payload,
+      count: state.count - (typeof action.payload === 'number' ? action.payload : 0),
     };
   },
   [PLUS_QUANTITY]: (state, action) => {
@@ -31,14 +31,18 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     };
   },
   [ADD_TO_CART]: (state, action) => {
-    const newItem: CartItemType = {
-      quantity: action.payload.quantity,
-      size: action.payload.size,
-    };
-    return {
-      ...state,
-      cart: [...state.cartItems, newItem],
-    };
+    if (typeof action.payload === 'object' && action.payload !== null) {
+      const { quantity, size } = action.payload as { quantity: number; size: string };
+      const newItem: CartItemType = {
+        quantity,
+        size,
+      };
+      return {
+        ...state,
+        cart: [...state.cartItems, newItem],
+      };
+    }
+    return state;
   },
 });
 
