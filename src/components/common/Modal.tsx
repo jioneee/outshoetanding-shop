@@ -37,7 +37,7 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
 
   const handleSizeSelection = (size: string) => {
     setSelectedSize(size);
-    console.log('size', selectedSize);
+    console.log('size');
   };
 
   const handleCartClick = () => {

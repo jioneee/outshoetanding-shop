@@ -15,3 +15,12 @@ export const plusQuantity = (value: number) => {
 export const minusQuantity = (value: number) => {
   return { type: MINUS_QUANTITY, payload: value };
 };
+
+export const ADD_TO_CART = 'ADD_TO_CART';
+
+export const addToCart = (quantity: number, size: string) => {
+  return {
+    type: ADD_TO_CART,
+    paload: { quantity, size },
+  };
+};
