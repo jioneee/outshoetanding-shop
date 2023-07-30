@@ -1,16 +1,23 @@
 import styled from 'styled-components';
 
+import { useState } from 'react';
 import CartBox from '../components/Product/CartBox';
 
 const ShoppingCart = () => {
+  const [selectAllCheck, setSelectAllCheck] = useState(false);
+
+  const handleSelectAllCheck = () => {
+    setSelectAllCheck(!selectAllCheck);
+  };
+
   return (
     <div>
       <CartContainer>
         <CartHeader>장바구니</CartHeader>
         <Cartcontents>
           <CartContentTitle>상품옵션</CartContentTitle>
-
-          <CartBox></CartBox>
+          <CartCheckBox type='checkbox' onClick={handleSelectAllCheck} />
+          <CartBox selectAllCheck={selectAllCheck}></CartBox>
         </Cartcontents>
 
         <TotalBox></TotalBox>
@@ -41,7 +48,8 @@ const Cartcontents = styled.div`
   border-bottom: 3px solid black;
   margin-top: 50px;
   width: 900px;
-  height: 70px;
+  height: 80px;
+  text-align: left;
 `;
 
 const CartContentTitle = styled.div`
@@ -50,6 +58,10 @@ const CartContentTitle = styled.div`
   height: 50px;
   border-bottom: 2px solid black;
   background-color: #e3e0e0;
+`;
+
+const CartCheckBox = styled.input`
+  margin: 5px;
 `;
 
 const TotalBox = styled.div`

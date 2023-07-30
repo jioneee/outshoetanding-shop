@@ -2,20 +2,22 @@ import styled from 'styled-components';
 
 import { useState } from 'react';
 import { initialState } from '../../modules/initialStates/initialState';
+interface CartBoxProps {
+  selectAllCheck: boolean;
+}
 
-const CartBox: any = () => {
+const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const onClickCheck = () => {
     setIsChecked(!isChecked);
-    console.log('check');
   };
 
   return (
     <>
       {initialState.cartItems.map((item) => (
         <Container key={item.id}>
-          <InputCheck type='checkbox' onClick={onClickCheck}></InputCheck>
+          <InputCheck type='checkbox' checked={selectAllCheck || isChecked} onClick={onClickCheck}></InputCheck>
           <ImageContain>
             <Img src={item.img} alt={item.name} />
           </ImageContain>
