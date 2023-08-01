@@ -59,6 +59,7 @@ const Container = styled.div`
 `;
 const InputCheck = styled.input`
   margin: 15px;
+  accent-color: gray;
 `;
 const ImageContain = styled.span`
   margin: 15px;

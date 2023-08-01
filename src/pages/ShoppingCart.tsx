@@ -66,6 +66,7 @@ const CartContentTitle = styled.div`
 
 const CartCheckBox = styled.input`
   margin: 5px;
+  accent-color: gray;
 `;
 
 const TotalBox = styled.div`
