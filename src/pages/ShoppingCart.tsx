@@ -6,8 +6,12 @@ import CartBox from '../components/Product/CartBox';
 const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
 
-  const handleSelectAllCheck = () => {
-    setSelectAllCheck(!selectAllCheck);
+  const handleCheckBoxChange = (checked: boolean) => {
+    setSelectAllCheck(checked);
+  };
+
+  const handleSelectAllCheckChange = () => {
+    setSelectAllCheck((prev) => !prev);
   };
 
   return (
@@ -16,8 +20,8 @@ const ShoppingCart = () => {
         <CartHeader>장바구니</CartHeader>
         <Cartcontents>
           <CartContentTitle>상품옵션</CartContentTitle>
-          <CartCheckBox type='checkbox' onClick={handleSelectAllCheck} />
-          <CartBox selectAllCheck={selectAllCheck}></CartBox>
+          <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
+          <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange}></CartBox>
         </Cartcontents>
 
         <TotalBox></TotalBox>
