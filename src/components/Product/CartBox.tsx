@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { initialState } from '../../modules/initialStates/initialState';
 interface CartBoxProps {
   selectAllCheck: boolean;
@@ -8,17 +8,30 @@ interface CartBoxProps {
 }
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState<boolean[]>([]);
 
-  const onClickCheck = () => {
-    setIsChecked(!isChecked);
+  useEffect(() => {
+    if (selectAllCheck) {
+      setIsChecked(initialState.cartItems.map(() => true));
+    } else {
+      setIsChecked(initialState.cartItems.map(() => false));
+    }
+  }, [selectAllCheck]);
+
+  const onClickCheck = (index: number) => {
+    const updatedChecked = [...isChecked];
+    updatedChecked[index] = !updatedChecked[index];
+    setIsChecked(updatedChecked);
+
+    const allChecked = updatedChecked.every((value) => value);
+    onChange(allChecked);
   };
 
   return (
     <>
-      {initialState.cartItems.map((item) => (
+      {initialState.cartItems.map((item, index) => (
         <Container key={item.id}>
-          <InputCheck type='checkbox' checked={selectAllCheck || isChecked} onChange={onClickCheck} />
+          <InputCheck type='checkbox' checked={isChecked[index] || false} onChange={() => onClickCheck(index)} />
           <ImageContain>
             <Img src={item.img} alt={item.name} />
           </ImageContain>
