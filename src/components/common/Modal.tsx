@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../modules/reducer';
 import styled from 'styled-components';
 
+import { addToCart } from '../../modules/actions/cart';
 import CloseIcon from '@mui/icons-material/Close';
 import useOpenModal from '../../Hooks/useOpenModal';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
@@ -18,6 +19,7 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
   const dispatch = useDispatch();
   const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
+  const [quantity, setQuantity] = useState(1);
 
   const { isOpenModal, clickCloseModal } = useOpenModal();
   const handleModalClose = () => {
@@ -41,7 +43,8 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
   };
 
   const handleCartClick = () => {
-    onAddToCart(count, selectedSize);
+    dispatch(addToCart(quantity, selectedSize));
+    handleModalClose();
   };
   return (
     <>
