@@ -39,7 +39,7 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
       };
       return {
         ...state,
-        cart: [...state.cartItems, newItem],
+        cartItems: [...state.cartItems, newItem],
       };
     }
     return state;
