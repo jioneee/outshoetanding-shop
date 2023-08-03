@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../modules/reducer';
 import styled from 'styled-components';
@@ -22,8 +22,20 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
   const [quantity, setQuantity] = useState(1);
 
   const { isOpenModal, clickCloseModal } = useOpenModal();
+
+  useEffect(() => {
+    setQuantity(1);
+  }, []);
+
+  useEffect(() => {
+    setSelectedSize('');
+    setQuantity(1);
+  }, [isOpenModal]);
+
   const handleModalClose = () => {
     onClick();
+    setSelectedSize('');
+    setQuantity(1);
     clickCloseModal();
   };
 
@@ -43,7 +55,9 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
   };
 
   const handleCartClick = () => {
+    setQuantity(1);
     dispatch(addToCart(quantity, selectedSize));
+    console.log(setQuantity, 'SET');
     handleModalClose();
   };
   return (
