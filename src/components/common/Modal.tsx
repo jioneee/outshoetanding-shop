@@ -70,7 +70,7 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
                 <CloseIcon />
               </ModalButton>
               <ModalHead>신발명</ModalHead>
-              size :<ModalSize onClick={() => handleSizeSelection('230')}>230</ModalSize>
+              SIZE <ModalSize onClick={() => handleSizeSelection('230')}>230</ModalSize>
               <ModalSize onClick={() => handleSizeSelection('240')}>240</ModalSize>
               <ModalSize onClick={() => handleSizeSelection('250')}>250</ModalSize>
               <ModalSize onClick={() => handleSizeSelection('260')}>260</ModalSize>
@@ -130,6 +130,19 @@ const ModalSize = styled.button`
   height: 30px;
   margin: 5px;
   font-weight: 300;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  border: 1px solid white;
+  cursor: pointer;
+  &:hover {
+    background-color: #f8f847;
+  }
+
+  &:focus {
+    background-color: #c6c5c5;
+  }
 `;
 const ModalButton = styled.button`
   margin: 10px;
