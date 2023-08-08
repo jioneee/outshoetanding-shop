@@ -99,17 +99,21 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
 export default Modal;
 
 const ModalContainer = styled.div`
-  position: relative;
-  ::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid gray;
+  /* ::after {
     content: '';
-    position: fixed;
+    position: relative;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 1;
-  }
+  } */
 `;
 
 const ModalBox = styled.div`
