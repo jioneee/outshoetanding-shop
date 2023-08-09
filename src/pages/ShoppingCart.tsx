@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 import { useState } from 'react';
+import { initialState } from '../modules/initialStates/initialState';
 import CartBox from '../components/Product/CartBox';
 
 const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
+  const cartItems = initialState.cartItems;
 
   const handleCheckBoxChange = (checked: boolean) => {
     setSelectAllCheck(checked);
@@ -13,6 +15,7 @@ const ShoppingCart = () => {
   const handleSelectAllCheckChange = () => {
     setSelectAllCheck((prev) => !prev);
   };
+  const totalCartQuantity = selectAllCheck ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
 
   return (
     <div>
@@ -24,7 +27,7 @@ const ShoppingCart = () => {
           <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange}></CartBox>
         </Cartcontents>
 
-        <TotalBox></TotalBox>
+        <TotalBox>Total:{totalCartQuantity} </TotalBox>
         <ButtonBox>
           <DeleteSelection>선택 삭제</DeleteSelection>
           <SelectionOrder>선택 주문</SelectionOrder>
