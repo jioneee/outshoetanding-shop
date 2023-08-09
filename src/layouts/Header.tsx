@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router';
+import { useSelector } from 'react-redux';
+import { RootState } from '../modules/reducer';
 import Logo from '../components/common/Logo';
 // import { ButtonS, ButtonM, ButtonL } from "../components/UI/button"
 import HomeIcon from '@mui/icons-material/Home';
@@ -13,6 +15,8 @@ interface Props {
 }
 
 const Header: any = ({ onClick }: Props) => {
+  // const dispatch = useDispatch();
+  const count = useSelector((state: RootState) => state.cart.count);
   const navigate = useNavigate();
   const handleClickCart = () => {
     navigate('/cart');
@@ -47,7 +51,7 @@ const Header: any = ({ onClick }: Props) => {
                 <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 30, margin: 5 }}>
                   cart
                 </ShoppingCartIcon>
-                <CartQuantity>2</CartQuantity>
+                <CartQuantity>{count}</CartQuantity>
               </CartCount>
             </IconBox>
             <IconBox>
