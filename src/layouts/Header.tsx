@@ -15,8 +15,7 @@ interface Props {
 }
 
 const Header: any = ({ onClick }: Props) => {
-  // const dispatch = useDispatch();
-  const count = useSelector((state: RootState) => state.cart.count);
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const navigate = useNavigate();
   const handleClickCart = () => {
     navigate('/cart');
@@ -29,6 +28,7 @@ const Header: any = ({ onClick }: Props) => {
   const handleClickMyPge = () => {
     navigate('/mypage');
   };
+  const totalCartQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <div>
@@ -51,7 +51,7 @@ const Header: any = ({ onClick }: Props) => {
                 <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 30, margin: 5 }}>
                   cart
                 </ShoppingCartIcon>
-                <CartQuantity>{count}</CartQuantity>
+                <CartQuantity>{totalCartQuantity}</CartQuantity>
               </CartCount>
             </IconBox>
             <IconBox>
