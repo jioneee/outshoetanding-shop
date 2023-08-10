@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { initialState } from '../../modules/initialStates/initialState';
 interface CartBoxProps {
   selectAllCheck: boolean;
-  onChange: (checked: boolean) => void;
+  onChange: (index: number) => void;
 }
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange }) => {
@@ -22,9 +22,7 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange }) => {
     const updatedChecked = [...isChecked];
     updatedChecked[index] = !updatedChecked[index];
     setIsChecked(updatedChecked);
-
-    const allChecked = updatedChecked.every((value) => value);
-    onChange(allChecked);
+    onChange(index);
   };
 
   return (

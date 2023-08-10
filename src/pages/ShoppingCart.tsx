@@ -7,17 +7,25 @@ import CartBox from '../components/Product/CartBox';
 const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
   const cartItems = initialState.cartItems;
+  const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
 
-  const handleCheckBoxChange = (checked: boolean) => {
-    setSelectAllCheck(checked);
+  const handleCheckBoxChange = (index: number) => {
+    const updatedChecked = [...isChecked];
+    updatedChecked[index] = !updatedChecked[index];
+    setIsChecked(updatedChecked);
+
+    const allChecked = updatedChecked.every((value) => value);
+    setSelectAllCheck(allChecked);
   };
 
   const handleSelectAllCheckChange = () => {
-    setSelectAllCheck((prev) => !prev);
+    const allChecked = !selectAllCheck;
+    setSelectAllCheck(allChecked);
+    setIsChecked(cartItems.map(() => allChecked));
   };
-  const totalCartQuantity = selectAllCheck ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+  const totalCartQuantity = isChecked.reduce((total, checked, index) => total + (checked ? cartItems[index].quantity : 0), 0);
 
-  const totalCartPrice = selectAllCheck ? cartItems.reduce((total, item) => total + item.price * item.quantity, 0) : 0;
+  const totalCartPrice = isChecked.reduce((total, checked, index) => total + (checked ? cartItems[index].price * cartItems[index].quantity : 0), 0);
 
   return (
     <div>
@@ -26,11 +34,11 @@ const ShoppingCart = () => {
         <Cartcontents>
           <CartContentTitle>상품옵션</CartContentTitle>
           <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
-          <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange}></CartBox>
+          <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} />
         </Cartcontents>
 
         <TotalBox>
-          Total:{totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원{' '}
+          Quantity: {totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원
         </TotalBox>
         <ButtonBox>
           <DeleteSelection>선택 삭제</DeleteSelection>
