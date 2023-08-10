@@ -17,6 +17,8 @@ const ShoppingCart = () => {
   };
   const totalCartQuantity = selectAllCheck ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
 
+  const totalCartPrice = selectAllCheck ? cartItems.reduce((total, item) => total + item.price * item.quantity, 0) : 0;
+
   return (
     <div>
       <CartContainer>
@@ -27,7 +29,9 @@ const ShoppingCart = () => {
           <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange}></CartBox>
         </Cartcontents>
 
-        <TotalBox>Total:{totalCartQuantity} </TotalBox>
+        <TotalBox>
+          Total:{totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원{' '}
+        </TotalBox>
         <ButtonBox>
           <DeleteSelection>선택 삭제</DeleteSelection>
           <SelectionOrder>선택 주문</SelectionOrder>
