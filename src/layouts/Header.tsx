@@ -42,20 +42,20 @@ const Header: any = ({ onClick }: Props) => {
           </div>
           <IconContainer>
             <IconBox>
-              <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 30, margin: 5 }}>
+              <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 35, margin: 5 }}>
                 home
               </HomeIcon>
             </IconBox>
             <IconBox>
               <CartCount>
-                <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 30, margin: 5 }}>
+                <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 35, margin: 5 }}>
                   cart
                 </ShoppingCartIcon>
                 <CartQuantity>{totalCart}</CartQuantity>
               </CartCount>
             </IconBox>
             <IconBox>
-              <PersonIcon onClick={handleClickMyPge} style={{ color: 'white', fontSize: 30, margin: 5 }}>
+              <PersonIcon onClick={handleClickMyPge} style={{ color: 'white', fontSize: 35, margin: 5 }}>
                 my
               </PersonIcon>
             </IconBox>
@@ -77,7 +77,7 @@ const HeaderBox = styled.div`
   flex-direction: row;
   box-sizing: border-box;
   width: 100%;
-  height: 55px;
+  height: 60px;
   padding: 10px;
   position: fixed;
   top: 0;
@@ -103,16 +103,21 @@ const IconContainer = styled.span`
 `;
 const IconBox = styled.span`
   cursor: pointer;
+  margin-left: 10px;
   /* position:absolute; */
 `;
 const CartQuantity = styled.span`
+  display: inline-block;
+  text-align: center;
   box-sizing: border-box;
+  font-weight: 500;
   margin-left: -15px;
   margin-top: 0px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: white;
+  width: 17px;
+  height: 20px;
+  border-radius: 0%;
+  border: 1px solid gray;
+  background-color: #f7f760;
 `;
 const CartCount = styled.span`
   cursor: pointer;
