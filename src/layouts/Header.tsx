@@ -28,7 +28,7 @@ const Header: any = ({ onClick }: Props) => {
   const handleClickMyPge = () => {
     navigate('/mypage');
   };
-  const totalCartQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalCart = cartItems.length;
 
   return (
     <div>
@@ -51,7 +51,7 @@ const Header: any = ({ onClick }: Props) => {
                 <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 30, margin: 5 }}>
                   cart
                 </ShoppingCartIcon>
-                <CartQuantity>{totalCartQuantity}</CartQuantity>
+                <CartQuantity>{totalCart}</CartQuantity>
               </CartCount>
             </IconBox>
             <IconBox>
