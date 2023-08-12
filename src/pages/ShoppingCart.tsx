@@ -38,7 +38,10 @@ const ShoppingCart = () => {
         </Cartcontents>
 
         <TotalBox>
-          Quantity: {totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원
+          <TotalQuantity>
+            {' '}
+            Quantity: {totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원
+          </TotalQuantity>
         </TotalBox>
         <ButtonBox>
           <DeleteSelection>선택 삭제</DeleteSelection>
@@ -86,11 +89,16 @@ const CartCheckBox = styled.input`
 
 const TotalBox = styled.div`
   box-sizing: border-box;
+  text-align: right;
   border-top: 3px solid #e3e0e0;
   border-bottom: 3px solid #e3e0e0;
   margin-top: 350px;
   width: 900px;
   height: 100px;
+`;
+
+const TotalQuantity = styled.span`
+  margin-right: 80px;
 `;
 const ButtonBox = styled.div`
   display: flex;
