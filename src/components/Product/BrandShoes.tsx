@@ -129,7 +129,7 @@ export const Nike = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='price'>Price: {img.price} 원</div>
+              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
@@ -149,7 +149,7 @@ export const Adidas = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='price'>Price: {img.price} 원</div>
+              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
@@ -169,7 +169,7 @@ export const NewBalance = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='price'>Price: {img.price} 원</div>
+              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
@@ -189,7 +189,7 @@ export const Converse = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='price'>Price: {img.price} 원</div>
+              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
@@ -209,7 +209,7 @@ export const Vans = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='price'>Price: {img.price} 원</div>
+              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
@@ -229,7 +229,7 @@ export const Asics = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='price'>Price: {img.price} 원</div>
+              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
           </div>
@@ -245,7 +245,7 @@ const ProductListWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: gray;
+  background-color: rgb(227, 224, 224);
   padding-bottom: 10px;
 `;
 
@@ -254,7 +254,7 @@ const ProductListItem = styled.div`
   margin: 25px;
   height: 250px;
   max-width: 250px;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   img {
     width: 250px;
     height: 250px;
@@ -268,9 +268,13 @@ const ProductListItem = styled.div`
 
 const AddToCart = styled.button`
   box-sizing: border-box;
-  font-weight: bold;
-  width: 70px;
-  height: 30px;
+  background-color: #f7f760;
   border: 0px;
+  font-weight: 600;
+  width: 75px;
+  height: 30px;
   margin-top: 25px;
+  &:hover {
+    background-color: gray;
+  }
 `;
