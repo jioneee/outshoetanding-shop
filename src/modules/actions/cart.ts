@@ -16,9 +16,9 @@ export const minusQuantity = (value: number) => {
   return { type: MINUS_QUANTITY, payload: value };
 };
 
-export const addToCart = (quantity: number, size: string) => {
+export const addToCart = (item: { quantity: number; size: string }) => {
   return {
     type: ADD_TO_CART,
-    payload: { quantity, size },
+    payload: item,
   };
 };

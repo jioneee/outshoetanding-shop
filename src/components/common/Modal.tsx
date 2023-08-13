@@ -57,7 +57,7 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
   const handleCartClick = () => {
     if (selectedSize !== '') {
       setQuantity(1);
-      dispatch(addToCart(quantity, selectedSize));
+      dispatch(addToCart({ quantity, size: selectedSize }));
       handleModalClose();
     }
   };
