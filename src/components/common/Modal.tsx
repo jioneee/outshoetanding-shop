@@ -55,10 +55,11 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
   };
 
   const handleCartClick = () => {
-    setQuantity(1);
-    dispatch(addToCart(quantity, selectedSize));
-    console.log(setQuantity, 'SET');
-    handleModalClose();
+    if (selectedSize !== '') {
+      setQuantity(1);
+      dispatch(addToCart(quantity, selectedSize));
+      handleModalClose();
+    }
   };
   return (
     <>
