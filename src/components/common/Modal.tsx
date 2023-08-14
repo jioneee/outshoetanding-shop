@@ -9,13 +9,15 @@ import useOpenModal from '../../Hooks/useOpenModal';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { minusQuantity, plusQuantity } from '../../modules/actions/cart';
+import { CartItemType } from '../../modules/initialStates/initialStateType';
 
 interface Props {
   onClick: () => void;
   onAddToCart: (quantity: number, size: string) => void;
+  img: string | undefined;
 }
 
-const Modal = ({ onClick, onAddToCart }: Props) => {
+const Modal = ({ onClick, img }: Props) => {
   const dispatch = useDispatch();
   const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
@@ -51,13 +53,20 @@ const Modal = ({ onClick, onAddToCart }: Props) => {
 
   const handleSizeSelection = (size: string) => {
     setSelectedSize(size);
-    console.log('size');
   };
 
   const handleCartClick = () => {
-    if (selectedSize !== '') {
-      setQuantity(1);
-      dispatch(addToCart({ quantity, size: selectedSize }));
+    if (selectedSize !== '' && img) {
+      const cartItem: CartItemType = {
+        id: 0,
+        name: '',
+        price: 0,
+        quantity: quantity,
+        size: selectedSize,
+        img: img,
+      };
+
+      dispatch(addToCart(cartItem));
       handleModalClose();
     }
   };

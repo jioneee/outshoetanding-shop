@@ -1,9 +1,9 @@
-// import { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import Modal from '../common/Modal';
 import useOpenModal from '../../Hooks/useOpenModal';
+import { useScrollTrigger } from '@mui/material';
 
 interface ProductImg {
   id: number;
@@ -121,6 +121,7 @@ const AsicsImage: ProductImg[] = [
 
 export const Nike = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
+  const [selectedImg, setSelectedImg] = useState();
 
   return (
     <div>
