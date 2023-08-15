@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Modal from '../common/Modal';
 import useOpenModal from '../../Hooks/useOpenModal';
-import { useScrollTrigger } from '@mui/material';
 
 interface ProductImg {
   id: number;
@@ -121,7 +120,12 @@ const AsicsImage: ProductImg[] = [
 
 export const Nike = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
-  const [selectedImg, setSelectedImg] = useState();
+  const [selectedImg, setSelectedImg] = useState(null);
+
+  const handleAddToCartClick = (img: any) => {
+    setSelectedImg(img);
+    clickOpenModal();
+  };
 
   return (
     <div>
@@ -132,10 +136,10 @@ export const Nike = () => {
               <img src={img.image} alt={img.title} />
               <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={clickOpenModal}>add to cart</AddToCart>
+            <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && <Modal onClick={clickCloseModal} onAddToCart={() => {}} />}
+        {isOpenModal && <Modal onClick={clickCloseModal} img={selectedImg} />}
       </ProductListWrap>
     </div>
   );
