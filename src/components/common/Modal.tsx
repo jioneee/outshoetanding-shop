@@ -14,7 +14,7 @@ import { CartItemType } from '../../modules/initialStates/initialStateType';
 interface Props {
   onClick: () => void;
   onAddToCart: () => void;
-  img: string;
+  img?: string;
 }
 
 const Modal = ({ onClick, img }: Props) => {
