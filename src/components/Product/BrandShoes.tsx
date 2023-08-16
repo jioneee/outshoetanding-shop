@@ -139,7 +139,7 @@ export const Nike = () => {
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && <Modal onClick={clickCloseModal} img={selectedImg} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} img={selectedImg} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
