@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 import { useState } from 'react';
-import { initialState } from '../modules/initialStates/initialState';
+// import { initialState } from '../modules/initialStates/initialState';
 import CartBox from '../components/Product/CartBox';
+import { useSelector } from 'react-redux';
+import { RootState } from '../modules/reducer';
 
 const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
-  const cartItems = initialState.cartItems;
+  // const cartItems = initialState.cartItems;
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
 
   const handleCheckBoxChange = (index: number) => {
@@ -34,7 +37,7 @@ const ShoppingCart = () => {
         <Cartcontents>
           <CartContentTitle>상품옵션</CartContentTitle>
           <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
-          <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} />
+          <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} />
         </Cartcontents>
 
         <TotalBox>

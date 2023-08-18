@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 import { useState, useEffect } from 'react';
 import { initialState } from '../../modules/initialStates/initialState';
+import { CartItemType } from '../../modules/initialStates/initialStateType';
 interface CartBoxProps {
   selectAllCheck: boolean;
   onChange: (index: number) => void;
+  cartItems: CartItemType[];
 }
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange }) => {
