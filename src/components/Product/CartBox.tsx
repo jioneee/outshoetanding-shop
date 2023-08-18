@@ -9,8 +9,7 @@ interface CartBoxProps {
 }
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }) => {
-  const [isChecked, setIsChecked] = useState<boolean[]>([]);
-
+  const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
   useEffect(() => {
     if (selectAllCheck) {
       setIsChecked(cartItems.map(() => true));

@@ -8,7 +8,6 @@ import { RootState } from '../modules/reducer';
 
 const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
-  // const cartItems = initialState.cartItems;
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
 
