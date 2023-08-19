@@ -38,7 +38,6 @@ const ShoppingCart = () => {
           <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
           <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} />
         </Cartcontents>
-
         <TotalBox>
           <TotalQuantity>
             {' '}
@@ -57,7 +56,9 @@ const ShoppingCart = () => {
 
 export default ShoppingCart;
 
-const CartContainer = styled.div``;
+const CartContainer = styled.div`
+  height: auto;
+`;
 const CartHeader = styled.div`
   box-sizing: border-box;
   border-bottom: 1px solid gray;
@@ -71,6 +72,7 @@ const Cartcontents = styled.div`
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   margin-top: 50px;
+
   width: 900px;
   height: 80px;
   text-align: left;
@@ -90,11 +92,14 @@ const CartCheckBox = styled.input`
 `;
 
 const TotalBox = styled.div`
+  position: fixed;
+  bottom: 0px;
   box-sizing: border-box;
   text-align: right;
   border-top: 3px solid #e3e0e0;
   border-bottom: 3px solid #e3e0e0;
-  margin-top: 350px;
+  /* margin-top: 500px; */
+  padding: 20px;
   width: 900px;
   height: 100px;
 `;
@@ -104,6 +109,8 @@ const TotalQuantity = styled.span`
 `;
 const ButtonBox = styled.div`
   display: flex;
+  position: fixed;
+  margin-bottom: 20px;
   flex-direction: row;
   float: right;
 `;

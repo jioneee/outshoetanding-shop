@@ -1,8 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState, ChangeEvent, MouseEvent } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { addCount, decCount } from './modules/actions/cart';
-import { RootState } from './modules/reducer';
 
 import theme from './theme';
 import Header from './layouts/Header';
@@ -14,26 +10,26 @@ import GlobalStyle from './components/style/globalStyle';
 import styled, { ThemeProvider } from 'styled-components';
 
 function App() {
-  const dispatch = useDispatch();
-  const count = useSelector((state: RootState) => state.cart.count);
+  // const dispatch = useDispatch();
+  // const count = useSelector((state: RootState) => state.cart.count);
 
-  const [txt, setTxt] = useState<string>('');
+  // const [txt, setTxt] = useState<string>('');
 
-  const onChangeTxt = (e: ChangeEvent<HTMLInputElement>) => {
-    setTxt(e.target.value);
-  };
+  // const onChangeTxt = (e: ChangeEvent<HTMLInputElement>) => {
+  //   setTxt(e.target.value);
+  // };
 
-  const onClickAdd = (e: MouseEvent<HTMLButtonElement>) => {
-    dispatch(addCount(Number(txt)));
-    setTxt('');
-    console.log('txt: ', txt);
-  };
+  // const onClickAdd = (e: MouseEvent<HTMLButtonElement>) => {
+  //   dispatch(addCount(Number(txt)));
+  //   setTxt('');
+  //   console.log('txt: ', txt);
+  // };
 
-  const onClickDec = (e: MouseEvent<HTMLButtonElement>) => {
-    dispatch(decCount(Number(txt)));
-    setTxt('');
-    console.log('txt: ', txt);
-  };
+  // const onClickDec = (e: MouseEvent<HTMLButtonElement>) => {
+  //   dispatch(decCount(Number(txt)));
+  //   setTxt('');
+  //   console.log('txt: ', txt);
+  // };
 
   return (
     <ThemeProvider theme={theme}>
@@ -48,10 +44,10 @@ function App() {
                 <Route path='/cart' element={<ShoppingCart />}></Route>
               </Routes>
             </Container>
-            <input value={txt} type={'number'} onChange={onChangeTxt} />
+            {/* <input value={txt} type={'number'} onChange={onChangeTxt} />
             <button onClick={onClickAdd}>덧셈</button>
             <button onClick={onClickDec}>뺄셈</button>
-            <div>{count}</div>
+            <div>{count}</div> */}
             <Footer />
           </BrowserRouter>
         </div>
