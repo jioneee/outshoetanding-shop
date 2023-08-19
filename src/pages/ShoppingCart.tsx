@@ -32,23 +32,28 @@ const ShoppingCart = () => {
   return (
     <div>
       <CartContainer>
-        <CartHeader>장바구니</CartHeader>
-        <Cartcontents>
-          <CartContentTitle>상품옵션</CartContentTitle>
-          <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
-          <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} />
-        </Cartcontents>
-        <TotalBox>
-          <TotalQuantity>
-            {' '}
-            Quantity: {totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원
-          </TotalQuantity>
-        </TotalBox>
-        <ButtonBox>
-          <DeleteSelection>선택 삭제</DeleteSelection>
-          <SelectionOrder>선택 주문</SelectionOrder>
-          <TotalOrder>전체 주문</TotalOrder>
-        </ButtonBox>
+        <CartWrapper>
+          <CartHeader>장바구니</CartHeader>
+          <Cartcontents>
+            <CartContentTitle>상품옵션</CartContentTitle>
+            <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
+            <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} />
+          </Cartcontents>
+        </CartWrapper>
+
+        <TotalContainer>
+          <TotalBox>
+            <TotalQuantity>
+              {' '}
+              Quantity: {totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원
+            </TotalQuantity>
+          </TotalBox>
+          <ButtonBox>
+            <DeleteSelection>선택 삭제</DeleteSelection>
+            <SelectionOrder>선택 주문</SelectionOrder>
+            <TotalOrder>전체 주문</TotalOrder>
+          </ButtonBox>
+        </TotalContainer>
       </CartContainer>
     </div>
   );
@@ -58,6 +63,10 @@ export default ShoppingCart;
 
 const CartContainer = styled.div`
   height: auto;
+`;
+
+const CartWrapper = styled.div`
+  margin-bottom: 200px;
 `;
 const CartHeader = styled.div`
   box-sizing: border-box;
@@ -132,4 +141,9 @@ const TotalOrder = styled.button`
   margin: 10px;
   width: 100px;
   height: 30px;
+`;
+
+const TotalContainer = styled.div`
+  position: fixed;
+  bottom: 150px;
 `;

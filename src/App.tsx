@@ -62,7 +62,7 @@ const Wrapper = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     flex-direction: column;
   }
-
+  height: auto;
   width: 100%;
 `;
 
