@@ -12,14 +12,16 @@ const Footer: any = () => {
 
 export default Footer;
 const FooterContainer = styled.footer`
-  margin-top: 150px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 `;
 
 const FooterBox = styled.div`
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100px;
-  bottom: 0px;
+  bottom: 0;
   border: solid white 2px;
   background-color: rgba(0, 2, 0, 10%);
 `;
