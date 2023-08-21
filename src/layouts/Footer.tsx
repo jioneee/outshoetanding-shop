@@ -13,15 +13,14 @@ const Footer: any = () => {
 export default Footer;
 const FooterContainer = styled.footer`
   position: relative;
+  transform: translateY(-100%);
   width: 100%;
-  bottom: 0;
+  height: 100px;
 `;
 
 const FooterBox = styled.div`
-  position: absolute;
   width: 100%;
   height: 100px;
-  bottom: 0;
   border: solid white 2px;
   background-color: rgba(0, 2, 0, 10%);
 `;

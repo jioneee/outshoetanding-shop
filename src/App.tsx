@@ -48,10 +48,10 @@ function App() {
             <button onClick={onClickAdd}>덧셈</button>
             <button onClick={onClickDec}>뺄셈</button>
             <div>{count}</div> */}
-            <Footer />
           </BrowserRouter>
         </div>
       </Wrapper>
+      <Footer />
     </ThemeProvider>
   );
 }
@@ -63,6 +63,8 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
   height: auto;
+  min-height: 100%;
+  padding-bottom: 100px;
   width: 100%;
 `;
 

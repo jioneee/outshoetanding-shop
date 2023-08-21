@@ -62,7 +62,7 @@ const ShoppingCart = () => {
 export default ShoppingCart;
 
 const CartContainer = styled.div`
-  height: auto;
+  min-height: 1000px;
 `;
 
 const CartWrapper = styled.div`
@@ -101,8 +101,9 @@ const CartCheckBox = styled.input`
 `;
 
 const TotalBox = styled.div`
-  position: fixed;
+  position: absolute;
   bottom: 0px;
+  right: 0;
   box-sizing: border-box;
   text-align: right;
   border-top: 3px solid #e3e0e0;
@@ -118,7 +119,8 @@ const TotalQuantity = styled.span`
 `;
 const ButtonBox = styled.div`
   display: flex;
-  position: fixed;
+  position: absolute;
+  right: 20px;
   margin-bottom: 20px;
   flex-direction: row;
   float: right;
@@ -144,6 +146,6 @@ const TotalOrder = styled.button`
 `;
 
 const TotalContainer = styled.div`
-  position: fixed;
+  position: relative;
   bottom: 150px;
 `;
