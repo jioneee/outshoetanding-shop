@@ -48,6 +48,7 @@ const ShoppingCart = () => {
               Quantity: {totalCartQuantity} Price: {totalCartPrice.toLocaleString('ko-kr')}원
             </TotalQuantity>
           </TotalBox>
+
           <ButtonBox>
             <DeleteSelection>선택 삭제</DeleteSelection>
             <SelectionOrder>선택 주문</SelectionOrder>
@@ -103,12 +104,11 @@ const CartCheckBox = styled.input`
 const TotalBox = styled.div`
   position: absolute;
   bottom: 0px;
-  right: 0;
   box-sizing: border-box;
   text-align: right;
   border-top: 3px solid #e3e0e0;
   border-bottom: 3px solid #e3e0e0;
-  /* margin-top: 500px; */
+
   padding: 20px;
   width: 900px;
   height: 100px;
@@ -119,11 +119,9 @@ const TotalQuantity = styled.span`
 `;
 const ButtonBox = styled.div`
   display: flex;
-  position: absolute;
-  right: 20px;
-  margin-bottom: 20px;
   flex-direction: row;
-  float: right;
+  /* float: right; */
+  margin-top: 250px;
 `;
 const DeleteSelection = styled.button`
   display: flex;
@@ -146,6 +144,6 @@ const TotalOrder = styled.button`
 `;
 
 const TotalContainer = styled.div`
-  position: relative;
-  bottom: 150px;
+  display: flex;
+  flex-direction: column;
 `;
