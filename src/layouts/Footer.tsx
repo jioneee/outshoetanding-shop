@@ -15,7 +15,7 @@ const FooterContainer = styled.footer`
   position: relative;
   transform: translateY(-100%);
   width: 100%;
-  height: 100px;
+  height: 0;
 `;
 
 const FooterBox = styled.div`

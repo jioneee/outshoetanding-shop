@@ -37,7 +37,10 @@ const ShoppingCart = () => {
           <Cartcontents>
             <CartContentTitle>상품옵션</CartContentTitle>
             <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
-            <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} />
+            <CartBoxWrapper>
+              {' '}
+              <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} />
+            </CartBoxWrapper>
           </Cartcontents>
         </CartWrapper>
 
@@ -63,6 +66,8 @@ const ShoppingCart = () => {
 export default ShoppingCart;
 
 const CartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   min-height: 1000px;
 `;
 
@@ -100,15 +105,18 @@ const CartCheckBox = styled.input`
   margin: 5px;
   accent-color: gray;
 `;
+const CartBoxWrapper = styled.div`
+  margin-bottom: 200px;
+`;
 
 const TotalBox = styled.div`
-  position: absolute;
+  /* position: absolute; */
   bottom: 0px;
   box-sizing: border-box;
   text-align: right;
   border-top: 3px solid #e3e0e0;
   border-bottom: 3px solid #e3e0e0;
-
+  margin-top: 300px;
   padding: 20px;
   width: 900px;
   height: 100px;
@@ -121,7 +129,7 @@ const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
   /* float: right; */
-  margin-top: 250px;
+  /* margin-top: 0px; */
 `;
 const DeleteSelection = styled.button`
   display: flex;
@@ -131,19 +139,20 @@ const DeleteSelection = styled.button`
   align-items: flex-start;
 `;
 const SelectionOrder = styled.button`
-  display: flex;
+  /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
 `;
 const TotalOrder = styled.button`
-  display: flex;
+  /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
 `;
 
 const TotalContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  /* margin-top: 150px; */
 `;
