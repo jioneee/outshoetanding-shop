@@ -57,7 +57,7 @@ const ProductList = () => {
   };
 
   return (
-    <div>
+    <ProductListContainer>
       <TagBox>New</TagBox>
       <ProductListWrap>
         {ProductImage.map((img) => (
@@ -67,11 +67,16 @@ const ProductList = () => {
         ))}
       </ProductListWrap>
       <ProductBrandTab handleAddToCart={handleAddToCart} />
-    </div>
+    </ProductListContainer>
   );
 };
 
 export default ProductList;
+
+const ProductListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const TagBox = styled.div`
   box-sizing: border-box;

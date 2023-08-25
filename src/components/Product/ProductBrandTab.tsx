@@ -48,6 +48,7 @@ const TabBox = styled.div`
   font-size: 20px;
   font-weight: normal;
   line-height: 50px;
+
   ul {
     display: flex;
     flex-direction: row;
