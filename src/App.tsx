@@ -60,8 +60,10 @@ export default App;
 
 const Wrapper = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
-    flex-direction: column;
   }
+  display: flex;
+  flex-direction: column;
+
   height: auto;
   min-height: 100%;
   padding-bottom: 100px;
@@ -72,6 +74,7 @@ const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 900px;
   margin: 50px auto;
   text-align: center;

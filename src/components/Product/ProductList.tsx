@@ -76,6 +76,9 @@ export default ProductList;
 const ProductListContainer = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 768px) {
+    width: 700px;
+  }
 `;
 
 const TagBox = styled.div`
@@ -87,6 +90,11 @@ const TagBox = styled.div`
   color: white;
   font-size: 30px;
   background-color: gray;
+  @media screen and (max-width: 768px) {
+    width: 70px;
+    height: 40px;
+    font-size: 25px;
+  }
 `;
 
 const ProductListWrap = styled.div`
@@ -95,6 +103,10 @@ const ProductListWrap = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   background-color: black;
+  @media screen and (max-width: 768px) {
+    width: 700px;
+    height: 270px;
+  }
 `;
 
 const ProductListItem = styled.div`
@@ -103,10 +115,17 @@ const ProductListItem = styled.div`
   height: 250px;
   max-width: 250px;
   border: 1px solid gray;
+  @media screen and (max-width: 768px) {
+    border: none;
+    margin: 10px;
+  }
 
   img {
     width: 250px;
     height: 250px;
     object-fit: contain;
+    @media screen and (max-width: 768px) {
+      width: 200px;
+    }
   }
 `;
