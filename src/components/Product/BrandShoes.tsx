@@ -252,6 +252,10 @@ const ProductListWrap = styled.div`
   flex-wrap: wrap;
   background-color: rgb(227, 224, 224);
   padding-bottom: 10px;
+  @media screen and (max-width: 768px) {
+    width: 700px;
+    height: 680px;
+  }
 `;
 
 const ProductListItem = styled.div`
@@ -264,10 +268,17 @@ const ProductListItem = styled.div`
     width: 250px;
     height: 250px;
     object-fit: contain;
+    @media screen and (max-width: 768px) {
+      width: 180px;
+      height: 200px;
+    }
   }
   .price {
     margin-top: 20px;
     /* font-weight: bold; */
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
   }
 `;
 
@@ -279,6 +290,9 @@ const AddToCart = styled.button`
   width: 75px;
   height: 30px;
   margin-top: 25px;
+  @media screen and (max-width: 768px) {
+    margin-top: 5px;
+  }
   &:hover {
     background-color: gray;
   }

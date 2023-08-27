@@ -48,6 +48,10 @@ const TabBox = styled.div`
   font-size: 20px;
   font-weight: normal;
   line-height: 50px;
+  @media screen and (max-width: 768px) {
+    width: 700px;
+    font-size: 15px;
+  }
 
   ul {
     display: flex;
