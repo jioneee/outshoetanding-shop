@@ -69,10 +69,18 @@ const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 1000px;
+  @media screen and (max-width: 768px) {
+    width: 700px;
+    font-size: 15px;
+  }
 `;
 
 const CartWrapper = styled.div`
   margin-bottom: 200px;
+  @media screen and (max-width: 768px) {
+    width: 700px;
+    font-size: 15px;
+  }
 `;
 const CartHeader = styled.div`
   box-sizing: border-box;
@@ -81,6 +89,9 @@ const CartHeader = styled.div`
   padding: 10px;
   text-align: left;
   font-size: 30px;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 const Cartcontents = styled.div`
   box-sizing: border-box;
@@ -88,7 +99,7 @@ const Cartcontents = styled.div`
   border-bottom: 3px solid black;
   margin-top: 50px;
 
-  width: 900px;
+  width: 100%;
   height: 80px;
   text-align: left;
 `;
@@ -118,7 +129,7 @@ const TotalBox = styled.div`
   border-bottom: 3px solid #e3e0e0;
   margin-top: 300px;
   padding: 20px;
-  width: 900px;
+  width: 100%;
   height: 100px;
 `;
 
@@ -132,23 +143,35 @@ const ButtonBox = styled.div`
   /* margin-top: 0px; */
 `;
 const DeleteSelection = styled.button`
-  display: flex;
+  /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  @media screen and (max-width: 768px) {
+    width: 70px;
+    font-size: 12px;
+  }
 `;
 const SelectionOrder = styled.button`
   /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
+  @media screen and (max-width: 768px) {
+    width: 70px;
+    font-size: 12px;
+  }
 `;
 const TotalOrder = styled.button`
   /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
+  @media screen and (max-width: 768px) {
+    width: 70px;
+    font-size: 12px;
+  }
 `;
 
 const TotalContainer = styled.div`
