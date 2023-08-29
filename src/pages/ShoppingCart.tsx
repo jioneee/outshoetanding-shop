@@ -76,7 +76,8 @@ const CartContainer = styled.div`
 `;
 
 const CartWrapper = styled.div`
-  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
   @media screen and (max-width: 768px) {
     width: 700px;
     font-size: 15px;
@@ -98,7 +99,7 @@ const Cartcontents = styled.div`
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   margin-top: 50px;
-
+  margin-bottom: auto;
   width: 100%;
   height: 80px;
   text-align: left;
@@ -121,8 +122,8 @@ const CartBoxWrapper = styled.div`
 `;
 
 const TotalBox = styled.div`
-  /* position: absolute; */
-  bottom: 0px;
+  position: absolute;
+  bottom: -50%;
   box-sizing: border-box;
   text-align: right;
   border-top: 3px solid #e3e0e0;
@@ -139,22 +140,19 @@ const TotalQuantity = styled.span`
 const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
-  /* float: right; */
-  /* margin-top: 0px; */
+  position: absolute;
+  bottom: -60%;
 `;
 const DeleteSelection = styled.button`
-  /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
-  /* align-items: flex-start; */
   @media screen and (max-width: 768px) {
     width: 70px;
     font-size: 12px;
   }
 `;
 const SelectionOrder = styled.button`
-  /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
@@ -164,7 +162,6 @@ const SelectionOrder = styled.button`
   }
 `;
 const TotalOrder = styled.button`
-  /* display: flex; */
   margin: 10px;
   width: 100px;
   height: 30px;
@@ -174,8 +171,4 @@ const TotalOrder = styled.button`
   }
 `;
 
-const TotalContainer = styled.div`
-  /* display: flex;
-  flex-direction: column; */
-  /* margin-top: 150px; */
-`;
+const TotalContainer = styled.div``;
