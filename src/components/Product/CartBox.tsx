@@ -82,21 +82,37 @@ const Title = styled.p`
   margin: 15px;
   font-weight: bold;
   font-size: large;
+  @media screen and (max-width: 768px) {
+    font-size: medium;
+    width: 150px;
+  }
 `;
 
 const Size = styled.span`
   width: 110px;
   height: 110px;
   margin: 15px;
+  @media screen and (max-width: 768px) {
+    width: 100px;
+    margin: 15px 10px;
+  }
 `;
 const Quantity = styled.span`
   width: 110px;
   height: 110px;
   margin: 15px;
+  @media screen and (max-width: 768px) {
+    width: 100px;
+    margin: 15px 10px;
+  }
 `;
 
 const Price = styled.span`
   width: 110px;
   height: 110px;
   margin: 15px;
+  @media screen and (max-width: 768px) {
+    width: 100px;
+    margin: 15px 10px;
+  }
 `;
