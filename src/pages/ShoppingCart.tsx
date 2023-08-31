@@ -69,6 +69,7 @@ const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 1000px;
+  width: 900px;
   @media screen and (max-width: 768px) {
     width: 700px;
     font-size: 15px;
@@ -130,8 +131,11 @@ const TotalBox = styled.div`
   border-bottom: 3px solid #e3e0e0;
   margin-top: 300px;
   padding: 20px;
-  width: 100%;
+  width: 900px;
   height: 100px;
+  @media screen and (max-width: 768px) {
+    width: 700px;
+  }
 `;
 
 const TotalQuantity = styled.span`
