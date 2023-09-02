@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 import { RootState } from '../modules/reducer';
@@ -7,6 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '../components/common/menu';
 
 import styled from 'styled-components';
 
@@ -15,6 +17,7 @@ interface Props {
 }
 
 const Header: any = ({ onClick }: Props) => {
+  const [isMenu, setIsMenu] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const navigate = useNavigate();
   const handleClickCart = () => {
@@ -30,6 +33,10 @@ const Header: any = ({ onClick }: Props) => {
   };
   const totalCart = cartItems.length;
 
+  const handleMenuIcon = () => {
+    setIsMenu(true);
+  };
+
   return (
     <div>
       <HeaderContainer>
@@ -38,7 +45,8 @@ const Header: any = ({ onClick }: Props) => {
             <Logo />
           </LogoBox>
           <div className='Menu_Icon'>
-            <MenuIcon style={{ color: 'white', fontSize: 40 }} />
+            <MenuIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} />
+            {isMenu ? <Menu /> : null}
           </div>
           <IconContainer>
             <IconBox>
