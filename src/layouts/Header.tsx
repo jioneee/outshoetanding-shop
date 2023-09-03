@@ -8,7 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
-import Menu from '../components/common/menu';
+import MenuBar from '../components/common/MenuBar';
 
 import styled from 'styled-components';
 
@@ -46,7 +46,7 @@ const Header: any = ({ onClick }: Props) => {
           </LogoBox>
           <div className='Menu_Icon'>
             <MenuIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} />
-            {isMenu ? <Menu /> : null}
+            {isMenu ? <MenuBar /> : null}
           </div>
           <IconContainer>
             <IconBox>
