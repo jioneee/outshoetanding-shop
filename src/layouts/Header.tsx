@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 import { RootState } from '../modules/reducer';
@@ -34,8 +34,23 @@ const Header: any = ({ onClick }: Props) => {
   const totalCart = cartItems.length;
 
   const handleMenuIcon = () => {
-    setIsMenu(true);
+    setIsMenu(!isMenu);
   };
+  const menuIconRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuIconRef.current && event.target instanceof Node && !menuIconRef.current.contains(event.target)) {
+        setIsMenu(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div>
@@ -44,7 +59,7 @@ const Header: any = ({ onClick }: Props) => {
           <LogoBox onClick={handleClickHome}>
             <Logo />
           </LogoBox>
-          <div className='Menu_Icon'>
+          <div className='Menu_Icon' ref={menuIconRef}>
             <MenuIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} />
             {isMenu ? <MenuBar /> : null}
           </div>
