@@ -123,6 +123,9 @@ const LogoBox = styled.div`
 `;
 const IconContainer = styled.span`
   margin-left: auto;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 const IconBox = styled.span`
   cursor: pointer;
