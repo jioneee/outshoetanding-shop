@@ -71,18 +71,18 @@ const CartContainer = styled.div`
   min-height: 1000px;
   width: 900px;
   @media screen and (max-width: 768px) {
-    width: 700px;
-    font-size: 15px;
+    width: 100%;
   }
 `;
 
 const CartWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 768px) {
+  width: 100%;
+  /* @media screen and (max-width: 768px) {
     width: 700px;
     font-size: 15px;
-  }
+  } */
 `;
 const CartHeader = styled.div`
   box-sizing: border-box;
@@ -91,9 +91,6 @@ const CartHeader = styled.div`
   padding: 10px;
   text-align: left;
   font-size: 30px;
-  @media screen and (max-width: 768px) {
-    font-size: 20px;
-  }
 `;
 const Cartcontents = styled.div`
   box-sizing: border-box;
@@ -131,10 +128,10 @@ const TotalBox = styled.div`
   border-bottom: 3px solid #e3e0e0;
   margin-top: 300px;
   padding: 20px;
-  width: 900px;
+  width: 100%;
   height: 100px;
   @media screen and (max-width: 768px) {
-    width: 700px;
+    width: 100%;
   }
 `;
 
