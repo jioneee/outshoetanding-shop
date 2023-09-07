@@ -1,10 +1,12 @@
 
-## Available Scripts
+## --- 프로젝트 소개 ---  
+- 신발 쇼핑몰
 
-In the project directory, you can run:
-
-### `npm start`
-
+## --- 실행 방법 ---  
+```
+ npm install
+ npm start
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
