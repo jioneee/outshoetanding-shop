@@ -102,7 +102,7 @@ const ProductListWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: black;
+
   @media screen and (max-width: 768px) {
     width: 700px;
     height: 270px;
@@ -125,7 +125,8 @@ const ProductListItem = styled.div`
     height: 250px;
     object-fit: contain;
     @media screen and (max-width: 768px) {
-      width: 200px;
+      width: 213px;
+      margin: 0px 0px;
     }
   }
 `;

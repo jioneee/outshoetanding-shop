@@ -172,4 +172,8 @@ const TotalOrder = styled.button`
   }
 `;
 
-const TotalContainer = styled.div``;
+const TotalContainer = styled.div`
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
