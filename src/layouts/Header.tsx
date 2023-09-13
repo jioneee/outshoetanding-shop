@@ -65,20 +65,20 @@ const Header: any = ({ onClick }: Props) => {
           </div>
           <IconContainer>
             <IconBox>
-              <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 35, margin: 5 }}>
+              <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 40, margin: 5 }}>
                 home
               </HomeIcon>
             </IconBox>
             <IconBox>
               <CartCount>
-                <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 35, margin: 5 }}>
+                <ShoppingCartIcon onClick={handleClickCart} style={{ color: 'white', fontSize: 40, margin: 5 }}>
                   cart
                 </ShoppingCartIcon>
                 <CartQuantity>{totalCart}</CartQuantity>
               </CartCount>
             </IconBox>
             <IconBox>
-              <PersonIcon onClick={handleClickMyPge} style={{ color: 'white', fontSize: 35, margin: 5 }}>
+              <PersonIcon onClick={handleClickMyPge} style={{ color: 'white', fontSize: 40, margin: 5 }}>
                 my
               </PersonIcon>
             </IconBox>
@@ -109,6 +109,8 @@ const HeaderBox = styled.div`
   background-color: rgba(0, 2, 0, 70%);
 
   .Menu_Icon {
+    height: 60px;
+    width: 50px;
     @media screen and (min-width: 769px) {
       display: none;
     }
@@ -117,6 +119,7 @@ const HeaderBox = styled.div`
 const LogoBox = styled.div`
   text-align: left;
   cursor: pointer;
+  height: 40px;
   @media screen and (max-width: 768px) {
     display: none;
   }
