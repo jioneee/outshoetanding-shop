@@ -62,7 +62,7 @@ const Header: any = ({ onClick }: Props) => {
           </LogoBox>
 
           <div className='Menu_Icon' ref={menuIconRef}>
-            {isMenu ? <CloseIcon style={{ color: 'white', fontSize: 40 }} /> : <MenuIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} />}
+            {isMenu ? <CloseIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} /> : <MenuIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} />}
 
             {isMenu ? <MenuBar /> : null}
           </div>
