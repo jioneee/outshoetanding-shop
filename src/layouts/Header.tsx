@@ -8,6 +8,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import MenuBar from '../components/common/MenuBar';
 
 import styled from 'styled-components';
@@ -59,10 +60,13 @@ const Header: any = ({ onClick }: Props) => {
           <LogoBox onClick={handleClickHome}>
             <Logo />
           </LogoBox>
+
           <div className='Menu_Icon' ref={menuIconRef}>
-            <MenuIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} />
+            {isMenu ? <CloseIcon style={{ color: 'white', fontSize: 40 }} /> : <MenuIcon style={{ color: 'white', fontSize: 40 }} onClick={handleMenuIcon} />}
+
             {isMenu ? <MenuBar /> : null}
           </div>
+
           <IconContainer>
             <IconBox>
               <HomeIcon onClick={handleClickHome} style={{ color: 'white', fontSize: 40, margin: 5 }}>
