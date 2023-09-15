@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router';
 
 const MenuBar = () => {
@@ -25,7 +25,19 @@ const MenuBar = () => {
 
 export default MenuBar;
 
-const MenuBox = styled.div`
+const animation = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  /* 100% {
+    opacity: 0;
+  } */
+`;
+
+const MenuBox = styled.ul`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -35,6 +47,7 @@ const MenuBox = styled.div`
   margin-left: -10px;
   margin-top: 6px;
   padding-left: 15px;
+  animation: ${animation} 1.5s linear;
 `;
 
 const MenuNavigate = styled.div`
