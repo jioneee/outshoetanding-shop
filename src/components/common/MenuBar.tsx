@@ -1,8 +1,10 @@
 import styled, { keyframes } from 'styled-components';
+// import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
 const MenuBar = () => {
   const navigate = useNavigate();
+  // const [currentMenu, setCurrentMenu] = useState('Home')
   const handleClickHome = () => {
     navigate('/');
   };
@@ -14,8 +16,13 @@ const MenuBar = () => {
   const handleClickMyPge = () => {
     navigate('/mypage');
   };
+
+  // const changeUnderLine = (e: any) => {
+  //   setCurrentMenu(e.target.value);
+  // };
   return (
     <MenuBox>
+      <UnderLine></UnderLine>
       <MenuNavigate onClick={handleClickHome}>Home</MenuNavigate>
       <MenuNavigate onClick={handleClickCart}>Cart</MenuNavigate>
       <MenuNavigate onClick={handleClickMyPge}>MyPage</MenuNavigate>
@@ -55,4 +62,24 @@ const MenuNavigate = styled.div`
   font-size: large;
   margin-top: 20px;
   cursor: pointer;
+`;
+
+const UnderLine = styled.div`
+  position: relative;
+
+  ::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-color: red;
+    left: 0px;
+    bottom: -50px;
+    height: 3px;
+    transform: scaleX(0);
+  }
+  &hover {
+    ::after {
+      transform: scaleX(1);
+    }
+  }
 `;
