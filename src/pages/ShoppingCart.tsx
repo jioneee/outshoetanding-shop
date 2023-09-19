@@ -128,7 +128,7 @@ const TotalBox = styled.div`
   border-bottom: 3px solid #e3e0e0;
   margin-top: 300px;
   padding: 20px;
-  width: 100%;
+  width: 900px;
   height: 100px;
   @media screen and (max-width: 768px) {
     width: 100%;
