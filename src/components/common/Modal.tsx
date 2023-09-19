@@ -1,7 +1,7 @@
 import { MouseEvent, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../modules/reducer';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { addToCart } from '../../modules/actions/cart';
 import CloseIcon from '@mui/icons-material/Close';
@@ -107,13 +107,26 @@ const Modal = ({ onClick, img }: Props) => {
 };
 
 export default Modal;
+const animation = keyframes`
+0% {
+        opacity: 0;
+    }
+    1%{
+        opacity: 0;
+        transform:translateY(100%)
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 
 const ModalContainer = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid gray;
+  border: none;
+
   /* ::after {
     content: '';
     position: relative;
@@ -133,6 +146,7 @@ const ModalBox = styled.div`
   padding: 10px;
   position: relative;
   z-index: 2;
+  animation: ${animation} 1.5s linear;
 `;
 
 const ModalHead = styled.div`
