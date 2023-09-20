@@ -114,10 +114,20 @@ const animation = keyframes`
     1%{
         opacity: 0;
         transform:translateY(100%)
+
     }
     100% {
-        opacity: 1;
+        opacity: 0.5;
     }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 `;
 
 const ModalContainer = styled.div`
@@ -147,6 +157,7 @@ const ModalBox = styled.div`
   position: relative;
   z-index: 2;
   animation: ${animation} 1.5s linear;
+  animation: ${fadeOut} 1.5s linear;
 `;
 
 const ModalHead = styled.div`
