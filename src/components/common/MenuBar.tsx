@@ -59,9 +59,14 @@ const MenuBox = styled.ul`
 
 const MenuNavigate = styled.div`
   color: white;
+  width: 100%;
   font-size: large;
   margin-top: 20px;
   cursor: pointer;
+  &:hover {
+    width: 50%;
+    color: yellow;
+  }
 `;
 
 const UnderLine = styled.div`
