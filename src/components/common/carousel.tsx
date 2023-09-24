@@ -10,6 +10,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import styled from 'styled-components';
+import Logo from './Logo';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -48,6 +49,8 @@ function SwipeableTextMobileStepper() {
 
   return (
     <CarouselContainer>
+      <Logo />
+
       <Box sx={{ maxWidth: 900, flexGrow: 1 }}>
         <Paper
           square
@@ -107,6 +110,7 @@ function SwipeableTextMobileStepper() {
 export default SwipeableTextMobileStepper;
 
 const CarouselContainer = styled.div`
+  margin-top: 50px;
   @media screen and (max-width: 768px) {
     width: 700px;
     height: 250px;
