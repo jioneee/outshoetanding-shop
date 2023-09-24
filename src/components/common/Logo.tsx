@@ -12,6 +12,20 @@ const Logo = () => {
 
 export default Logo;
 
+const BackgroundLogo = () => {
+  return (
+    <div>
+      <LogoBox>
+        <LogoText>out</LogoText>
+        <LogoHighlight>SHOE</LogoHighlight>
+        <LogoText>tanding shop</LogoText>
+      </LogoBox>
+    </div>
+  );
+};
+
+export { BackgroundLogo };
+
 const LogoText = styled.span`
   color: white;
   font-weight: 700;
@@ -21,4 +35,8 @@ const LogoHighlight = styled.span`
   color: yellow;
   font-weight: 700;
   font-size: 22px;
+`;
+
+const LogoBox = styled.div`
+  background-color: gray;
 `;
