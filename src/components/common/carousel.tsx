@@ -49,8 +49,7 @@ function SwipeableTextMobileStepper() {
 
   return (
     <CarouselContainer>
-      <BackgroundLogo />
-
+      <BackgroundLogo /> PROMOTION SALE
       <Box sx={{ maxWidth: 900, flexGrow: 1 }}>
         <Paper
           square

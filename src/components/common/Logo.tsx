@@ -38,5 +38,7 @@ const LogoHighlight = styled.span`
 `;
 
 const LogoBox = styled.div`
-  background-color: gray;
+  width: 30%;
+  border-radius: 3%;
+  background-color: #bdb8b8;
 `;
