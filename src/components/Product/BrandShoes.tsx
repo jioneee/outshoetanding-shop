@@ -21,23 +21,22 @@ const NikeImage: ProductImg[] = [
   },
   {
     id: 1,
-    title: 'shoes1',
+    title: '나이키 덩크 로우 레트로 프리미엄',
     image:
-      'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/%EC%97%90%EC%96%B4-%ED%8F%AC%EC%8A%A4-1-07-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-TttlGpDb.png',
+      'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/60e98509-bbe4-4edf-a1cc-77567773fcef/%EB%8D%A9%ED%81%AC-%EB%A1%9C%EC%9A%B0-%EB%A0%88%ED%8A%B8%EB%A1%9C-%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-p3eVdXYe.png',
     price: 70000,
   },
   {
     id: 2,
-    title: 'shoes1',
-    image:
-      'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/%EC%97%90%EC%96%B4-%ED%8F%AC%EC%8A%A4-1-07-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-TttlGpDb.png',
+    title: 'p-6000',
+    image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/bcxnfl2seca3k7mbexzi/p-6000-%EC%8B%A0%EB%B0%9C-lH2N4mEX.png',
     price: 70000,
   },
   {
     id: 3,
-    title: 'shoes1',
+    title: '코르테즈',
     image:
-      'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/%EC%97%90%EC%96%B4-%ED%8F%AC%EC%8A%A4-1-07-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-TttlGpDb.png',
+      'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/a3734282-d3ff-4df6-96bd-bbe1227ef63c/%EC%BD%94%EB%A5%B4%ED%85%8C%EC%A6%88-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-xEZf2W0t.png',
     price: 70000,
   },
 ];
