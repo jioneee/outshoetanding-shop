@@ -91,6 +91,7 @@ const TagBox = styled.div`
   font-size: 30px;
   background-color: gray;
   @media screen and (max-width: 768px) {
+    margin-top: 100px;
     width: 70px;
     height: 40px;
     font-size: 25px;

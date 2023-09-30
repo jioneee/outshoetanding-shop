@@ -43,10 +43,10 @@ export default ProductBrandTab;
 const TabBox = styled.div`
   box-sizing: border-box;
   margin: 50px auto;
-  background-color: gray;
+  background-color: #b5aaaa;
   width: 100%;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 500;
   line-height: 50px;
   @media screen and (max-width: 768px) {
     width: 700px;
