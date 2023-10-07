@@ -49,7 +49,7 @@ function SwipeableTextMobileStepper() {
 
   return (
     <CarouselContainer>
-      <BackgroundLogo /> <CarouselHeader>Today PROMOTION</CarouselHeader>
+      <BackgroundLogo /> <CarouselHeader>TODAY PROMOTION</CarouselHeader>
       <Box sx={{ maxWidth: 900, flexGrow: 1 }}>
         <Paper
           square
@@ -117,6 +117,8 @@ const CarouselContainer = styled.div`
   }
 `;
 
-const CarouselHeader = styled.h2`
+const CarouselHeader = styled.span`
   color: black;
+  font-weight: 600;
+  font-size: x-large;
 `;
