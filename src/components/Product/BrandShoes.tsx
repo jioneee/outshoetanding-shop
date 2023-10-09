@@ -284,7 +284,9 @@ const ProductListItem = styled.div`
 const AddToCart = styled.button`
   box-sizing: border-box;
   background-color: #f7f760;
-  border: 0px;
+  border: none;
+  border-radius: 30px;
+  color: gray;
   font-weight: 600;
   width: 75px;
   height: 30px;
@@ -293,6 +295,6 @@ const AddToCart = styled.button`
     margin-top: 5px;
   }
   &:hover {
-    background-color: gray;
+    background-color: #ffd732;
   }
 `;
