@@ -73,7 +73,8 @@ const TabBox = styled.div`
   }
   .focused {
     background-color: yellow;
-    border: 2px solid gray;
+    border: 0px solid red;
+    box-shadow: 0px 2px 0px #ffd732;
   }
 `;
 
