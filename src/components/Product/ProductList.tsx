@@ -86,10 +86,11 @@ const TagBox = styled.div`
   margin: 10px 5px;
   width: 100px;
   height: 50px;
-  border: 2px solid black;
-  color: white;
+  border: 2px solid #ffd732;
+  color: gray;
   font-size: 30px;
-  background-color: gray;
+  background-color: yellow;
+  box-shadow: 2px 2px 2px #ffd732;
   @media screen and (max-width: 768px) {
     margin-top: 100px;
     width: 70px;
