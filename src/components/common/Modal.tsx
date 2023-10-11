@@ -109,10 +109,10 @@ const Modal = ({ onClick, img }: Props) => {
 export default Modal;
 const animation = keyframes`
 0% {
-        opacity: 0;
+        opacity: 0.5;
     }
     1%{
-        opacity: 0;
+        opacity: 0.5;
         transform:translateY(100%)
 
     }
@@ -123,10 +123,10 @@ const animation = keyframes`
 
 const fadeOut = keyframes`
   from {
-    opacity: 1;
+    opacity: 0;
   }
   to {
-    opacity: 0;
+    opacity: 1;
   }
 `;
 
