@@ -104,7 +104,7 @@ const ProductListWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  background-color: black;
   @media screen and (max-width: 768px) {
     width: 700px;
     height: 270px;
