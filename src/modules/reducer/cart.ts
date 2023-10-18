@@ -32,9 +32,9 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
   },
   [ADD_TO_CART]: (state, action) => {
     if (typeof action.payload === 'object' && action.payload !== null) {
-      const { name, quantity, size, price, img } = action.payload as { name: string; quantity: number; size: string; price: number; img: string };
+      const { id, name, quantity, size, price, img } = action.payload as { id: number; name: string; quantity: number; size: string; price: number; img: string };
       const newItem: CartItemType = {
-        id: 0,
+        id,
         name,
         price,
         img,
