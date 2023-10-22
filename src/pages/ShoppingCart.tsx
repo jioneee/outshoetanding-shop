@@ -35,7 +35,9 @@ const ShoppingCart = () => {
         <CartWrapper>
           <CartHeader>장바구니</CartHeader>
           <Cartcontents>
-            <CartContentTitle>상품옵션</CartContentTitle>
+            <CartContentTitle>
+              <CartContentTitleText>상품옵션</CartContentTitleText>
+            </CartContentTitle>
             <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
             <CartBoxWrapper>
               {' '}
@@ -105,10 +107,14 @@ const Cartcontents = styled.div`
 
 const CartContentTitle = styled.div`
   box-sizing: border-box;
-  text-align: left;
   height: 50px;
   border-bottom: 2px solid black;
   background-color: #e3e0e0;
+`;
+
+const CartContentTitleText = styled.div`
+  font-size: large;
+  font-weight: 600;
 `;
 
 const CartCheckBox = styled.input`
