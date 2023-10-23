@@ -22,6 +22,7 @@ const Modal = ({ onClick, img }: Props) => {
   const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
+  const [name, setName] = useState('');
 
   const { isOpenModal, clickCloseModal } = useOpenModal();
 
@@ -32,6 +33,7 @@ const Modal = ({ onClick, img }: Props) => {
   useEffect(() => {
     setSelectedSize('');
     setQuantity(1);
+    setName('');
   }, [isOpenModal]);
 
   const handleModalClose = () => {
@@ -79,7 +81,7 @@ const Modal = ({ onClick, img }: Props) => {
               <ModalButton onClick={handleModalClose}>
                 <CloseIcon />
               </ModalButton>
-              <ModalHead>신발명</ModalHead>
+              <ModalHead>{name}</ModalHead>
               SIZE <ModalSize onClick={() => handleSizeSelection('230')}>230</ModalSize>
               <ModalSize onClick={() => handleSizeSelection('240')}>240</ModalSize>
               <ModalSize onClick={() => handleSizeSelection('250')}>250</ModalSize>
