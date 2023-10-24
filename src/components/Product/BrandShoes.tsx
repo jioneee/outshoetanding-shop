@@ -72,8 +72,8 @@ const NewBalanceImage: ProductImg[] = [
   },
   {
     id: 1,
-    title: 'shoes4',
-    image: 'https://image.nbkorea.com/NBRB_Product/20230203/NB20230203164137997001.jpg',
+    title: 'PZ530KA', //뉴발란스 530
+    image: 'https://image.nbkorea.com/NBRB_Product/20230914/NB20230914110422221001.jpg',
     price: 50000,
   },
   {
