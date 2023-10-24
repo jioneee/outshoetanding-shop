@@ -50,14 +50,14 @@ const AdidasImage: ProductImg[] = [
   },
   {
     id: 1,
-    title: 'shoes3',
-    image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
+    title: 'shoes3', //슈퍼스타 80S DEUX
+    image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2176fe82ceef41428a4019e57c6aefad_9366/80s_Deux_White_IF6292_01_standard.jpg',
     price: 50000,
   },
   {
     id: 2,
-    title: 'shoes3',
-    image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
+    title: 'shoes3', //오즈위고
+    image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/04c768e54ae4492792cbadf000b5ab1a_9366/Beige_GY6177_01_standard.jpg',
     price: 50000,
   },
 ];
