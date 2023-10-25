@@ -5,7 +5,7 @@ import { CartStateType } from './initialStateType';
 // }
 
 export const initialState: CartStateType = {
-  count: 0,
+  count: 1,
   cartItems: [
     {
       id: 1,
