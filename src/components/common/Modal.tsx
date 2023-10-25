@@ -48,7 +48,7 @@ const Modal = ({ onClick, img }: Props) => {
   };
 
   const onClickMinus = (e: MouseEvent<HTMLButtonElement>) => {
-    if (count >= 1) {
+    if (count >= 2) {
       dispatch(minusQuantity(1));
     }
   };
