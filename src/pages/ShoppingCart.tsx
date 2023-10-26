@@ -5,6 +5,8 @@ import { useState } from 'react';
 import CartBox from '../components/Product/CartBox';
 import { useSelector } from 'react-redux';
 import { RootState } from '../modules/reducer';
+// import Button from '../components/common/button';
+import { ButtonM } from '../components/common/button';
 
 const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
@@ -55,9 +57,9 @@ const ShoppingCart = () => {
           </TotalBox>
 
           <ButtonBox>
-            <DeleteSelection>선택 삭제</DeleteSelection>
-            <SelectionOrder>선택 주문</SelectionOrder>
-            <TotalOrder>전체 주문</TotalOrder>
+            <ButtonM>선택 삭제</ButtonM>
+            <ButtonM>선택 주문</ButtonM>
+            <ButtonM>전체 주문</ButtonM>
           </ButtonBox>
         </TotalContainer>
       </CartContainer>
@@ -150,33 +152,33 @@ const ButtonBox = styled.div`
   position: absolute;
   bottom: -60%;
 `;
-const DeleteSelection = styled.button`
-  margin: 10px;
-  width: 100px;
-  height: 30px;
-  @media screen and (max-width: 768px) {
-    width: 70px;
-    font-size: 12px;
-  }
-`;
-const SelectionOrder = styled.button`
-  margin: 10px;
-  width: 100px;
-  height: 30px;
-  @media screen and (max-width: 768px) {
-    width: 70px;
-    font-size: 12px;
-  }
-`;
-const TotalOrder = styled.button`
-  margin: 10px;
-  width: 100px;
-  height: 30px;
-  @media screen and (max-width: 768px) {
-    width: 70px;
-    font-size: 12px;
-  }
-`;
+// const DeleteSelection = styled.button`
+//   margin: 10px;
+//   width: 100px;
+//   height: 30px;
+//   @media screen and (max-width: 768px) {
+//     width: 70px;
+//     font-size: 12px;
+//   }
+// `;
+// const SelectionOrder = styled.button`
+//   margin: 10px;
+//   width: 100px;
+//   height: 30px;
+//   @media screen and (max-width: 768px) {
+//     width: 70px;
+//     font-size: 12px;
+//   }
+// `;
+// const TotalOrder = styled.button`
+//   margin: 10px;
+//   width: 100px;
+//   height: 30px;
+//   @media screen and (max-width: 768px) {
+//     width: 70px;
+//     font-size: 12px;
+//   }
+// `;
 
 const TotalContainer = styled.div`
   @media screen and (max-width: 768px) {

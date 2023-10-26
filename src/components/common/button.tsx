@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 
-export const ButtonS = () => {
+const ButtonS = () => {
   return <Small>Small</Small>;
 };
+export { ButtonS };
 
-export const ButtonM = () => {
+const ButtonM = () => {
   return <Middle>Middle</Middle>;
 };
+export { ButtonM };
 
-export const ButtonL = () => {
+const ButtonL = () => {
   return <Large>Large</Large>;
 };
-
+export { ButtonL };
 const Small = styled.button`
   height: 30px;
   width: 60px;
