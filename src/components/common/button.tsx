@@ -3,17 +3,15 @@ import styled from 'styled-components';
 const ButtonS = () => {
   return <Small>Small</Small>;
 };
-export { ButtonS };
 
 const ButtonM = () => {
   return <Middle>Middle</Middle>;
 };
-export { ButtonM };
 
 const ButtonL = () => {
   return <Large>Large</Large>;
 };
-export { ButtonL };
+export { ButtonS, ButtonM, ButtonL };
 const Small = styled.button`
   height: 30px;
   width: 60px;
