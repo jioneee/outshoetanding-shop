@@ -8,7 +8,7 @@ import { RootState } from '../modules/reducer';
 // import Button from '../components/common/button';
 import { ButtonM } from '../components/common/button';
 
-const ShoppingCart = () => {
+const ShoppingCart = (children: any) => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
@@ -57,7 +57,7 @@ const ShoppingCart = () => {
           </TotalBox>
 
           <ButtonBox>
-            <ButtonM>선택 삭제</ButtonM>
+            <ButtonM>선택 삭제{children}</ButtonM>
             <ButtonM>선택 주문</ButtonM>
             <ButtonM>전체 주문</ButtonM>
           </ButtonBox>
