@@ -57,9 +57,13 @@ const ShoppingCart = (children: any) => {
           </TotalBox>
 
           <ButtonBox>
-            <ButtonM>선택 삭제{children}</ButtonM>
-            <ButtonM>선택 주문</ButtonM>
-            <ButtonM>전체 주문</ButtonM>
+            <ButtonM></ButtonM>
+            <ButtonM></ButtonM>
+            <ButtonM></ButtonM>
+            {/* <ButtonM>{children}</ButtonM>
+            <ButtonM>{children}</ButtonM>
+            <ButtonM>{children}</ButtonM>
+            선택 삭제 선택 주문 전체 주문 */}
           </ButtonBox>
         </TotalContainer>
       </CartContainer>
