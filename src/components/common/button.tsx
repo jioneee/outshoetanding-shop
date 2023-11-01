@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import { ReactNode } from 'react';
 
 const ButtonS = () => {
-  return <Small>Small</Small>;
+  return <Small></Small>;
 };
 
-const ButtonM = () => {
-  return <Middle>Middle</Middle>;
+const ButtonM = ({ children }: { children: ReactNode }) => {
+  return <Middle>{children}</Middle>;
 };
 
 const ButtonL = () => {
-  return <Large>Large</Large>;
+  return <Large></Large>;
 };
 export { ButtonS, ButtonM, ButtonL };
 const Small = styled.button`

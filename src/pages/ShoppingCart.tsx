@@ -57,9 +57,9 @@ const ShoppingCart = (children: any) => {
           </TotalBox>
 
           <ButtonBox>
-            <ButtonM></ButtonM>
-            <ButtonM></ButtonM>
-            <ButtonM></ButtonM>
+            <ButtonM>선택삭제</ButtonM>
+            <ButtonM>선택주문</ButtonM>
+            <ButtonM>전체주문</ButtonM>
             {/* <ButtonM>{children}</ButtonM>
             <ButtonM>{children}</ButtonM>
             <ButtonM>{children}</ButtonM>
