@@ -8,7 +8,7 @@ import { RootState } from '../modules/reducer';
 // import Button from '../components/common/button';
 import { ButtonM } from '../components/common/button';
 
-const ShoppingCart = (children: any) => {
+const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
@@ -152,6 +152,7 @@ const TotalQuantity = styled.span`
 `;
 const ButtonBox = styled.div`
   display: flex;
+  gap: 15px;
   flex-direction: row;
   position: absolute;
   bottom: -60%;

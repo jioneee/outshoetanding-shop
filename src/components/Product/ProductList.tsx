@@ -12,19 +12,19 @@ interface ProductImg {
 const ProductImage: ProductImg[] = [
   {
     id: 0,
-    title: 'shoes1',
+    title: 'NIKE',
     image:
       'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/%EC%97%90%EC%96%B4-%ED%8F%AC%EC%8A%A4-1-07-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-TttlGpDb.png',
   },
   {
     id: 1,
-    title: 'shoes2',
+    title: 'ADIDAS',
     image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
   },
   {
     id: 2,
-    title: 'shoes3',
-    image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61f87dec481e4512823ea7fb0080ba1a_9366/Black_BB5476_01_standard.jpg',
+    title: 'NEWBALANCE',
+    image: 'https://image.nbkorea.com/NBRB_Product/20230203/NB20230203164137997001.jpg',
   },
 ];
 
