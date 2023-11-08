@@ -1,11 +1,9 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import theme from './theme';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
-import ShoppingCart from './pages/ShoppingCart';
-
-import Main from './pages/Main';
 import GlobalStyle from './components/style/globalStyle';
 import styled, { ThemeProvider } from 'styled-components';
 
@@ -30,6 +28,8 @@ function App() {
   //   setTxt('');
   //   console.log('txt: ', txt);
   // };
+  const Main = React.lazy(() => import('./pages/Main'));
+  const ShoppingCart = React.lazy(() => import('./pages/ShoppingCart'));
 
   return (
     <ThemeProvider theme={theme}>
@@ -39,10 +39,13 @@ function App() {
             <GlobalStyle />
             <Header />
             <Container className='container'>
-              <Routes>
-                <Route path='/' element={<Main />}></Route>
-                <Route path='/cart' element={<ShoppingCart />}></Route>
-              </Routes>
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                  <Route path='/' element={<Main />}></Route>
+
+                  <Route path='/cart' element={<ShoppingCart />}></Route>
+                </Routes>
+              </React.Suspense>
             </Container>
             {/* <input value={txt} type={'number'} onChange={onChangeTxt} />
             <button onClick={onClickAdd}>덧셈</button>
