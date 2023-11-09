@@ -1,10 +1,10 @@
 import styled, { keyframes } from 'styled-components';
-// import { useState } from 'react';
+
 import { useNavigate } from 'react-router';
 
 const MenuBar = () => {
   const navigate = useNavigate();
-  // const [currentMenu, setCurrentMenu] = useState('Home')
+
   const handleClickHome = () => {
     navigate('/');
   };
@@ -17,9 +17,6 @@ const MenuBar = () => {
     navigate('/mypage');
   };
 
-  // const changeUnderLine = (e: any) => {
-  //   setCurrentMenu(e.target.value);
-  // };
   return (
     <MenuBox>
       <UnderLine></UnderLine>
@@ -39,9 +36,7 @@ const animation = keyframes`
   50% {
     opacity: 0.5;
   }
-  /* 100% {
-    opacity: 0;
-  } */
+
 `;
 
 const MenuBox = styled.ul`

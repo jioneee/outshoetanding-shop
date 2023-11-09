@@ -49,22 +49,3 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     return state;
   },
 });
-
-// export default createReducer<CartStateType, CartActionType>(initialState, {
-//     [ADD_COUNT]: (state , action) => {
-//         const newState: CartActionType = {
-//             ...state,
-//             count: state.count + action.payload,
-//         }
-//         return newState
-//     },
-//     [DEC_COUNT]: (state: any, action: any) => {
-//         const newState: CartActionType = {
-//             ...state,
-//             count: state.count - action.payload,
-//         }
-//         return newState
-
-// },
-
-// })

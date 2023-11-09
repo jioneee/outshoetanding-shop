@@ -60,10 +60,6 @@ const ShoppingCart = () => {
             <ButtonM>선택삭제</ButtonM>
             <ButtonM>선택주문</ButtonM>
             <ButtonM>전체주문</ButtonM>
-            {/* <ButtonM>{children}</ButtonM>
-            <ButtonM>{children}</ButtonM>
-            <ButtonM>{children}</ButtonM>
-            선택 삭제 선택 주문 전체 주문 */}
           </ButtonBox>
         </TotalContainer>
       </CartContainer>
@@ -87,10 +83,6 @@ const CartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* @media screen and (max-width: 768px) {
-    width: 700px;
-    font-size: 15px;
-  } */
 `;
 const CartHeader = styled.div`
   box-sizing: border-box;

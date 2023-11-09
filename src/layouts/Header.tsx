@@ -87,9 +87,6 @@ const Header: any = ({ onClick }: Props) => {
               </PersonIcon>
             </IconBox>
           </IconContainer>
-          {/* <ButtonS></ButtonS>
-        <ButtonM></ButtonM>
-        <ButtonL></ButtonL> */}
         </HeaderBox>
       </HeaderContainer>
     </div>
@@ -109,7 +106,7 @@ const HeaderBox = styled.div`
   position: fixed;
   top: 0;
   z-index: 9999;
-  /* border: solid black 2px; */
+
   background-color: rgba(0, 2, 0, 70%);
 
   .Menu_Icon {
@@ -137,7 +134,6 @@ const IconContainer = styled.span`
 const IconBox = styled.span`
   cursor: pointer;
   margin-left: 10px;
-  /* position:absolute; */
 `;
 const CartQuantity = styled.span`
   display: inline-block;
@@ -154,7 +150,7 @@ const CartQuantity = styled.span`
 `;
 const CartCount = styled.span`
   cursor: pointer;
-  /* position:absolute; */
+
   padding: 10px;
   color: rgba(0, 2, 0, 70%);
 `;

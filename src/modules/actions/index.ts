@@ -3,8 +3,3 @@ import { ActionType } from 'typesafe-actions';
 import { addCount, decCount, plusQuantity, minusQuantity, addToCart } from './cart';
 
 export type CartActionType = ActionType<typeof addCount> | ActionType<typeof decCount> | ActionType<typeof plusQuantity> | ActionType<typeof minusQuantity> | ActionType<typeof addToCart>;
-
-// export type CartActionType = {
-//     type: string;
-//     payload: number;
-//   };

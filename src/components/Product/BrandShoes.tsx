@@ -262,7 +262,7 @@ const ProductListItem = styled.div`
   margin: 25px;
   height: 250px;
   max-width: 250px;
-  /* border: 1px solid gray; */
+
   img {
     width: 250px;
     height: 250px;
@@ -274,7 +274,6 @@ const ProductListItem = styled.div`
   }
   .price {
     margin-top: 20px;
-    /* font-weight: bold; */
     @media screen and (max-width: 768px) {
       margin-top: 10px;
     }

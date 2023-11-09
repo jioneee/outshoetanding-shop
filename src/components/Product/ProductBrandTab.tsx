@@ -83,5 +83,4 @@ const TabContentBox = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* background-color: gray; */
 `;
