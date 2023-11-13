@@ -5,6 +5,7 @@ import theme from './theme';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import GlobalStyle from './components/style/globalStyle';
+import Loading from './components/common/Loading';
 import styled, { ThemeProvider } from 'styled-components';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             <GlobalStyle />
             <Header />
             <Container className='container'>
-              <React.Suspense fallback={<div>Loading...</div>}>
+              <React.Suspense fallback={<Loading />}>
                 <Routes>
                   <Route path='/' element={<Main />}></Route>
 
