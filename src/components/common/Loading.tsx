@@ -8,6 +8,10 @@ const Loading = () => {
   );
 };
 
+setTimeout(() => {
+  console.log('작동중');
+}, 50000);
+
 export default Loading;
 
 const LoadingContainer = styled.div`
@@ -29,6 +33,7 @@ const LoadingText = styled.div`
   text-align: center;
   width: 11px;
   height: 11px;
+  font-size: 50px;
   border: 1.5px solid $gray-4;
   border-top: 1.5px solid $gray-10;
   border-radius: 50%;
