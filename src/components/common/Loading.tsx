@@ -8,16 +8,14 @@ const Loading = () => {
   );
 };
 
-setTimeout(() => {
-  console.log('작동중');
-}, 50000);
+setTimeout(Loading, 5000);
 
 export default Loading;
 
 const LoadingContainer = styled.div`
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   background: #ffffffb7;
