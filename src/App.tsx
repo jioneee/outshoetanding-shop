@@ -7,6 +7,7 @@ import Footer from './layouts/Footer';
 import GlobalStyle from './components/style/globalStyle';
 import Loading from './components/common/Loading';
 import styled, { ThemeProvider } from 'styled-components';
+import MyPage from './pages/MyPage';
 
 function App() {
   const Main = React.lazy(() => import('./pages/Main'));
@@ -25,6 +26,7 @@ function App() {
                   <Route path='/' element={<Main />}></Route>
 
                   <Route path='/cart' element={<ShoppingCart />}></Route>
+                  <Route path='/mypage' element={<MyPage />}></Route>
                 </Routes>
               </React.Suspense>
             </Container>
