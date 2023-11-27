@@ -49,59 +49,62 @@ function SwipeableTextMobileStepper() {
 
   return (
     <CarouselContainer>
-      <BackgroundLogo /> <CarouselHeader>TODAY PROMOTION</CarouselHeader>
-      <Box sx={{ maxWidth: 900, flexGrow: 1 }}>
-        <Paper
-          square
-          elevation={0}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            height: 50,
-            pl: 2,
-            bgcolor: 'background.default',
-          }}
-        >
-          <Typography>{images[activeStep].label}</Typography>
-        </Paper>
-        <AutoPlaySwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
-          {images.map((step, index) => (
-            <div key={step.label}>
-              {Math.abs(activeStep - index) <= 2 ? (
-                <Box
-                  component='img'
-                  sx={{
-                    height: 255,
-                    display: 'block',
-                    Width: 900,
-                    overflow: 'hidden',
-                    width: '100%',
-                  }}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
-              ) : null}
-            </div>
-          ))}
-        </AutoPlaySwipeableViews>
-        <MobileStepper
-          steps={maxSteps}
-          position='static'
-          activeStep={activeStep}
-          nextButton={
-            <Button size='small' onClick={handleNext} disabled={activeStep === maxSteps - 1} color='inherit'>
-              Next
-              {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-            </Button>
-          }
-          backButton={
-            <Button size='small' onClick={handleBack} disabled={activeStep === 0} color='inherit'>
-              {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-              Back
-            </Button>
-          }
-        />
-      </Box>
+      <BackgroundLogo />
+      <CarouselBox>
+        <CarouselHeader>TODAY PROMOTION</CarouselHeader>
+        <Box sx={{ maxWidth: 900, flexGrow: 1 }}>
+          <Paper
+            square
+            elevation={0}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              height: 50,
+              pl: 2,
+              bgcolor: 'background.default',
+            }}
+          >
+            <Typography>{images[activeStep].label}</Typography>
+          </Paper>
+          <AutoPlaySwipeableViews axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} index={activeStep} onChangeIndex={handleStepChange} enableMouseEvents>
+            {images.map((step, index) => (
+              <div key={step.label}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <Box
+                    component='img'
+                    sx={{
+                      height: 255,
+                      display: 'block',
+                      Width: 900,
+                      overflow: 'hidden',
+                      width: '100%',
+                    }}
+                    src={step.imgPath}
+                    alt={step.label}
+                  />
+                ) : null}
+              </div>
+            ))}
+          </AutoPlaySwipeableViews>
+          <MobileStepper
+            steps={maxSteps}
+            position='static'
+            activeStep={activeStep}
+            nextButton={
+              <Button size='small' onClick={handleNext} disabled={activeStep === maxSteps - 1} color='inherit'>
+                Next
+                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+              </Button>
+            }
+            backButton={
+              <Button size='small' onClick={handleBack} disabled={activeStep === 0} color='inherit'>
+                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+                Back
+              </Button>
+            }
+          />
+        </Box>
+      </CarouselBox>
     </CarouselContainer>
   );
 }
@@ -115,6 +118,13 @@ const CarouselContainer = styled.div`
     height: 250px;
     margin-bottom: 120px;
   }
+`;
+
+const CarouselBox = styled.div`
+  box-sizing: border-box;
+  border: 7px solid rgba(246, 246, 27, 0.7);
+  margin: 5px;
+  padding: 3px;
 `;
 
 const CarouselHeader = styled.span`
