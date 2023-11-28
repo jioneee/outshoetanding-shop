@@ -122,7 +122,7 @@ const CarouselContainer = styled.div`
 
 const CarouselBox = styled.div`
   box-sizing: border-box;
-  border: 7px solid rgba(246, 246, 27, 0.7);
+  /* border: 7px solid rgba(246, 246, 27, 0.7); */
   margin: 5px;
   padding: 3px;
 `;

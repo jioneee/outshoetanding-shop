@@ -104,6 +104,8 @@ const ProductListWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 850px;
+  border: 5px solid rgba(246, 246, 27, 0.7);
   background-color: #a6a6a6;
   @media screen and (max-width: 768px) {
     width: 700px;
@@ -115,8 +117,8 @@ const ProductListItem = styled.div`
   box-sizing: border-box;
   margin: 25px;
   height: 250px;
-  max-width: 250px;
-  border: 1px solid gray;
+  max-width: 225px;
+  /* gap: 20px; */
   @media screen and (max-width: 768px) {
     border: none;
     margin: 10px;
