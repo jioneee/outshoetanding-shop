@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Loading = () => {
   return (
     <LoadingContainer>
-      <LoadingText>Loading...</LoadingText>
+      <LoadingImg src='/img/spinner.gif' alt='loading'></LoadingImg>
     </LoadingContainer>
   );
 };
@@ -26,12 +26,9 @@ const LoadingContainer = styled.div`
   justify-content: center;
 `;
 
-const LoadingText = styled.div`
+const LoadingImg = styled.img`
   font: 1rem 'Noto Sans KR';
   text-align: center;
-  width: 11px;
-  height: 11px;
-  font-size: 50px;
   border: 1.5px solid $gray-4;
   border-top: 1.5px solid $gray-10;
   border-radius: 50%;
