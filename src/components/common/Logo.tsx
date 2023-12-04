@@ -46,7 +46,7 @@ const LogoHighlight = styled.span`
 const LogoBox = styled.div`
   width: 30%;
   border-radius: 3%;
-  background-color: #bdb8b8;
+  background-color: #6e4d0a;
   @media screen and (max-width: 768px) {
     background-color: #cdc9c9;
     height: 30px;

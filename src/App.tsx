@@ -31,9 +31,9 @@ function App() {
               </React.Suspense>
             </Container>
           </BrowserRouter>
+          <Footer />
         </div>
       </Wrapper>
-      <Footer />
     </ThemeProvider>
   );
 }
@@ -45,8 +45,6 @@ const Wrapper = styled.div`
   }
   display: flex;
   flex-direction: column;
-
-  height: auto;
   min-height: 100%;
   padding-bottom: 100px;
   width: 100%;

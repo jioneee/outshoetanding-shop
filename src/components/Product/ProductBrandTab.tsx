@@ -43,7 +43,8 @@ export default ProductBrandTab;
 const TabBox = styled.div`
   box-sizing: border-box;
   margin: 50px auto;
-  background-color: #b5aaaa;
+  background-color: #6e4d0a;
+  color: white;
   width: 100%;
   font-size: 20px;
   font-weight: 500;
@@ -69,10 +70,12 @@ const TabBox = styled.div`
     cursor: pointer;
     &:hover {
       background-color: #f8f847;
+      color: black;
     }
   }
   .focused {
     background-color: yellow;
+    color: black;
     border: 0px solid red;
     box-shadow: 0px 3px 0px #ffd732;
   }

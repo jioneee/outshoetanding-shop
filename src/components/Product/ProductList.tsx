@@ -105,8 +105,8 @@ const ProductListWrap = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 850px;
-  border: 5px solid rgba(246, 246, 27, 0.7);
-  background-color: #a6a6a6;
+  /* border: 5px solid rgba(246, 246, 27, 0.7); */
+  background-color: #f2c15f;
   @media screen and (max-width: 768px) {
     width: 700px;
     height: 270px;

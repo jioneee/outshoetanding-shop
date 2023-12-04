@@ -107,7 +107,7 @@ const HeaderBox = styled.div`
   top: 0;
   z-index: 9999;
 
-  background-color: rgba(0, 2, 0, 70%);
+  background-color: #5b3f06;
 
   .Menu_Icon {
     height: 60px;

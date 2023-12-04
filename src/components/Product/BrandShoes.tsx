@@ -249,7 +249,7 @@ const ProductListWrap = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: rgb(227, 224, 224);
+  background-color: #d2a854;
   padding-bottom: 10px;
   @media screen and (max-width: 768px) {
     width: 700px;
