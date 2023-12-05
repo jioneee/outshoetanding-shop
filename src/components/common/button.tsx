@@ -16,7 +16,7 @@ export { ButtonS, ButtonM, ButtonL };
 const Small = styled.button`
   height: 30px;
   width: 60px;
-  background-color: black;
+  background-color: #5b3f06;
   border-radius: 10%;
   color: white;
 `;
@@ -24,7 +24,7 @@ const Small = styled.button`
 const Middle = styled.button`
   height: 50px;
   width: 70px;
-  background-color: black;
+  background-color: #5b3f06;
   border-radius: 10%;
   color: white;
 `;
@@ -32,7 +32,7 @@ const Middle = styled.button`
 const Large = styled.button`
   height: 60px;
   width: 90px;
-  background-color: black;
+  background-color: #5b3f06;
   border-radius: 10%;
   color: white;
 `;

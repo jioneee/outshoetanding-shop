@@ -86,7 +86,7 @@ const CartWrapper = styled.div`
 `;
 const CartHeader = styled.div`
   box-sizing: border-box;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #5b3f06;
   margin-top: 50px;
   padding: 10px;
   text-align: left;
@@ -107,7 +107,7 @@ const CartContentTitle = styled.div`
   box-sizing: border-box;
   height: 50px;
   border-bottom: 2px solid black;
-  background-color: #e3e0e0;
+  background-color: #f2c15f;
 `;
 
 const CartContentTitleText = styled.div`
@@ -117,7 +117,7 @@ const CartContentTitleText = styled.div`
 
 const CartCheckBox = styled.input`
   margin: 5px;
-  accent-color: gray;
+  accent-color: #5b3f06;
 `;
 const CartBoxWrapper = styled.div`
   margin-bottom: 200px;
@@ -128,8 +128,8 @@ const TotalBox = styled.div`
   bottom: -50%;
   box-sizing: border-box;
   text-align: right;
-  border-top: 3px solid #e3e0e0;
-  border-bottom: 3px solid #e3e0e0;
+  border-top: 3px solid #5b3f06;
+  border-bottom: 3px solid #5b3f06;
   margin-top: 300px;
   padding: 20px;
   width: 900px;
