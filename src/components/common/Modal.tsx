@@ -91,11 +91,11 @@ const Modal = ({ onClick, img }: Props) => {
               <div></div>
               수량 :
               <ModalButton onClick={onClickMinus}>
-                <RemoveCircleOutlineIcon />
+                <RemoveCircleOutlineIcon color='action' />
               </ModalButton>
               {count}
               <ModalButton onClick={onClickPlus}>
-                <AddCircleOutlineIcon />
+                <AddCircleOutlineIcon color='action' />
               </ModalButton>
               <br />
               <CartButton onClick={handleCartClick}>Cart</CartButton>
@@ -193,6 +193,7 @@ const ModalButton = styled.button`
 const CartButton = styled.button`
   width: 100px;
   height: 30px;
-  background-color: #666;
-  border-color: #666;
+  color: white;
+  background-color: #5b3f06;
+  border-color: #5b3f06;
 `;
