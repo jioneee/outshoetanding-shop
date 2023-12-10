@@ -31,9 +31,9 @@ function App() {
               </React.Suspense>
             </Container>
           </BrowserRouter>
-          <Footer />
         </div>
       </Wrapper>
+      <Footer />
     </ThemeProvider>
   );
 }
@@ -45,8 +45,8 @@ const Wrapper = styled.div`
   }
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  padding-bottom: 100px;
+  min-height: 100vh;
+  /* padding-bottom: 100px; */
   width: 100%;
 `;
 
@@ -56,9 +56,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 900px;
-  margin: 50px auto;
+  margin: 50px auto 0px auto;
   text-align: center;
   align-items: center;
+  flex-grow: 1;
   /* background-color:rgba(0,2,0,70%) ; */
   /* z-index: -1; */
   @media screen and (max-width: 768px) {

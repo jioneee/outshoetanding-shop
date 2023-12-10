@@ -124,13 +124,12 @@ const CartBoxWrapper = styled.div`
 `;
 
 const TotalBox = styled.div`
-  position: absolute;
-  bottom: -50%;
+  position: relative;
   box-sizing: border-box;
   text-align: right;
   border-top: 3px solid #5b3f06;
   border-bottom: 3px solid #5b3f06;
-  margin-top: 300px;
+  margin-top: 500px;
   padding: 20px;
   width: 900px;
   height: 100px;
@@ -146,8 +145,8 @@ const ButtonBox = styled.div`
   display: flex;
   gap: 15px;
   flex-direction: row;
-  position: absolute;
-  bottom: -60%;
+  position: relative;
+  margin-top: 50px;
 `;
 // const DeleteSelection = styled.button`
 //   margin: 10px;
