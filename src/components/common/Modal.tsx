@@ -1,6 +1,6 @@
 import { MouseEvent, useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../modules/reducer';
+import { useDispatch } from 'react-redux';
+// import { RootState } from '../../modules/reducer';
 import styled, { keyframes } from 'styled-components';
 
 import { addToCart } from '../../modules/actions/cart';
@@ -8,7 +8,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import useOpenModal from '../../Hooks/useOpenModal';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { minusQuantity, plusQuantity } from '../../modules/actions/cart';
 import { CartItemType } from '../../modules/initialStates/initialStateType';
 
 interface Props {
@@ -19,7 +18,7 @@ interface Props {
 
 const Modal = ({ onClick, img }: Props) => {
   const dispatch = useDispatch();
-  const count = useSelector((state: RootState) => state.cart.count);
+  // const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState('');
@@ -44,12 +43,12 @@ const Modal = ({ onClick, img }: Props) => {
   };
 
   const onClickPlus = (e: MouseEvent<HTMLButtonElement>) => {
-    dispatch(plusQuantity(1));
+    setQuantity(quantity + 1);
   };
 
   const onClickMinus = (e: MouseEvent<HTMLButtonElement>) => {
-    if (count >= 2) {
-      dispatch(minusQuantity(1));
+    if (quantity >= 2) {
+      setQuantity(quantity - 1);
     }
   };
 
@@ -93,7 +92,7 @@ const Modal = ({ onClick, img }: Props) => {
               <ModalButton onClick={onClickMinus}>
                 <RemoveCircleOutlineIcon color='action' />
               </ModalButton>
-              {count}
+              {quantity}
               <ModalButton onClick={onClickPlus}>
                 <AddCircleOutlineIcon color='action' />
               </ModalButton>
