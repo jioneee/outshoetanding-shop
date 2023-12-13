@@ -43,10 +43,12 @@ const Modal = ({ onClick, img }: Props) => {
   };
 
   const onClickPlus = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     setQuantity(quantity + 1);
   };
 
   const onClickMinus = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     if (quantity >= 2) {
       setQuantity(quantity - 1);
     }

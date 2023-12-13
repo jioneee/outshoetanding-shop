@@ -10,7 +10,12 @@ interface CartBoxProps {
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }) => {
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
+  console.log('cartItems', cartItems);
+  console.log('cartItems[2]', cartItems[2]);
   useEffect(() => {
+    // console.log('selectAllCheck', selectAllCheck);
+    // console.log('isChecked', isChecked);
+    // console.log('cartItems', cartItems);
     if (selectAllCheck) {
       setIsChecked(cartItems.map(() => true));
     } else {
@@ -19,6 +24,7 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
   }, [selectAllCheck, cartItems]);
 
   const onClickCheck = (index: number) => {
+    console.log('Clicked index', index);
     const updatedChecked = [...isChecked];
     updatedChecked[index] = !updatedChecked[index];
     setIsChecked(updatedChecked);
@@ -31,13 +37,13 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
         <Container key={item.id}>
           <InputCheck type='checkbox' checked={isChecked[index] || false} onChange={() => onClickCheck(index)} />
           <ImageContain>
-            <Img src={item.img} alt={item.name} />
+            <Img src={item.img.image} alt={item.img.title} />
           </ImageContain>
           <ShoesInfo>
-            <Title>{item.name}</Title>
+            <Title>{item.img.title}</Title>
             <Size>사이즈 : {item.size}</Size>
             <Quantity>수량 : {item.quantity}</Quantity>
-            <Price>{(item.price * item.quantity).toLocaleString('ko-kr')}원</Price>
+            <Price>{(item.img.price * item.quantity).toLocaleString('ko-kr')}원</Price>
           </ShoesInfo>
         </Container>
       ))}
@@ -116,6 +122,7 @@ const Price = styled.span`
   width: 110px;
   height: 110px;
   margin: 15px;
+
   @media screen and (max-width: 768px) {
     width: 100px;
     margin: 15px 10px;
