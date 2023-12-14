@@ -66,7 +66,11 @@ const Modal = ({ onClick, img }: Props) => {
         price: 0,
         quantity: quantity,
         size: selectedSize,
-        img: img,
+        img: {
+          image: img,
+          title: '',
+          price: 0,
+        },
       };
 
       dispatch(addToCart(cartItem));
