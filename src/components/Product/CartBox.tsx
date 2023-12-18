@@ -12,7 +12,7 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
   console.log('cartItems', cartItems);
   console.log('cartItems[2]', cartItems[2]);
-  console.log(cartItems[0].img.price);
+  console.log(cartItems[2].img.price);
   useEffect(() => {
     // console.log('selectAllCheck', selectAllCheck);
     // console.log('isChecked', isChecked);
