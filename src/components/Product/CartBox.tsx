@@ -12,7 +12,6 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
   console.log('cartItems', cartItems);
   console.log('cartItems[2]', cartItems[2]);
-  console.log(cartItems[2].img.price);
   useEffect(() => {
     // console.log('selectAllCheck', selectAllCheck);
     // console.log('isChecked', isChecked);
@@ -38,10 +37,10 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
         <Container key={item.id}>
           <InputCheck type='checkbox' checked={isChecked[index] || false} onChange={() => onClickCheck(index)} />
           <ImageContain>
-            <Img src={item.img.image} alt={item.img.title} />
+            <Img src={item.img.image.image} alt={item.img.image.title} />
           </ImageContain>
           <ShoesInfo>
-            <Title>{item.img.title}</Title>
+            <Title>{item.img.image.title}</Title>
             <Size>사이즈 : {item.size}</Size>
             <Quantity>수량 : {item.quantity}</Quantity>
             <Price>{(item.img.price * item.quantity).toLocaleString('ko-kr')}원</Price>
