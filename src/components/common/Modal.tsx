@@ -67,7 +67,7 @@ const Modal = ({ onClick, img }: Props) => {
         quantity: quantity,
         size: selectedSize,
         img: {
-          image: img,
+          image: '',
           title: '',
           price: 0,
         },
