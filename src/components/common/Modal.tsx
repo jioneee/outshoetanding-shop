@@ -14,9 +14,10 @@ interface Props {
   onClick: () => void;
   onAddToCart: () => void;
   img?: string;
+  price: number;
 }
 
-const Modal = ({ onClick, img }: Props) => {
+const Modal = ({ onClick, img, price }: Props) => {
   const dispatch = useDispatch();
   // const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
@@ -69,7 +70,7 @@ const Modal = ({ onClick, img }: Props) => {
         img: {
           image: '',
           title: '',
-          price: 0,
+          price: price,
         },
       };
 

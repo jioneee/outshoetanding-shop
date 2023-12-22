@@ -120,9 +120,11 @@ const AsicsImage: ProductImg[] = [
 export const Nike = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
   const [selectedImg, setSelectedImg] = useState(null);
+  const { seletedPrice, setSelectedPrice } = useState(0);
 
-  const handleAddToCartClick = (img: any) => {
+  const handleAddToCartClick = (img: any, price: number) => {
     setSelectedImg(img);
+    setSelectedPrice(price);
     clickOpenModal();
   };
 
@@ -135,10 +137,10 @@ export const Nike = () => {
               <img src={img.image} alt={img.title} />
               <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
+            <AddToCart onClick={() => handleAddToCartClick(img, price)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} img={selectedImg} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} img={selectedImg} price={seletedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
