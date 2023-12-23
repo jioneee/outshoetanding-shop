@@ -9,5 +9,9 @@ export type CartItemType = {
   price: number;
   quantity: number;
   size: string;
-  img: string;
+  img: {
+    image: string;
+    title: string;
+    price: number;
+  };
 };
