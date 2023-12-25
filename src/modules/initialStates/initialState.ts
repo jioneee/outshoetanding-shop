@@ -14,7 +14,7 @@ export const initialState: CartStateType = {
       },
 
       quantity: 1,
-      size: 270,
+      size: '270',
       price: 70000,
     },
     {
@@ -27,7 +27,7 @@ export const initialState: CartStateType = {
       },
 
       quantity: 2,
-      size: 230,
+      size: '230',
       price: 70000,
     },
   ],
