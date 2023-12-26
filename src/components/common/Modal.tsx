@@ -14,7 +14,7 @@ interface Props {
   onClick: () => void;
   onAddToCart: () => void;
   img?: string;
-  price: number;
+  price?: number;
 }
 
 const Modal = ({ onClick, img, price }: Props) => {

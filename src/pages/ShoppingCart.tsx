@@ -5,7 +5,6 @@ import { useState } from 'react';
 import CartBox from '../components/Product/CartBox';
 import { useSelector } from 'react-redux';
 import { RootState } from '../modules/reducer';
-// import Button from '../components/common/button';
 import { ButtonM } from '../components/common/button';
 
 const ShoppingCart = () => {
