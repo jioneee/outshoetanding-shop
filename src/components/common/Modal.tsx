@@ -17,7 +17,7 @@ interface Props {
   price?: number;
 }
 
-const Modal = ({ onClick, img, price }: Props) => {
+const Modal = ({ onClick, img, price = 0 }: Props) => {
   const dispatch = useDispatch();
   // const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
