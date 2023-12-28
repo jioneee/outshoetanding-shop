@@ -17,12 +17,13 @@ interface Props {
   price?: number;
 }
 
-const Modal = ({ onClick, img, price = 0 }: Props) => {
+const Modal = ({ onClick, img }: Props) => {
   const dispatch = useDispatch();
   // const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
   const [name, setName] = useState('');
+  const [selectedPrice, setSelectedPrice] = useState(0);
 
   const { isOpenModal, clickCloseModal } = useOpenModal();
 
@@ -34,6 +35,7 @@ const Modal = ({ onClick, img, price = 0 }: Props) => {
     setSelectedSize('');
     setQuantity(1);
     setName('');
+    setSelectedPrice(0);
   }, [isOpenModal]);
 
   const handleModalClose = () => {
@@ -70,7 +72,7 @@ const Modal = ({ onClick, img, price = 0 }: Props) => {
         img: {
           image: img,
           title: '',
-          price: price,
+          price: selectedPrice,
         },
       };
 
