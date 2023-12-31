@@ -36,7 +36,7 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
       {cartItems.map((item, index) => (
         <Container key={item.id}>
           <InputCheck type='checkbox' checked={isChecked[index] || false} onChange={() => onClickCheck(index)} />
-          <ImageContain>
+          <ImageContain imgUrl={item.img.image.image}>
             <Img src={item.img.image.image} alt={item.img.image.title} />
           </ImageContain>
           <ShoesInfo>
@@ -66,9 +66,11 @@ const InputCheck = styled.input`
   margin: 15px;
   accent-color: #5b3f06;
 `;
-const ImageContain = styled.span`
+const ImageContain = styled.span<{ imgUrl: string }>`
   margin: 15px;
   height: 150px;
+  background-image: url(${(props) => props.imgUrl});
+  background-size: cover;
 `;
 const Img = styled.img`
   border: 1px solid #5b3f06;
