@@ -73,6 +73,7 @@ const CartContainer = styled.div`
   flex-direction: column;
   min-height: 1000px;
   width: 900px;
+  gap: 300px;
   @media screen and (max-width: 768px) {
     width: 100%;
   }
