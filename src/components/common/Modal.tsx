@@ -42,6 +42,7 @@ const Modal = ({ onClick, img }: Props) => {
     onClick();
     setSelectedSize('');
     setQuantity(1);
+    setSelectedPrice(0);
     clickCloseModal();
   };
 
