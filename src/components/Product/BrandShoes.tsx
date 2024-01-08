@@ -315,6 +315,7 @@ const ProductListItem = styled.div`
   }
   .price {
     margin-top: 20px;
+    text-align: left;
     @media screen and (max-width: 768px) {
       margin-top: 10px;
     }
