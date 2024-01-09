@@ -329,9 +329,10 @@ const AddToCart = styled.button`
   border-radius: 30px;
   color: gray;
   font-weight: 600;
-  width: 75px;
+  width: 90px;
   height: 30px;
-  margin-top: 70px;
+  margin-top: 80px;
+  font-size: 15px;
   @media screen and (max-width: 768px) {
     margin-top: 5px;
   }
