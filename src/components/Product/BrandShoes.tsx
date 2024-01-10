@@ -162,6 +162,7 @@ export const Adidas = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='title'>{img.title} </div>
               <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
@@ -188,6 +189,7 @@ export const NewBalance = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='title'>{img.title} </div>
               <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
@@ -214,6 +216,7 @@ export const Converse = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='title'>{img.title} </div>
               <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
@@ -240,6 +243,7 @@ export const Vans = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='title'>{img.title} </div>
               <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
@@ -266,6 +270,7 @@ export const Asics = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='title'>{img.title} </div>
               <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
