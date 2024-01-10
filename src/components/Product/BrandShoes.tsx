@@ -135,6 +135,7 @@ export const Nike = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='brandname'>나이키</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -162,6 +163,7 @@ export const Adidas = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='brandname'>아디다스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -189,6 +191,7 @@ export const NewBalance = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='brandname'>뉴발란스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -216,6 +219,7 @@ export const Converse = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='brandname'>컨버스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -243,6 +247,7 @@ export const Vans = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='brandname'>반스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -270,6 +275,7 @@ export const Asics = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
+              <div className='brandname'>아식스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -310,6 +316,15 @@ const ProductListItem = styled.div`
       height: 200px;
     }
   }
+  .brandname {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
+  }
   .title {
     margin-top: 10px;
     font-weight: bold;
@@ -336,7 +351,7 @@ const AddToCart = styled.button`
   font-weight: 600;
   width: 90px;
   height: 30px;
-  margin-top: 80px;
+  margin-top: 100px;
   font-size: 15px;
   @media screen and (max-width: 768px) {
     margin-top: 5px;
