@@ -137,7 +137,7 @@ export const Nike = () => {
               <img src={img.image} alt={img.title} />
               <div className='brandname'>나이키 </div>
               <div className='title'>{img.title} </div>
-              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
+              <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
@@ -165,7 +165,7 @@ export const Adidas = () => {
               <img src={img.image} alt={img.title} />
               <div className='brandname'>아디다스 </div>
               <div className='title'>{img.title} </div>
-              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
+              <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
@@ -193,7 +193,7 @@ export const NewBalance = () => {
               <img src={img.image} alt={img.title} />
               <div className='brandname'>뉴발란스 </div>
               <div className='title'>{img.title} </div>
-              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
+              <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
@@ -221,7 +221,7 @@ export const Converse = () => {
               <img src={img.image} alt={img.title} />
               <div className='brandname'>컨버스 </div>
               <div className='title'>{img.title} </div>
-              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
+              <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
@@ -249,7 +249,7 @@ export const Vans = () => {
               <img src={img.image} alt={img.title} />
               <div className='brandname'>반스 </div>
               <div className='title'>{img.title} </div>
-              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
+              <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
@@ -277,7 +277,7 @@ export const Asics = () => {
               <img src={img.image} alt={img.title} />
               <div className='brandname'>아식스 </div>
               <div className='title'>{img.title} </div>
-              <div className='price'>Price: {img.price.toLocaleString('ko-kr')} 원</div>
+              <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
             <AddToCart onClick={() => handleAddToCartClick(img)}>add to cart</AddToCart>
           </div>
@@ -326,7 +326,7 @@ const ProductListItem = styled.div`
     }
   }
   .title {
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: bold;
     text-align: left;
     @media screen and (max-width: 768px) {
