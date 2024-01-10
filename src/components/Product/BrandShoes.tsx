@@ -14,7 +14,7 @@ interface ProductImg {
 const NikeImage: ProductImg[] = [
   {
     id: 0,
-    title: '에어 포스 1 `07',
+    title: '나이키 에어 포스 1 `07',
     image:
       'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/%EC%97%90%EC%96%B4-%ED%8F%AC%EC%8A%A4-1-07-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-TttlGpDb.png',
     price: 70000,
@@ -109,7 +109,7 @@ const VansImage: ProductImg[] = [
 const AsicsImage: ProductImg[] = [
   {
     id: 0,
-    title: '젤-카야노 14 화이트 미드나잇',
+    title: '젤-카야노 14 화이트 미드나잇 우먼스',
     image: 'https://static.luck-d.com/product/4233/main_carousel/ASICS_GELKAYANO_14_WHITE_MIDNIGHT_WMNS_1202A056109_54001.webp',
     price: 50000,
   },
@@ -135,7 +135,6 @@ export const Nike = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='brandname'>나이키 </div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -163,7 +162,6 @@ export const Adidas = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='brandname'>아디다스 </div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -191,7 +189,6 @@ export const NewBalance = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='brandname'>뉴발란스 </div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -219,7 +216,6 @@ export const Converse = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='brandname'>컨버스 </div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -247,7 +243,6 @@ export const Vans = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='brandname'>반스 </div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -275,7 +270,6 @@ export const Asics = () => {
           <div key={img.id}>
             <ProductListItem>
               <img src={img.image} alt={img.title} />
-              <div className='brandname'>아식스 </div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
@@ -316,15 +310,6 @@ const ProductListItem = styled.div`
       height: 200px;
     }
   }
-  .brandname {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: left;
-    @media screen and (max-width: 768px) {
-      margin-top: 10px;
-    }
-  }
   .title {
     margin-top: 10px;
     font-weight: bold;
@@ -351,7 +336,7 @@ const AddToCart = styled.button`
   font-weight: 600;
   width: 90px;
   height: 30px;
-  margin-top: 120px;
+  margin-top: 80px;
   font-size: 15px;
   @media screen and (max-width: 768px) {
     margin-top: 5px;
