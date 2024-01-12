@@ -90,7 +90,7 @@ const Title = styled.p`
   height: 110px;
   margin: 15px;
   font-weight: bold;
-  font-size: large;
+  font-size: 15px;
   color: #5b3f06;
   @media screen and (max-width: 768px) {
     font-size: medium;

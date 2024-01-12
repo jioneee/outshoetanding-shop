@@ -14,14 +14,14 @@ interface ProductImg {
 const NikeImage: ProductImg[] = [
   {
     id: 0,
-    title: '나이키 에어 포스 1 `07',
+    title: '에어 포스 1 `07',
     image:
       'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/%EC%97%90%EC%96%B4-%ED%8F%AC%EC%8A%A4-1-07-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-TttlGpDb.png',
     price: 70000,
   },
   {
     id: 1,
-    title: '나이키 덩크 로우 레트로 프리미엄',
+    title: '덩크 로우 레트로 프리미엄',
     image:
       'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/60e98509-bbe4-4edf-a1cc-77567773fcef/%EB%8D%A9%ED%81%AC-%EB%A1%9C%EC%9A%B0-%EB%A0%88%ED%8A%B8%EB%A1%9C-%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-p3eVdXYe.png',
     price: 70000,
@@ -327,6 +327,7 @@ const ProductListItem = styled.div`
   }
   .title {
     margin-top: 10px;
+    color: #666666;
     font-weight: bold;
     text-align: left;
     @media screen and (max-width: 768px) {
