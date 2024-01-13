@@ -34,7 +34,7 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
   return (
     <>
       {cartItems.map((item, index) => (
-        <Container key={item.id}>
+        <Container key={index}>
           <InputCheck type='checkbox' checked={isChecked[index] || false} onChange={() => onClickCheck(index)} />
           <ImageContain>
             <Img src={item.img.image.image} alt={item.img.image.title} />
