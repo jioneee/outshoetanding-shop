@@ -297,7 +297,6 @@ const ProductListWrap = styled.div`
   padding-bottom: 10px;
   @media screen and (max-width: 768px) {
     width: 700px;
-    height: 680px;
   }
 `;
 
@@ -355,7 +354,7 @@ const AddToCart = styled.button`
   margin-top: 100px;
   font-size: 15px;
   @media screen and (max-width: 768px) {
-    margin-top: 5px;
+    margin-top: 50px;
   }
   &:hover {
     background-color: #ffd732;
