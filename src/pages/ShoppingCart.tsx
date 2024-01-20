@@ -58,7 +58,7 @@ const ShoppingCart = () => {
           <ButtonBox>
             <ButtonM>선택삭제</ButtonM>
             <ButtonM>선택주문</ButtonM>
-            <ButtonM>전체주문</ButtonM>
+            <ButtonM onClick={handleSelectAllCheckChange}>전체주문</ButtonM>
           </ButtonBox>
         </TotalContainer>
       </CartContainer>

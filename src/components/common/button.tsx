@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { ReactNode } from 'react';
+import { ReactNode, MouseEvent } from 'react';
 
 const ButtonS = ({ children }: { children: ReactNode }) => {
   return <Small>{children}</Small>;
 };
 
-const ButtonM = ({ children }: { children: ReactNode }) => {
-  return <Middle>{children}</Middle>;
+const ButtonM = ({ onClick, children }: { onClick?: (event: MouseEvent) => void; children: ReactNode }) => {
+  return <Middle onClick={onClick}>{children}</Middle>;
 };
 
 const ButtonL = ({ children }: { children: ReactNode }) => {
