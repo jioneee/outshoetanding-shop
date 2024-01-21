@@ -26,6 +26,7 @@ const ShoppingCart = () => {
     setSelectAllCheck(allChecked);
     setIsChecked(cartItems.map(() => allChecked));
   };
+
   const totalCartQuantity = isChecked.reduce((total, checked, index) => total + (checked ? cartItems[index].quantity : 0), 0);
 
   const totalCartPrice = isChecked.reduce((total, checked, index) => total + (checked ? cartItems[index].price * cartItems[index].quantity : 0), 0);
