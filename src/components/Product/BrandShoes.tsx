@@ -120,9 +120,9 @@ const AsicsImage: ProductImg[] = [
 export const Nike = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
   const [selectedImg, setSelectedImg] = useState(null);
-  const [selectedPrice, setSelectedPrice] = useState<number>(0);
+  const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
 
-  const handleAddToCartClick = (img: string, price: any) => {
+  const handleAddToCartClick = (img: string, price: string) => {
     setSelectedImg(img);
     selectedPrice(price);
     clickOpenModal();
