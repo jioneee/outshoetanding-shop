@@ -124,7 +124,7 @@ export const Nike = () => {
 
   const handleAddToCartClick = (img: string, price: number) => {
     setSelectedImg(img);
-    selectedPrice(price);
+    setSelectedPrice(price);
     clickOpenModal();
   };
 
@@ -142,7 +142,7 @@ export const Nike = () => {
             <AddToCart onClick={() => handleAddToCartClick(img.image, img.price)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} img={selectedImg} price={setSelectedPrice} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
