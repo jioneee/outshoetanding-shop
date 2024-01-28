@@ -37,10 +37,10 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
         <Container key={index}>
           <InputCheck type='checkbox' checked={isChecked[index] || false} onChange={() => onClickCheck(index)} />
           <ImageContain>
-            <Img src={item.img.image.image} alt={item.img.image.title} />
+            <Img src={item.img.image} alt={item.img.title} />
           </ImageContain>
           <ShoesInfo>
-            <Title>{item.img.image.title}</Title>
+            <Title>{item.img.title}</Title>
             <Size>사이즈 : {item.size}</Size>
             <Quantity>수량 : {item.quantity}</Quantity>
             <Price>{(item.img.price * item.quantity).toLocaleString('ko-kr')}원</Price>
