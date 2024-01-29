@@ -167,8 +167,7 @@ const ModalBox = styled.div`
   padding: 10px;
   position: relative;
   z-index: 2;
-  animation: ${animation} 1.5s linear;
-  animation: ${fadeOut} 1.5s linear;
+  animation: ${animation} 1.5s linear, ${fadeOut} 1.5s linear;
 `;
 
 const ModalHead = styled.div`
