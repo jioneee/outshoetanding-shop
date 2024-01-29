@@ -84,34 +84,32 @@ const Modal = ({ onClick, img }: Props) => {
   return (
     <>
       {!isOpenModal && (
-        <div>
-          <ModalContainer>
-            <ModalBox>
-              <ModalButton onClick={handleModalClose}>
-                <CloseIcon />
-              </ModalButton>
-              <ModalHead>{name}</ModalHead>
-              SIZE <ModalSize onClick={() => handleSizeSelection('230')}>230</ModalSize>
-              <ModalSize onClick={() => handleSizeSelection('240')}>240</ModalSize>
-              <ModalSize onClick={() => handleSizeSelection('250')}>250</ModalSize>
-              <ModalSize onClick={() => handleSizeSelection('260')}>260</ModalSize>
-              <ModalSize onClick={() => handleSizeSelection('270')}>270</ModalSize>
-              <ModalSize onClick={() => handleSizeSelection('280')}>280</ModalSize>
-              <div></div>
-              수량 :
-              <ModalButton onClick={onClickMinus}>
-                <RemoveCircleOutlineIcon color='action' />
-              </ModalButton>
-              {quantity}
-              <ModalButton onClick={onClickPlus}>
-                <AddCircleOutlineIcon color='action' />
-              </ModalButton>
-              <br />
-              <CartButton onClick={handleCartClick}>Cart</CartButton>
-              {/* onClick={() => dispatch(addCount())} */}
-            </ModalBox>
-          </ModalContainer>
-        </div>
+        <ModalContainer>
+          <ModalBox>
+            <ModalButton onClick={handleModalClose}>
+              <CloseIcon />
+            </ModalButton>
+            <ModalHead>{name}</ModalHead>
+            SIZE <ModalSize onClick={() => handleSizeSelection('230')}>230</ModalSize>
+            <ModalSize onClick={() => handleSizeSelection('240')}>240</ModalSize>
+            <ModalSize onClick={() => handleSizeSelection('250')}>250</ModalSize>
+            <ModalSize onClick={() => handleSizeSelection('260')}>260</ModalSize>
+            <ModalSize onClick={() => handleSizeSelection('270')}>270</ModalSize>
+            <ModalSize onClick={() => handleSizeSelection('280')}>280</ModalSize>
+            <div></div>
+            수량 :
+            <ModalButton onClick={onClickMinus}>
+              <RemoveCircleOutlineIcon color='action' />
+            </ModalButton>
+            {quantity}
+            <ModalButton onClick={onClickPlus}>
+              <AddCircleOutlineIcon color='action' />
+            </ModalButton>
+            <br />
+            <CartButton onClick={handleCartClick}>Cart</CartButton>
+            {/* onClick={() => dispatch(addCount())} */}
+          </ModalBox>
+        </ModalContainer>
       )}
     </>
   );
