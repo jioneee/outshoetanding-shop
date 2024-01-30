@@ -86,7 +86,7 @@ const Modal = ({ onClick, img }: Props) => {
       {!isOpenModal && (
         <ModalContainer>
           <ModalBox>
-            <ModalButton onClick={handleModalClose}>
+            <ModalButton type='button' onClick={handleModalClose}>
               <CloseIcon />
             </ModalButton>
             <ModalHead>{name}</ModalHead>
@@ -98,15 +98,17 @@ const Modal = ({ onClick, img }: Props) => {
             <ModalSize onClick={() => handleSizeSelection('280')}>280</ModalSize>
             <div></div>
             수량 :
-            <ModalButton onClick={onClickMinus}>
+            <ModalButton type='button' onClick={onClickMinus}>
               <RemoveCircleOutlineIcon color='action' />
             </ModalButton>
             {quantity}
-            <ModalButton onClick={onClickPlus}>
+            <ModalButton type='button' onClick={onClickPlus}>
               <AddCircleOutlineIcon color='action' />
             </ModalButton>
             <br />
-            <CartButton onClick={handleCartClick}>Cart</CartButton>
+            <CartButton type='button' onClick={handleCartClick}>
+              Cart
+            </CartButton>
             {/* onClick={() => dispatch(addCount())} */}
           </ModalBox>
         </ModalContainer>

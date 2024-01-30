@@ -139,7 +139,9 @@ export const Nike = () => {
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={() => handleAddToCartClick(img.image, img.price)}>add to cart</AddToCart>
+            <AddToCart type='button' onClick={() => handleAddToCartClick(img.image, img.price)}>
+              add to cart
+            </AddToCart>
           </div>
         ))}
         {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
