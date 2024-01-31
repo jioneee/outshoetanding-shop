@@ -179,7 +179,6 @@ const ModalSize = styled.button`
   height: 30px;
   margin: 5px;
   font-weight: 300;
-
   box-sizing: border-box;
   width: 100%;
   height: auto;

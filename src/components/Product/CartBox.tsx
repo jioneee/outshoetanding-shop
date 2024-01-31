@@ -53,6 +53,14 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
 
 export default CartBox;
 
+const commonStyle = `
+  margin: 15px;
+  color: #5b3f06;
+  @media screen and (max-width: 768px) {
+    margin: 15px 10px;
+  }
+`;
+
 const Container = styled.div`
   color: #5b3f06;
   display: flex;
@@ -63,11 +71,11 @@ const Container = styled.div`
   margin: 20px 0px;
 `;
 const InputCheck = styled.input`
-  margin: 15px;
+  ${commonStyle}
   accent-color: #5b3f06;
 `;
 const ImageContain = styled.span`
-  margin: 15px;
+  ${commonStyle}
   height: 150px;
   background-size: cover;
 `;
@@ -78,17 +86,16 @@ const Img = styled.img`
   object-fit: contain;
 `;
 const ShoesInfo = styled.span`
-  color: #5b3f06;
+  ${commonStyle}
   display: flex;
   flex-direction: row;
   line-height: 110px;
 `;
 
 const Title = styled.p`
-  box-sizing: border-box;
+  ${commonStyle}
   width: 230px;
   height: 110px;
-  margin: 15px;
   font-weight: bold;
   font-size: 15px;
   color: #5b3f06;
@@ -99,33 +106,15 @@ const Title = styled.p`
 `;
 
 const Size = styled.span`
+  ${commonStyle}
   width: 110px;
-  height: 110px;
-  margin: 15px;
-  color: #5b3f06;
-  @media screen and (max-width: 768px) {
-    width: 100px;
-    margin: 15px 10px;
-  }
 `;
 const Quantity = styled.span`
+  ${commonStyle}
   width: 110px;
-  height: 110px;
-  margin: 15px;
-  color: #5b3f06;
-  @media screen and (max-width: 768px) {
-    width: 100px;
-    margin: 15px 10px;
-  }
 `;
 
 const Price = styled.span`
+  ${commonStyle}
   width: 110px;
-  height: 110px;
-  margin: 15px;
-
-  @media screen and (max-width: 768px) {
-    width: 100px;
-    margin: 15px 10px;
-  }
 `;
