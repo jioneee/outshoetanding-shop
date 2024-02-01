@@ -48,7 +48,7 @@ const LogoBox = styled.div`
   border-radius: 3%;
   background-color: #6e4d0a;
   @media screen and (max-width: 768px) {
-    background-color: #cdc9c9;
+    background-color: #6e4d0a;
     height: 30px;
   }
 `;
