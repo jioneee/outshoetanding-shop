@@ -56,13 +56,16 @@ const ProductList = () => {
       console.error('error');
     }
   };
+  const handleProductClick = (product: ProductImg): void => {
+    setSelectedProduct(product);
+  };
 
   return (
     <ProductListContainer>
       <TagBox>New</TagBox>
       <ProductListWrap>
         {ProductImage.map((img) => (
-          <ProductListItem key={img.id}>
+          <ProductListItem key={img.id} onClick={() => handleProductClick(img)}>
             <img src={img.image} alt={img.title} />
           </ProductListItem>
         ))}
