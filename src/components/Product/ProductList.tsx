@@ -53,6 +53,7 @@ const ProductList = () => {
       console.log(`quantity: ${quantity}`);
       console.log(`size: ${size}`);
     } else {
+      console.error('error');
     }
   };
 
