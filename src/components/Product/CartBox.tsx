@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-
 import { useState, useEffect } from 'react';
 import { CartItemType } from '../../modules/initialStates/initialStateType';
+
 interface CartBoxProps {
   selectAllCheck: boolean;
   onChange: (index: number) => void;
@@ -10,21 +10,31 @@ interface CartBoxProps {
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }) => {
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
-  console.log('cartItems', cartItems);
-  console.log('cartItems[2]', cartItems[2]);
+  const [groupedCartItems, setGroupedCartItems] = useState<CartItemType[]>([]);
+
   useEffect(() => {
-    // console.log('selectAllCheck', selectAllCheck);
-    // console.log('isChecked', isChecked);
-    // console.log('cartItems', cartItems);
-    if (selectAllCheck) {
-      setIsChecked(cartItems.map(() => true));
-    } else {
-      setIsChecked(cartItems.map(() => false));
-    }
+    setIsChecked(cartItems.map(() => false));
+    groupCartItems();
   }, [selectAllCheck, cartItems]);
 
+  const groupCartItems = () => {
+    const groupedItems: Record<string, CartItemType> = {};
+
+    cartItems.forEach((item) => {
+      const key = `${item.size}-${item.img.title}`;
+
+      if (groupedItems[key]) {
+        groupedItems[key].quantity += item.quantity;
+      } else {
+        groupedItems[key] = { ...item };
+      }
+    });
+
+    const result = Object.values(groupedItems);
+    setGroupedCartItems(result);
+  };
+
   const onClickCheck = (index: number) => {
-    console.log('Clicked index', index);
     const updatedChecked = [...isChecked];
     updatedChecked[index] = !updatedChecked[index];
     setIsChecked(updatedChecked);
@@ -33,7 +43,7 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
 
   return (
     <>
-      {cartItems.map((item, index) => (
+      {groupedCartItems.map((item, index) => (
         <Container key={index}>
           <InputCheck type='checkbox' checked={isChecked[index] || false} onChange={() => onClickCheck(index)} />
           <ImageContain>
@@ -41,8 +51,8 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
           </ImageContain>
           <ShoesInfo>
             <Title>{item.img.title}</Title>
-            <Size>사이즈 : {item.size}</Size>
-            <Quantity>수량 : {item.quantity}</Quantity>
+            <Size>사이즈: {item.size}</Size>
+            <Quantity>수량: {item.quantity}</Quantity>
             <Price>{(item.img.price * item.quantity).toLocaleString('ko-kr')}원</Price>
           </ShoesInfo>
         </Container>
