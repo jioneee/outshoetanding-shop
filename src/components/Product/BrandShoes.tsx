@@ -152,7 +152,7 @@ export const Nike = () => {
 
 export const Adidas = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedImg, setSelectedImg] = useState('');
   const handleAddToCartClick = (img: any) => {
     setSelectedImg(img);
 
@@ -180,7 +180,7 @@ export const Adidas = () => {
 
 export const NewBalance = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedImg, setSelectedImg] = useState('');
   const handleAddToCartClick = (img: any) => {
     setSelectedImg(img);
 
@@ -208,7 +208,7 @@ export const NewBalance = () => {
 
 export const Converse = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedImg, setSelectedImg] = useState('');
   const handleAddToCartClick = (img: any) => {
     setSelectedImg(img);
 
@@ -236,7 +236,7 @@ export const Converse = () => {
 
 export const Vans = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedImg, setSelectedImg] = useState('');
   const handleAddToCartClick = (img: any) => {
     setSelectedImg(img);
 
@@ -264,7 +264,7 @@ export const Vans = () => {
 
 export const Asics = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedImg, setSelectedImg] = useState('');
   const handleAddToCartClick = (img: any) => {
     setSelectedImg(img);
 
