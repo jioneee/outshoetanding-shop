@@ -13,26 +13,26 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems }
   const [groupedCartItems, setGroupedCartItems] = useState<CartItemType[]>([]);
 
   useEffect(() => {
-    setIsChecked(cartItems.map(() => false));
+    const groupCartItems = () => {
+      const groupedItems: Record<string, CartItemType> = {};
+
+      cartItems.forEach((item) => {
+        const key = `${item.size}-${item.img.title}`;
+
+        if (groupedItems[key]) {
+          groupedItems[key].quantity += item.quantity;
+        } else {
+          groupedItems[key] = { ...item };
+        }
+      });
+
+      const result = Object.values(groupedItems);
+      setGroupedCartItems(result);
+    };
+
+    setIsChecked((prevChecked) => cartItems.map((_, index) => prevChecked[index] || false));
     groupCartItems();
   }, [selectAllCheck, cartItems]);
-
-  const groupCartItems = () => {
-    const groupedItems: Record<string, CartItemType> = {};
-
-    cartItems.forEach((item) => {
-      const key = `${item.size}-${item.img.title}`;
-
-      if (groupedItems[key]) {
-        groupedItems[key].quantity += item.quantity;
-      } else {
-        groupedItems[key] = { ...item };
-      }
-    });
-
-    const result = Object.values(groupedItems);
-    setGroupedCartItems(result);
-  };
 
   const onClickCheck = (index: number) => {
     const updatedChecked = [...isChecked];
