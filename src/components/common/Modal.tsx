@@ -123,12 +123,12 @@ const animation = keyframes`
         opacity: 0.5;
     }
     1%{
-        opacity: 0.5;
-        transform:translateY(100%)
+        opacity:0.5;
+        transform:translateY(10%)
 
     }
     100% {
-        opacity: 0.5;
+        opacity: 1;
     }
 `;
 
