@@ -49,18 +49,19 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     return state;
   },
   [REMOVE_FROM_CART]: (state, action) => {
-    if (typeof action.payload === 'number') {
-      const indexToRemove = action.payload;
-      if (indexToRemove >= 0 && indexToRemove < state.cartItems.length) {
-        // indexToRemove에 해당하는 아이템을 제외한 새로운 배열을 생성
-        const newCartItems = state.cartItems.filter((_, index) => index !== indexToRemove);
+    let indicesToRemove: number[] = [];
 
-        return {
-          ...state,
-          cartItems: newCartItems,
-        };
-      }
+    if (typeof action.payload === 'number') {
+      indicesToRemove = [action.payload];
+    } else if (Array.isArray(action.payload)) {
+      indicesToRemove = action.payload;
     }
-    return state;
+
+    const newCartItems = state.cartItems.filter((_, index) => !indicesToRemove.includes(index));
+
+    return {
+      ...state,
+      cartItems: newCartItems,
+    };
   },
 });
