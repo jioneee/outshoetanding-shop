@@ -1,6 +1,6 @@
 import { createReducer } from 'typesafe-actions';
 
-import { ADD_COUNT, DEC_COUNT, MINUS_QUANTITY, PLUS_QUANTITY, ADD_TO_CART, REMOVE_FROM_CART } from '../actionTypes/cart';
+import { ADD_COUNT, DEC_COUNT, MINUS_QUANTITY, PLUS_QUANTITY, ADD_TO_CART, REMOVE_FROM_CART, REMOVE_SELECTED_FROM_CART } from '../actionTypes/cart';
 import { CartActionType } from '../actions';
 import { CartStateType, CartItemType } from '../initialStates/initialStateType';
 import { initialState } from '../initialStates/initialState';
@@ -49,6 +49,22 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     return state;
   },
   [REMOVE_FROM_CART]: (state, action) => {
+    let indicesToRemove: number[] = [];
+
+    if (typeof action.payload === 'number') {
+      indicesToRemove = [action.payload];
+    } else if (Array.isArray(action.payload)) {
+      indicesToRemove = action.payload;
+    }
+
+    const newCartItems = state.cartItems.filter((_, index) => !indicesToRemove.includes(index));
+
+    return {
+      ...state,
+      cartItems: newCartItems,
+    };
+  },
+  [REMOVE_SELECTED_FROM_CART]: (state, action) => {
     let indicesToRemove: number[] = [];
 
     if (typeof action.payload === 'number') {
