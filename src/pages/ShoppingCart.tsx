@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 // import { initialState } from '../modules/initialStates/initialState';
 import CartBox from '../components/Product/CartBox';
-import { useSelector } from 'react-redux';
 import { RootState } from '../modules/reducer';
+import { removeSelectedFromCart } from '../modules/actions/cart';
 import { ButtonM } from '../components/common/button';
 
 const ShoppingCart = () => {
+  const dispatch = useDispatch();
   const [selectAllCheck, setSelectAllCheck] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
@@ -25,6 +27,17 @@ const ShoppingCart = () => {
     const allChecked = !selectAllCheck;
     setSelectAllCheck(allChecked);
     setIsChecked(cartItems.map(() => allChecked));
+  };
+
+  const handleDeleteSelection = () => {
+    const indicesToRemove: number[] = isChecked.reduce((acc, checked, index) => {
+      if (checked) {
+        acc.push(index);
+      }
+      return acc;
+    }, []);
+
+    dispatch(removeSelectedFromCart(indicesToRemove));
   };
 
   const totalCartQuantity = isChecked.reduce((total, checked, index) => total + (checked ? cartItems[index].quantity : 0), 0);
@@ -57,7 +70,7 @@ const ShoppingCart = () => {
           </TotalBox>
 
           <ButtonBox>
-            <ButtonM>선택삭제</ButtonM>
+            <ButtonM onClick={handleDeleteSelection}>선택삭제</ButtonM>
             <ButtonM>선택주문</ButtonM>
             <ButtonM onClick={handleSelectAllCheckChange}>전체주문</ButtonM>
           </ButtonBox>
