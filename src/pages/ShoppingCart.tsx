@@ -28,14 +28,10 @@ const ShoppingCart = () => {
     setSelectAllCheck(allChecked);
     setIsChecked(cartItems.map(() => allChecked));
   };
-
   const handleDeleteSelection = () => {
-    const indicesToRemove: number[] = isChecked.reduce((acc, checked, index) => {
-      if (checked) {
-        acc.push(index);
-      }
-      return acc;
-    }, []);
+    const indicesToRemove: number[] = isChecked
+      .map((checked, index) => (checked ? index : -1)) // Map to indices or -1 for unchecked
+      .filter((index) => index !== -1); // Remove the -1 values
 
     dispatch(removeSelectedFromCart(indicesToRemove));
   };
