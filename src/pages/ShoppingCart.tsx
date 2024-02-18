@@ -36,10 +36,19 @@ const ShoppingCart = () => {
     dispatch(removeSelectedFromCart(indicesToRemove));
   };
 
-  const totalCartQuantity = isChecked.reduce((total, checked, index) => total + (checked ? cartItems[index].quantity : 0), 0);
+  const totalCartQuantity = isChecked.reduce((total, checked, index) => {
+    if (checked && cartItems[index]) {
+      return total + cartItems[index].quantity;
+    }
+    return total;
+  }, 0);
 
-  const totalCartPrice = isChecked.reduce((total, checked, index) => total + (checked ? cartItems[index].price * cartItems[index].quantity : 0), 0);
-
+  const totalCartPrice = isChecked.reduce((total, checked, index) => {
+    if (checked && cartItems[index]) {
+      return total + cartItems[index].price * cartItems[index].quantity;
+    }
+    return total;
+  }, 0);
   return (
     <div>
       <CartContainer>
