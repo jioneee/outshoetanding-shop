@@ -17,6 +17,7 @@
     "@types/react-redux": "^7.1.25",
     "@types/redux": "^3.6.0",
     "@types/redux-logger": "^3.0.9",
+    "firebase": "^10.8.0",
     "immer": "^10.0.2",
     "install": "^0.13.0",
     "npm": "^9.6.5",
