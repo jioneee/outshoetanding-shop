@@ -8,6 +8,7 @@ import GlobalStyle from './components/style/globalStyle';
 import Loading from './components/common/Loading';
 import styled, { ThemeProvider } from 'styled-components';
 import MyPage from './pages/MyPage';
+import Login from './pages/Login';
 
 function App() {
   const Main = React.lazy(() => import('./pages/Main'));
@@ -24,7 +25,7 @@ function App() {
               <React.Suspense fallback={<Loading />}>
                 <Routes>
                   <Route path='/' element={<Main />}></Route>
-
+                  <Route path='/login' element={<Login />}></Route>
                   <Route path='/cart' element={<ShoppingCart />}></Route>
                   <Route path='/mypage' element={<MyPage />}></Route>
                 </Routes>

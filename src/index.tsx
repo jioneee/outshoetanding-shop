@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { auth } from './firebase';
-
 import store from './store';
+import AuthProvider from './components/authProvider';
 
 console.log('auth', auth);
 
@@ -14,9 +14,11 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <>
     <Provider store={store}>
-      {/* <React.StrictMode> */}
-      <App />
-      {/* </React.StrictMode> */}
+      <AuthProvider>
+        {/* <React.StrictMode> */}
+        <App />
+        {/* </React.StrictMode> */}
+      </AuthProvider>
     </Provider>
   </>
 );
