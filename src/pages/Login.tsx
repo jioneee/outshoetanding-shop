@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AuthContext } from '../context/authContext';
@@ -33,6 +33,14 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, email, pwd)
         .then(() => {
           alert('회원가입 성공');
+        })
+        .catch((e) => {
+          alert(e);
+        });
+    } else {
+      signInWithEmailAndPassword(auth, email, pwd)
+        .then(() => {
+          alert('로그인 성공');
         })
         .catch((e) => {
           alert(e);
