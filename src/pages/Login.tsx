@@ -3,8 +3,10 @@ import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AuthContext } from '../context/authContext';
 import { auth } from '../firebase';
+import { useNavigate } from 'react-router';
 
 const Login = () => {
+  const navigate = useNavigate();
   const userInfo = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
@@ -28,7 +30,6 @@ const Login = () => {
   const handleSubit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 회원 가입일때
     if (isCreate) {
       createUserWithEmailAndPassword(auth, email, pwd)
         .then(() => {
@@ -41,6 +42,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email, pwd)
         .then(() => {
           alert('로그인 성공');
+          navigate('/main');
         })
         .catch((e) => {
           alert(e);
