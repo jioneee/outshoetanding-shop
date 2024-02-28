@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { AuthContext } from '../context/authContext';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router';
-
+import { ButtonS } from '../components/common/button';
 const Login = () => {
   const navigate = useNavigate();
   const userInfo = useContext(AuthContext);
@@ -42,7 +42,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email, pwd)
         .then(() => {
           alert('로그인 성공');
-          navigate('/main');
+          navigate('/');
         })
         .catch((e) => {
           alert(e);
@@ -54,14 +54,17 @@ const Login = () => {
   return (
     <div>
       <LoginContainer>
-        <form onSubmit={handleSubit}>
-          <input type='email' name='email' onChange={handleEmail} value={email} />
-          <input type='password' name='pwd' onChange={handlePwd} value={pwd} />
-          <button type='submit'> {isCreate ? '회원가입' : '로그인'}</button>
-          <button type='button' onClick={handleClickCreate}>
-            {isCreate ? '취소' : '회원가입'}
-          </button>
-        </form>
+        <LoginBox>
+          <form onSubmit={handleSubit}>
+            <LoginHeader>LogIn</LoginHeader>
+            <LoginInput type='email' name='email' onChange={handleEmail} value={email} />
+            <br />
+            <LoginInput type='password' name='pwd' onChange={handlePwd} value={pwd} />
+            <br />
+            <ButtonS type='submit'> {isCreate ? '회원가입' : '로그인'}</ButtonS>
+            <ButtonS onClick={handleClickCreate}>{isCreate ? '취소' : '회원가입'}</ButtonS>
+          </form>
+        </LoginBox>
       </LoginContainer>
     </div>
   );
@@ -71,4 +74,18 @@ export default Login;
 
 const LoginContainer = styled.div`
   margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 `;
+
+const LoginBox = styled.div`
+  box-sizing: border-box;
+  padding: 20px;
+  width: 700px;
+  border: 3px solid #5b3f06;
+`;
+
+const LoginHeader = styled.header``;
+
+const LoginInput = styled.input``;

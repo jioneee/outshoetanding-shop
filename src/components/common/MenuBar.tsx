@@ -17,12 +17,17 @@ const MenuBar = () => {
     navigate('/mypage');
   };
 
+  const handleClickLogIn = () => {
+    navigate('/login');
+  };
+
   return (
     <MenuBox>
       <UnderLine></UnderLine>
       <MenuNavigate onClick={handleClickHome}>Home</MenuNavigate>
       <MenuNavigate onClick={handleClickCart}>Cart</MenuNavigate>
       <MenuNavigate onClick={handleClickMyPge}>MyPage</MenuNavigate>
+      <MenuNavigate onClick={handleClickLogIn}>LogIn</MenuNavigate>
     </MenuBox>
   );
 };
@@ -45,7 +50,7 @@ const MenuBox = styled.ul`
   box-sizing: border-box;
   background-color: rgba(0, 2, 0, 70%);
   width: 150px;
-  height: 150px;
+  height: 200px;
   margin-left: -10px;
   margin-top: 6px;
   padding-left: 15px;

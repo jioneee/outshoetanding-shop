@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import LoginIcon from '@mui/icons-material/Login';
 import MenuBar from '../components/common/MenuBar';
 
 import styled from 'styled-components';
@@ -32,6 +33,10 @@ const Header: any = ({ onClick }: Props) => {
   const handleClickMyPge = () => {
     navigate('/mypage');
   };
+  const handleClickLogIn = () => {
+    navigate('/login');
+  };
+
   const totalCart = cartItems.length;
 
   const handleMenuIcon = () => {
@@ -85,6 +90,11 @@ const Header: any = ({ onClick }: Props) => {
               <PersonIcon onClick={handleClickMyPge} style={{ color: 'white', fontSize: 40, margin: 5 }}>
                 my
               </PersonIcon>
+            </IconBox>
+            <IconBox>
+              <LoginIcon onClick={handleClickLogIn} style={{ color: 'white', fontSize: 40, margin: 5 }}>
+                LogIn
+              </LoginIcon>{' '}
             </IconBox>
           </IconContainer>
         </HeaderBox>
