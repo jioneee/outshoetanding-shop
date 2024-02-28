@@ -1,15 +1,29 @@
 import styled from 'styled-components';
-import { ReactNode, MouseEvent } from 'react';
+import { ReactNode, MouseEvent, FC } from 'react';
 
-const ButtonS = ({ children }: { children: ReactNode }) => {
-  return <Small>{children}</Small>;
+interface ButtonProps {
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  children: ReactNode;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const ButtonS: FC<ButtonProps> = ({ onClick, children, type }) => {
+  return (
+    <Small onClick={onClick} type={type}>
+      {children}
+    </Small>
+  );
 };
 
-const ButtonM = ({ onClick, children }: { onClick?: (event: MouseEvent) => void; children: ReactNode }) => {
-  return <Middle onClick={onClick}>{children}</Middle>;
+const ButtonM: FC<ButtonProps> = ({ onClick, children, type }) => {
+  return (
+    <Middle onClick={onClick} type={type}>
+      {children}
+    </Middle>
+  );
 };
 
-const ButtonL = ({ children }: { children: ReactNode }) => {
+const ButtonL: FC<ButtonProps> = ({ children }: { children: ReactNode }) => {
   return <Large>{children}</Large>;
 };
 export { ButtonS, ButtonM, ButtonL };
