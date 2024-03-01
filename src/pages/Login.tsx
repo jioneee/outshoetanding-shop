@@ -5,12 +5,14 @@ import { AuthContext } from '../context/authContext';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router';
 import { ButtonS } from '../components/common/button';
+
 const Login = () => {
   const navigate = useNavigate();
   const userInfo = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
   const [isCreate, setIsCreate] = useState(false);
+  const [isInputClicked, setIsInputClicked] = useState(false);
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -57,9 +59,25 @@ const Login = () => {
         <LoginBox>
           <form onSubmit={handleSubit}>
             <LoginHeader>LogIn</LoginHeader>
-            <LoginInput type='email' name='email' onChange={handleEmail} value={email} />
+            <LoginInput
+              type='email'
+              name='email'
+              onChange={handleEmail}
+              value={email}
+              onFocus={() => setIsInputClicked(true)}
+              onBlur={() => setIsInputClicked(false)}
+              placeholder={isInputClicked === true ? '' : 'ID'}
+            />
             <br />
-            <LoginInput type='password' name='pwd' onChange={handlePwd} value={pwd} />
+            <LoginInput
+              type='password'
+              name='pwd'
+              onChange={handlePwd}
+              value={pwd}
+              onFocus={() => setIsInputClicked(true)}
+              onBlur={() => setIsInputClicked(false)}
+              placeholder={isInputClicked === true ? '' : 'password'}
+            />
             <br />
             <ButtonS type='submit'> {isCreate ? '회원가입' : '로그인'}</ButtonS>
             <ButtonS onClick={handleClickCreate}>{isCreate ? '취소' : '회원가입'}</ButtonS>
