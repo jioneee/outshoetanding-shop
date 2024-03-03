@@ -79,8 +79,10 @@ const Login = () => {
               placeholder={isInputClicked === true ? '' : 'password'}
             />
             <br />
-            <ButtonS type='submit'> {isCreate ? '회원가입' : '로그인'}</ButtonS>
-            <ButtonS onClick={handleClickCreate}>{isCreate ? '취소' : '회원가입'}</ButtonS>
+            <LoginButtonBox>
+              <ButtonS type='submit'> {isCreate ? '회원가입' : '로그인'}</ButtonS>
+              <ButtonS onClick={handleClickCreate}>{isCreate ? '취소' : '회원가입'}</ButtonS>
+            </LoginButtonBox>
           </form>
         </LoginBox>
       </LoginContainer>
@@ -106,4 +108,10 @@ const LoginBox = styled.div`
 
 const LoginHeader = styled.header``;
 
-const LoginInput = styled.input``;
+const LoginButtonBox = styled.div`
+  gap: 10px;
+  align-items: center;
+`;
+const LoginInput = styled.input`
+  margin: 20px;
+`;
