@@ -100,16 +100,21 @@ const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    width: 600px;
+    margin: 50px;
+  }
 `;
 
 const LoginBox = styled.div`
   box-sizing: border-box;
   padding: 0px;
-
   width: 700px;
   border: 3px solid #5b3f06;
+  @media screen and (max-width: 768px) {
+    width: 600px;
+  }
 `;
-
 const LoginHead = styled.div`
   background-color: #5b3f06;
 `;
