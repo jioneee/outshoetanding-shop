@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { AuthContext } from '../context/authContext';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router';
-import { ButtonS } from '../components/common/button';
+import Logo from '../components/common/Logo';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -58,7 +58,9 @@ const Login = () => {
       <LoginContainer>
         <LoginBox>
           <form onSubmit={handleSubit}>
-            <LoginHeader>LogIn</LoginHeader>
+            <LoginHead>
+              <Logo />
+            </LoginHead>
             <LoginInput
               type='email'
               name='email'
@@ -80,8 +82,9 @@ const Login = () => {
             />
             <br />
             <LoginButtonBox>
-              <ButtonS type='submit'> {isCreate ? '회원가입' : '로그인'}</ButtonS>
-              <ButtonS onClick={handleClickCreate}>{isCreate ? '취소' : '회원가입'}</ButtonS>
+              <LoginButton type='submit'> {isCreate ? '회원가입' : '로그인'}</LoginButton>
+              <br />
+              <LoginButton onClick={handleClickCreate}>{isCreate ? '취소' : '회원가입'}</LoginButton>
             </LoginButtonBox>
           </form>
         </LoginBox>
@@ -101,12 +104,15 @@ const LoginContainer = styled.div`
 
 const LoginBox = styled.div`
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0px;
+
   width: 700px;
   border: 3px solid #5b3f06;
 `;
 
-const LoginHeader = styled.header``;
+const LoginHead = styled.div`
+  background-color: #5b3f06;
+`;
 
 const LoginButtonBox = styled.div`
   gap: 10px;
@@ -114,4 +120,15 @@ const LoginButtonBox = styled.div`
 `;
 const LoginInput = styled.input`
   margin: 20px;
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+`;
+const LoginButton = styled.button`
+  margin: 20px;
+  width: 250px;
+  height: 30px;
+  background-color: #5b3f06;
+  color: white;
+  font-size: 15px;
 `;
