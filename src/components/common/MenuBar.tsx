@@ -1,8 +1,11 @@
 import styled, { keyframes } from 'styled-components';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/authContext';
 
 import { useNavigate } from 'react-router';
 
 const MenuBar = () => {
+  const user = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleClickHome = () => {
@@ -27,7 +30,7 @@ const MenuBar = () => {
       <MenuNavigate onClick={handleClickHome}>Home</MenuNavigate>
       <MenuNavigate onClick={handleClickCart}>Cart</MenuNavigate>
       <MenuNavigate onClick={handleClickMyPge}>MyPage</MenuNavigate>
-      <MenuNavigate onClick={handleClickLogIn}>LogIn</MenuNavigate>
+      {user ? <MenuNavigate onClick={handleClickLogIn}>LogOut</MenuNavigate> : <MenuNavigate onClick={handleClickLogIn}>LogIn</MenuNavigate>}
     </MenuBox>
   );
 };
