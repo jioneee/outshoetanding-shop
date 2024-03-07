@@ -8,6 +8,10 @@ const MenuBar = () => {
   const user = useContext(AuthContext);
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
   const handleClickHome = () => {
     navigate('/');
   };
@@ -30,7 +34,7 @@ const MenuBar = () => {
       <MenuNavigate onClick={handleClickHome}>Home</MenuNavigate>
       <MenuNavigate onClick={handleClickCart}>Cart</MenuNavigate>
       <MenuNavigate onClick={handleClickMyPge}>MyPage</MenuNavigate>
-      {user ? <MenuNavigate onClick={handleClickLogIn}>LogOut</MenuNavigate> : <MenuNavigate onClick={handleClickLogIn}>LogIn</MenuNavigate>}
+      {user ? <MenuNavigate onClick={handleLogout}>LogOut</MenuNavigate> : <MenuNavigate onClick={handleClickLogIn}>LogIn</MenuNavigate>}
     </MenuBox>
   );
 };
