@@ -31,9 +31,19 @@ const MenuBar = () => {
   return (
     <MenuBox>
       <UnderLine></UnderLine>
-      <MenuNavigate onClick={handleClickHome}>Home</MenuNavigate>
-      <MenuNavigate onClick={handleClickCart}>Cart</MenuNavigate>
-      <MenuNavigate onClick={handleClickMyPge}>MyPage</MenuNavigate>
+      {!user ? (
+        <div>
+          <MenuNavigate onClick={handleClickHome}>Home</MenuNavigate>
+          <MenuNavigate onClick={handleClickCart}>Cart</MenuNavigate>
+        </div>
+      ) : (
+        <div>
+          <MenuNavigate onClick={handleClickHome}>Home</MenuNavigate>
+          <MenuNavigate onClick={handleClickCart}>Cart</MenuNavigate>
+          <MenuNavigate onClick={handleClickMyPge}>MyPage</MenuNavigate>
+        </div>
+      )}
+
       {user ? <MenuNavigate onClick={handleClickLogout}>LogOut</MenuNavigate> : <MenuNavigate onClick={handleClickLogIn}>LogIn</MenuNavigate>}
     </MenuBox>
   );
