@@ -92,7 +92,7 @@ const CartContainer = styled.div`
   width: 900px;
   gap: 300px;
   @media screen and (max-width: 768px) {
-    width: 100%;
+    width: 735px;
   }
 `;
 
