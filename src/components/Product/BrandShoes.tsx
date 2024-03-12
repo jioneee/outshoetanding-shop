@@ -313,7 +313,7 @@ const ProductListItem = styled.div`
     height: 250px;
     object-fit: contain;
     @media screen and (max-width: 768px) {
-      width: 180px;
+      width: 175px;
       height: 200px;
     }
   }

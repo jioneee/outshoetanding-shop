@@ -125,6 +125,7 @@ const ProductListItem = styled.div`
   /* gap: 20px; */
   @media screen and (max-width: 768px) {
     border: none;
+    max-width: 215px;
     margin: 10px;
   }
 
