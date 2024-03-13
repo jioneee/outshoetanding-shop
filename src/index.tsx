@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
-import { auth } from './firebase';
+import { db } from './firebase';
 import store from './store';
 import AuthProvider from './components/authProvider';
 
-console.log('auth', auth);
+console.log('auth', db);
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

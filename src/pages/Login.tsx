@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AuthContext } from '../context/authContext';
-import { auth } from '../firebase';
+import { db } from '../firebase';
 import { useNavigate } from 'react-router';
 import Logo from '../components/common/Logo';
 
@@ -33,7 +33,7 @@ const Login = () => {
     e.preventDefault();
 
     if (isCreate) {
-      createUserWithEmailAndPassword(auth, email, pwd)
+      createUserWithEmailAndPassword(db, email, pwd)
         .then(() => {
           alert('회원가입 성공');
         })
@@ -41,7 +41,7 @@ const Login = () => {
           alert(e);
         });
     } else {
-      signInWithEmailAndPassword(auth, email, pwd)
+      signInWithEmailAndPassword(db, email, pwd)
         .then(() => {
           alert('로그인 성공');
           navigate('/');
