@@ -49,15 +49,15 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     return state;
   },
   [REMOVE_FROM_CART]: (state, action) => {
-    let indicesToRemove: number[] = [];
+    let indexToRemove: number[] = [];
 
     if (typeof action.payload === 'number') {
-      indicesToRemove = [action.payload];
+      indexToRemove = [action.payload];
     } else if (Array.isArray(action.payload)) {
-      indicesToRemove = action.payload;
+      indexToRemove = action.payload;
     }
 
-    const newCartItems = state.cartItems.filter((_, index) => !indicesToRemove.includes(index));
+    const newCartItems = state.cartItems.filter((_, index) => !indexToRemove.includes(index));
 
     return {
       ...state,
@@ -65,15 +65,15 @@ export default createReducer<CartStateType, CartActionType>(initialState, {
     };
   },
   [REMOVE_SELECTED_FROM_CART]: (state, action) => {
-    let indicesToRemove: number[] = [];
+    let indexToRemove: number[] = [];
 
     if (typeof action.payload === 'number') {
-      indicesToRemove = [action.payload];
+      indexToRemove = [action.payload];
     } else if (Array.isArray(action.payload)) {
-      indicesToRemove = action.payload;
+      indexToRemove = action.payload;
     }
 
-    const newCartItems = state.cartItems.filter((_, index) => !indicesToRemove.includes(index));
+    const newCartItems = state.cartItems.filter((_, index) => !indexToRemove.includes(index));
 
     return {
       ...state,
