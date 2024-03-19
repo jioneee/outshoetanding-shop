@@ -15,9 +15,7 @@ root.render(
   <>
     <Provider store={store}>
       <AuthProvider>
-        {/* <React.StrictMode> */}
         <App />
-        {/* </React.StrictMode> */}
       </AuthProvider>
     </Provider>
   </>
