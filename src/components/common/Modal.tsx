@@ -13,18 +13,18 @@ import { CartItemType } from '../../modules/initialStates/initialStateType';
 interface Props {
   onClick: () => void;
   onAddToCart: () => void;
+  title: string;
   img?: string;
   price?: number;
   name?: string;
   selectedPrice?: number;
 }
 
-const Modal = ({ onClick, img }: Props) => {
+const Modal = ({ onClick, title, img, price, onAddToCart }: Props) => {
   const dispatch = useDispatch();
   // const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
-  const [name, setName] = useState('');
   const [selectedPrice, setSelectedPrice] = useState(0);
 
   const { isOpenModal, clickCloseModal } = useOpenModal();
@@ -36,7 +36,6 @@ const Modal = ({ onClick, img }: Props) => {
   useEffect(() => {
     setSelectedSize('');
     setQuantity(1);
-    setName('');
     setSelectedPrice(0);
   }, [isOpenModal]);
 
@@ -68,14 +67,13 @@ const Modal = ({ onClick, img }: Props) => {
     if (selectedSize !== '' && img) {
       const cartItem: CartItemType = {
         id: 0,
-        name: '',
-        price: 0,
+        price: price || 0,
         quantity: quantity,
         size: selectedSize,
         img: {
           image: img,
-          title: '',
-          price: selectedPrice,
+          title: title,
+          price: selectedPrice || 0,
         },
       };
 
@@ -91,7 +89,7 @@ const Modal = ({ onClick, img }: Props) => {
             <ModalButton type='button' onClick={handleModalClose}>
               <CloseIcon />
             </ModalButton>
-            <ModalHead>{name}</ModalHead>
+            <ModalHead>{title}</ModalHead>
             SIZE <ModalSize onClick={() => handleSizeSelection('230')}>230</ModalSize>
             <ModalSize onClick={() => handleSizeSelection('240')}>240</ModalSize>
             <ModalSize onClick={() => handleSizeSelection('250')}>250</ModalSize>
