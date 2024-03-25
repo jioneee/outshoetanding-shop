@@ -67,6 +67,7 @@ const Modal = ({ onClick, title, img, price, onAddToCart }: Props) => {
     if (selectedSize !== '' && img) {
       const cartItem: CartItemType = {
         id: 0,
+        name: '',
         price: price || 0,
         quantity: quantity,
         size: selectedSize,
