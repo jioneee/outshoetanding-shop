@@ -25,7 +25,7 @@ const Modal = ({ onClick, title, img, price, onAddToCart }: Props) => {
   // const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [quantity, setQuantity] = useState(1);
-  const [selectedPrice, setSelectedPrice] = useState(0);
+  // const [selectedPrice, setSelectedPrice] = useState(0);
 
   const { isOpenModal, clickCloseModal } = useOpenModal();
 
@@ -36,14 +36,12 @@ const Modal = ({ onClick, title, img, price, onAddToCart }: Props) => {
   useEffect(() => {
     setSelectedSize('');
     setQuantity(1);
-    setSelectedPrice(0);
   }, [isOpenModal]);
 
   const handleModalClose = () => {
     onClick();
     setSelectedSize('');
     setQuantity(1);
-    setSelectedPrice(0);
     clickCloseModal();
   };
 
@@ -74,7 +72,7 @@ const Modal = ({ onClick, title, img, price, onAddToCart }: Props) => {
         img: {
           image: img,
           title: title,
-          price: selectedPrice || 0,
+          price: price || 0,
         },
       };
 
