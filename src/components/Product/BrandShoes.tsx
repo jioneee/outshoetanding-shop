@@ -119,11 +119,13 @@ const AsicsImage: ProductImg[] = [
 
 export const Nike = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
+  const [selectedId, setSelectedId] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedImg, setSelectedImg] = useState('');
   const [selectedPrice, setSelectedPrice] = useState<number>(0);
 
-  const handleAddToCartClick = (title: string, img: string, price: number) => {
+  const handleAddToCartClick = (id: number, title: string, img: string, price: number) => {
+    setSelectedId(id);
     setSelectedTitle(title);
     setSelectedImg(img);
     setSelectedPrice(price);
@@ -141,12 +143,12 @@ export const Nike = () => {
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart type='button' onClick={() => handleAddToCartClick(img.title, img.image, img.price)}>
+            <AddToCart type='button' onClick={() => handleAddToCartClick(img.id, img.title, img.image, img.price)}>
               add to cart
             </AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} id={selectedId} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
@@ -154,10 +156,12 @@ export const Nike = () => {
 
 export const Adidas = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
+  const [selectedId, setSelectedId] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedImg, setSelectedImg] = useState('');
   const [selectedPrice, setSelectedPrice] = useState<number>(0);
-  const handleAddToCartClick = (title: string, img: string, price: number) => {
+  const handleAddToCartClick = (id: number, title: string, img: string, price: number) => {
+    setSelectedId(id);
     setSelectedTitle(title);
     setSelectedImg(img);
     setSelectedPrice(price);
@@ -174,10 +178,10 @@ export const Adidas = () => {
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={() => handleAddToCartClick(img.title, img.image, img.price)}>add to cart</AddToCart>
+            <AddToCart onClick={() => handleAddToCartClick(img.id, img.title, img.image, img.price)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} id={selectedId} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
@@ -185,10 +189,12 @@ export const Adidas = () => {
 
 export const NewBalance = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
+  const [selectedId, setSelectedId] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedImg, setSelectedImg] = useState('');
   const [selectedPrice, setSelectedPrice] = useState<number>(0);
-  const handleAddToCartClick = (title: string, img: string, price: number) => {
+  const handleAddToCartClick = (id: number, title: string, img: string, price: number) => {
+    setSelectedId(id);
     setSelectedTitle(title);
     setSelectedImg(img);
     setSelectedPrice(price);
@@ -205,10 +211,10 @@ export const NewBalance = () => {
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={() => handleAddToCartClick(img.title, img.image, img.price)}>add to cart</AddToCart>
+            <AddToCart onClick={() => handleAddToCartClick(img.id, img.title, img.image, img.price)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} id={selectedId} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
@@ -216,10 +222,12 @@ export const NewBalance = () => {
 
 export const Converse = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
+  const [selectedId, setSelectedId] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedImg, setSelectedImg] = useState('');
   const [selectedPrice, setSelectedPrice] = useState<number>(0);
-  const handleAddToCartClick = (title: string, img: string, price: number) => {
+  const handleAddToCartClick = (id: number, title: string, img: string, price: number) => {
+    setSelectedId(id);
     setSelectedTitle(title);
     setSelectedImg(img);
     setSelectedPrice(price);
@@ -236,10 +244,10 @@ export const Converse = () => {
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={() => handleAddToCartClick(img.title, img.image, img.price)}>add to cart</AddToCart>
+            <AddToCart onClick={() => handleAddToCartClick(img.id, img.title, img.image, img.price)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} id={selectedId} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
@@ -247,10 +255,12 @@ export const Converse = () => {
 
 export const Vans = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
+  const [selectedId, setSelectedId] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedImg, setSelectedImg] = useState('');
   const [selectedPrice, setSelectedPrice] = useState<number>(0);
-  const handleAddToCartClick = (title: string, img: string, price: number) => {
+  const handleAddToCartClick = (id: number, title: string, img: string, price: number) => {
+    setSelectedId(id);
     setSelectedTitle(title);
     setSelectedImg(img);
     setSelectedPrice(price);
@@ -267,10 +277,10 @@ export const Vans = () => {
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={() => handleAddToCartClick(img.title, img.image, img.price)}>add to cart</AddToCart>
+            <AddToCart onClick={() => handleAddToCartClick(img.id, img.title, img.image, img.price)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} id={selectedId} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );
@@ -278,10 +288,12 @@ export const Vans = () => {
 
 export const Asics = () => {
   const { isOpenModal, clickOpenModal, clickCloseModal } = useOpenModal();
+  const [selectedId, setSelectedId] = useState<number>(0);
   const [selectedTitle, setSelectedTitle] = useState('');
   const [selectedImg, setSelectedImg] = useState('');
   const [selectedPrice, setSelectedPrice] = useState<number>(0);
-  const handleAddToCartClick = (title: string, img: string, price: number) => {
+  const handleAddToCartClick = (id: number, title: string, img: string, price: number) => {
+    setSelectedId(id);
     setSelectedTitle(title);
     setSelectedImg(img);
     setSelectedPrice(price);
@@ -298,10 +310,10 @@ export const Asics = () => {
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
             </ProductListItem>
-            <AddToCart onClick={() => handleAddToCartClick(img.title, img.image, img.price)}>add to cart</AddToCart>
+            <AddToCart onClick={() => handleAddToCartClick(img.id, img.title, img.image, img.price)}>add to cart</AddToCart>
           </div>
         ))}
-        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
+        {isOpenModal && selectedImg !== null && <Modal onClick={clickCloseModal} id={selectedId} title={selectedTitle} img={selectedImg} price={selectedPrice} onAddToCart={() => {}} />}
       </ProductListWrap>
     </div>
   );

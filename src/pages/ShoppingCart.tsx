@@ -26,6 +26,7 @@ const ShoppingCart = () => {
   const handleSelectAllCheckChange = () => {
     const allChecked = !selectAllCheck;
     setSelectAllCheck(allChecked);
+    console.log('allchecked', allChecked);
     setIsChecked(cartItems.map(() => allChecked));
   };
   const handleDeleteSelection = () => {
@@ -165,33 +166,6 @@ const ButtonBox = styled.div`
   position: relative;
   margin-top: 50px;
 `;
-// const DeleteSelection = styled.button`
-//   margin: 10px;
-//   width: 100px;
-//   height: 30px;
-//   @media screen and (max-width: 768px) {
-//     width: 70px;
-//     font-size: 12px;
-//   }
-// `;
-// const SelectionOrder = styled.button`
-//   margin: 10px;
-//   width: 100px;
-//   height: 30px;
-//   @media screen and (max-width: 768px) {
-//     width: 70px;
-//     font-size: 12px;
-//   }
-// `;
-// const TotalOrder = styled.button`
-//   margin: 10px;
-//   width: 100px;
-//   height: 30px;
-//   @media screen and (max-width: 768px) {
-//     width: 70px;
-//     font-size: 12px;
-//   }
-// `;
 
 const TotalContainer = styled.div`
   @media screen and (max-width: 768px) {
