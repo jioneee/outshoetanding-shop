@@ -13,6 +13,7 @@ import { CartItemType } from '../../modules/initialStates/initialStateType';
 interface Props {
   onClick: () => void;
   onAddToCart: () => void;
+  id: number;
   title: string;
   img?: string;
   price?: number;
@@ -20,7 +21,7 @@ interface Props {
   selectedPrice?: number;
 }
 
-const Modal = ({ onClick, title, img, price, onAddToCart }: Props) => {
+const Modal = ({ onClick, id, title, img, price, onAddToCart }: Props) => {
   const dispatch = useDispatch();
   // const count = useSelector((state: RootState) => state.cart.count);
   const [selectedSize, setSelectedSize] = useState<string>('');
@@ -64,7 +65,7 @@ const Modal = ({ onClick, title, img, price, onAddToCart }: Props) => {
   const handleCartClick = () => {
     if (selectedSize !== '' && img) {
       const cartItem: CartItemType = {
-        id: 0,
+        id: id,
         name: '',
         price: price || 0,
         quantity: quantity,
