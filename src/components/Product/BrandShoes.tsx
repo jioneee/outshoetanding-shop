@@ -136,9 +136,9 @@ export const Nike = () => {
     <div>
       <ProductListWrap>
         {NikeImage.map((img) => (
-          <div key={img.id}>
+          <div>
             <ProductListItem>
-              <img src={img.image} alt={img.title} />
+              <img key={img.id} src={img.image} alt={img.title} />
               <div className='brandname'>나이키</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
@@ -171,9 +171,9 @@ export const Adidas = () => {
     <div>
       <ProductListWrap>
         {AdidasImage.map((img) => (
-          <div key={img.id}>
+          <div>
             <ProductListItem>
-              <img src={img.image} alt={img.title} />
+              <img key={img.id} src={img.image} alt={img.title} />
               <div className='brandname'>아디다스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
@@ -204,9 +204,9 @@ export const NewBalance = () => {
     <div>
       <ProductListWrap>
         {NewBalanceImage.map((img) => (
-          <div key={img.id}>
+          <div>
             <ProductListItem>
-              <img src={img.image} alt={img.title} />
+              <img key={img.id} src={img.image} alt={img.title} />
               <div className='brandname'>뉴발란스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
@@ -237,9 +237,9 @@ export const Converse = () => {
     <div>
       <ProductListWrap>
         {ConverseImage.map((img) => (
-          <div key={img.id}>
+          <div>
             <ProductListItem>
-              <img src={img.image} alt={img.title} />
+              <img key={img.id} src={img.image} alt={img.title} />
               <div className='brandname'>컨버스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
@@ -270,9 +270,9 @@ export const Vans = () => {
     <div>
       <ProductListWrap>
         {VansImage.map((img) => (
-          <div key={img.id}>
+          <div>
             <ProductListItem>
-              <img src={img.image} alt={img.title} />
+              <img key={img.id} src={img.image} alt={img.title} />
               <div className='brandname'>반스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
@@ -303,9 +303,9 @@ export const Asics = () => {
     <div>
       <ProductListWrap>
         {AsicsImage.map((img) => (
-          <div key={img.id}>
+          <div>
             <ProductListItem>
-              <img src={img.image} alt={img.title} />
+              <img key={img.id} src={img.image} alt={img.title} />
               <div className='brandname'>아식스</div>
               <div className='title'>{img.title} </div>
               <div className='price'> {img.price.toLocaleString('ko-kr')} 원</div>
