@@ -27,8 +27,9 @@ const ShoppingCart = () => {
     const allChecked = !selectAllCheck;
     setSelectAllCheck(allChecked);
     console.log('allchecked', allChecked);
-    setIsChecked(cartItems.map(() => allChecked));
+    setIsChecked(new Array(cartItems.length).fill(allChecked));
   };
+
   const handleDeleteSelection = () => {
     const indicesToRemove: number[] = isChecked.map((checked, index) => (checked ? index : -1)).filter((index) => index !== -1);
 
