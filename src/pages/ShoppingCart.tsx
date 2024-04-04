@@ -7,6 +7,7 @@ import CartBox from '../components/Product/CartBox';
 import { RootState } from '../modules/reducer';
 import { removeSelectedFromCart } from '../modules/actions/cart';
 import { ButtonM } from '../components/common/button';
+import { CartItemType } from '../modules/initialStates/initialStateType';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch();
@@ -21,8 +22,18 @@ const ShoppingCart = () => {
 
     const allChecked = updatedChecked.every((value) => value);
     setSelectAllCheck(allChecked);
+    handleCheckBoxSelection(index);
   };
 
+  const handleCheckBoxSelection = (index: number) => {
+    const selectedCartItem = cartItems[index];
+    displaySelectedCartItems(selectedCartItem);
+  };
+
+  const displaySelectedCartItems = (selectedCartItem: CartItemType) => {
+    console.log('선택가격', selectedCartItem.img.price);
+    console.log('선택수량', selectedCartItem.quantity);
+  };
   const handleSelectAllCheckChange = () => {
     const allChecked = !selectAllCheck;
     setSelectAllCheck(allChecked);
@@ -61,7 +72,7 @@ const ShoppingCart = () => {
             <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
             <CartBoxWrapper>
               {' '}
-              <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} />
+              <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} handleCheckBoxSelection={handleCheckBoxSelection} />
             </CartBoxWrapper>
           </Cartcontents>
         </CartWrapper>
