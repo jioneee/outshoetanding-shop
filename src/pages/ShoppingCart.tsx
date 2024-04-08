@@ -14,6 +14,7 @@ const ShoppingCart = () => {
   const [selectAllCheck, setSelectAllCheck] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
+
   console.log('cartItems', cartItems);
   const handleCheckBoxChange = (index: number) => {
     const updatedChecked = [...isChecked];

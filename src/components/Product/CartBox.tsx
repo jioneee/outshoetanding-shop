@@ -6,7 +6,7 @@ interface CartBoxProps {
   selectAllCheck: boolean;
   onChange: (index: number) => void;
   cartItems: CartItemType[];
-  handleCheckBoxSelection: (index: number) => void;
+  handleCheckBoxSelection: (index: number, selectedItem: CartItemType) => void;
 }
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, handleCheckBoxSelection }) => {
@@ -40,7 +40,8 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, 
     updatedChecked[index] = !updatedChecked[index];
     setIsChecked(updatedChecked);
     // onChange(index);
-    handleCheckBoxSelection(index);
+    // handleCheckBoxSelection(index);
+    handleCheckBoxSelection(index, cartItems[index]);
   };
 
   return (
