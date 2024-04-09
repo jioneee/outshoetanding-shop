@@ -38,8 +38,7 @@ const ShoppingCart = () => {
   const handleSelectAllCheckChange = () => {
     const allChecked = !selectAllCheck;
     setSelectAllCheck(allChecked);
-    console.log('allchecked', allChecked);
-    setIsChecked(new Array(cartItems.length).fill(allChecked));
+    setIsChecked((prevState) => prevState.map(() => allChecked));
   };
 
   const handleDeleteSelection = () => {
