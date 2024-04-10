@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { initialState } from '../modules/initialStates/initialState';
 import CartBox from '../components/Product/CartBox';
@@ -15,6 +15,9 @@ const ShoppingCart = () => {
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
 
+  useEffect(() => {
+    setIsChecked(new Array(cartItems.length).fill(false));
+  }, [cartItems]);
   console.log('cartItems', cartItems);
   const handleCheckBoxChange = (index: number) => {
     const updatedChecked = [...isChecked];
