@@ -63,6 +63,11 @@ const ShoppingCart = () => {
     }
     return total;
   }, 0);
+
+  useEffect(() => {
+    const allChecked = isChecked.every((value) => value);
+    setSelectAllCheck(allChecked);
+  }, [isChecked]);
   return (
     <div>
       <CartContainer>
