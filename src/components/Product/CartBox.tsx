@@ -104,6 +104,7 @@ const Img = styled.img`
 const ShoesInfo = styled.span`
   ${commonStyle}
   display: flex;
+  margin-top: auto;
   flex-direction: row;
   line-height: 110px;
 `;
