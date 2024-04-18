@@ -7,10 +7,10 @@ interface CartBoxProps {
   onChange: (index: number) => void;
   cartItems: CartItemType[];
   handleCheckBoxSelection: (index: number, selectedItem: CartItemType) => void;
+  isChecked: boolean[];
 }
 
-const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, handleCheckBoxSelection }) => {
-  const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
+const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, handleCheckBoxSelection, isChecked }) => {
   const [groupedCartItems, setGroupedCartItems] = useState<CartItemType[]>([]);
 
   useEffect(() => {
@@ -27,20 +27,13 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, 
         }
       });
 
-      const result = Object.values(groupedItems);
-      setGroupedCartItems(result);
+      return Object.values(groupedItems);
     };
 
-    setIsChecked((prevChecked) => cartItems.map((_, index) => prevChecked[index]));
-    groupCartItems();
+    setGroupedCartItems(groupCartItems());
   }, [selectAllCheck, cartItems]);
 
   const onClickCheck = (index: number) => {
-    const updatedChecked = [...isChecked];
-    updatedChecked[index] = !updatedChecked[index];
-    setIsChecked(updatedChecked);
-    // onChange(index);
-    // handleCheckBoxSelection(index);
     handleCheckBoxSelection(index, cartItems[index]);
   };
 
@@ -49,6 +42,7 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, 
       {groupedCartItems.map((item, index) => (
         <Container key={`${item.size}-${item.img.title}`}>
           <InputCheck type='checkbox' checked={isChecked[index]} onChange={() => onClickCheck(index)} />
+
           <ImageContain>
             <Img src={item.img.image} alt={item.img.title} />
           </ImageContain>

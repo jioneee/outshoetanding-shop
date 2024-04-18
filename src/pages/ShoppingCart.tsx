@@ -41,7 +41,7 @@ const ShoppingCart = () => {
   const handleSelectAllCheckChange = () => {
     const allChecked = !selectAllCheck;
     setSelectAllCheck(allChecked);
-    setIsChecked((prevState) => prevState.map(() => allChecked));
+    setIsChecked(new Array(cartItems.length).fill(allChecked));
   };
 
   const handleDeleteSelection = () => {
@@ -80,7 +80,7 @@ const ShoppingCart = () => {
             <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
             <CartBoxWrapper>
               {' '}
-              <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} handleCheckBoxSelection={handleCheckBoxSelection} />
+              <CartBox selectAllCheck={selectAllCheck} onChange={handleCheckBoxChange} cartItems={cartItems} handleCheckBoxSelection={handleCheckBoxSelection} isChecked={isChecked} />
             </CartBoxWrapper>
           </Cartcontents>
         </CartWrapper>
