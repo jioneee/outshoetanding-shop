@@ -34,6 +34,8 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, 
   }, [selectAllCheck, cartItems]);
 
   const onClickCheck = (index: number) => {
+    const updatedChecked = [...isChecked];
+    updatedChecked[index] = !updatedChecked[index];
     handleCheckBoxSelection(index, cartItems[index]);
   };
 
