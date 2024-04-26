@@ -12,7 +12,7 @@ interface CartBoxProps {
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, handleCheckBoxSelection, isChecked }) => {
   const [groupedCartItems, setGroupedCartItems] = useState<CartItemType[]>([]);
-  const [checkedCartItems, setCheckedCartItems] = useState<boolean[]>(new Array(groupedCartItems.length).fill(false));
+  const [checkedCartItems, setCheckedCartItems] = useState<boolean[]>(groupedCartItems.map(() => false));
 
   useEffect(() => {
     const groupCartItems = () => {
