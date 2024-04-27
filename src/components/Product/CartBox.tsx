@@ -10,9 +10,9 @@ interface CartBoxProps {
   isChecked: boolean[];
 }
 
-const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, handleCheckBoxSelection, isChecked }) => {
+const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, cartItems, handleCheckBoxSelection, isChecked }) => {
   const [groupedCartItems, setGroupedCartItems] = useState<CartItemType[]>([]);
-  const [checkedCartItems, setCheckedCartItems] = useState<boolean[]>(groupedCartItems.map(() => false));
+  const [checkedCartItems, setCheckedCartItems] = useState<boolean[]>([]);
 
   useEffect(() => {
     const groupCartItems = () => {
@@ -32,8 +32,8 @@ const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, onChange, cartItems, 
     };
 
     setGroupedCartItems(groupCartItems());
-    setCheckedCartItems(new Array(groupCartItems.length).fill(false));
-  }, [selectAllCheck, cartItems]);
+    setCheckedCartItems(new Array(groupedCartItems.length).fill(false));
+  }, [selectAllCheck, cartItems, groupedCartItems.length]);
 
   const onClickCheck = (index: number) => {
     const updatedChecked = [...isChecked];
