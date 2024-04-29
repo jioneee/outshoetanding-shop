@@ -11,41 +11,41 @@ interface CartBoxProps {
 }
 
 const CartBox: React.FC<CartBoxProps> = ({ selectAllCheck, cartItems, handleCheckBoxSelection, isChecked }) => {
-  const [groupedCartItems, setGroupedCartItems] = useState<CartItemType[]>([]);
+  // const [groupedCartItems, setGroupedCartItems] = useState<CartItemType[]>([]);
   const [checkedCartItems, setCheckedCartItems] = useState<boolean[]>([]);
 
   useEffect(() => {
-    const groupCartItems = () => {
-      const groupedItems: Record<string, CartItemType> = {};
+    // const groupCartItems = () => {
+    //   const groupedItems: Record<string, CartItemType> = {};
 
-      cartItems.forEach((item) => {
-        const key = `${item.size}-${item.img.title}`;
+    //   cartItems.forEach((item) => {
+    //     const key = `${item.size}-${item.img.title}`;
 
-        if (groupedItems[key]) {
-          groupedItems[key].quantity += item.quantity;
-        } else {
-          groupedItems[key] = { ...item };
-        }
-      });
+    //     if (groupedItems[key]) {
+    //       groupedItems[key].quantity += item.quantity;
+    //     } else {
+    //       groupedItems[key] = { ...item };
+    //     }
+    //   });
 
-      return Object.values(groupedItems);
-    };
+    //   return Object.values(groupedItems);
+    // };
 
-    setGroupedCartItems(groupCartItems());
-    setCheckedCartItems(new Array(groupedCartItems.length).fill(false));
-  }, [selectAllCheck, cartItems, groupedCartItems.length]);
+    // setGroupedCartItems(groupCartItems());
+    setCheckedCartItems(new Array(cartItems.length).fill(false));
+  }, [cartItems]);
 
   const onClickCheck = (index: number) => {
     const updatedChecked = [...isChecked];
     updatedChecked[index] = !updatedChecked[index];
     setCheckedCartItems(updatedChecked);
 
-    handleCheckBoxSelection(index, groupedCartItems[index]);
+    handleCheckBoxSelection(index, cartItems[index]);
   };
 
   return (
     <>
-      {groupedCartItems.map((item, index) => (
+      {cartItems.map((item, index) => (
         <Container key={`${item.size}-${item.img.title}`}>
           <InputCheck type='checkbox' checked={checkedCartItems[index]} onChange={() => onClickCheck(index)} />
 

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { initialState } from '../modules/initialStates/initialState';
 import CartBox from '../components/Product/CartBox';
 import { RootState } from '../modules/reducer';
 import { removeSelectedFromCart } from '../modules/actions/cart';
