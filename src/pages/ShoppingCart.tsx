@@ -15,8 +15,8 @@ const ShoppingCart = () => {
   const [isChecked, setIsChecked] = useState<boolean[]>(cartItems.map(() => false));
 
   useEffect(() => {
-    setIsChecked(new Array(cartItems.length).fill(false));
-  }, [cartItems]);
+    setIsChecked(new Array(cartItems.length).fill(selectAllCheck));
+  }, [cartItems, selectAllCheck]);
   console.log('cartItems', cartItems);
   const handleCheckBoxChange = (index: number) => {
     const updatedChecked = [...isChecked];
