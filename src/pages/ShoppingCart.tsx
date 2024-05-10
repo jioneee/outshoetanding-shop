@@ -22,10 +22,10 @@ const ShoppingCart = () => {
     const updatedChecked = [...isChecked];
     updatedChecked[index] = !updatedChecked[index];
     setIsChecked(updatedChecked);
-
-    const allChecked = updatedChecked.every((value) => value);
-    setSelectAllCheck(allChecked);
-    handleCheckBoxSelection(index);
+    setSelectAllCheck(updatedChecked.every((value) => value));
+    // const allChecked = updatedChecked.every((value) => value);
+    // setSelectAllCheck(allChecked);
+    // handleCheckBoxSelection(index);
   };
 
   const handleCheckBoxSelection = (index: number) => {
