@@ -4,7 +4,7 @@ import { CartItemType } from '../../modules/initialStates/initialStateType';
 
 interface CartBoxProps {
   selectAllCheck: boolean;
-  onChange: (index: number) => void;
+  onCheckBoxChange: (index: number) => void;
   cartItems: CartItemType[];
   handleCheckBoxSelection: (index: number, selectedItem: CartItemType) => void;
   isChecked: boolean[];
