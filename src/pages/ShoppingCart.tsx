@@ -79,14 +79,7 @@ const ShoppingCart = () => {
             <CartCheckBox type='checkbox' checked={selectAllCheck} onChange={handleSelectAllCheckChange} />
             <CartBoxWrapper>
               {' '}
-              <CartBox
-                selectAllCheck={selectAllCheck}
-                onCheckBoxChange={handleCheckBoxChange}
-                cartItems={cartItems}
-                handleCheckBoxSelection={handleCheckBoxSelection}
-                isChecked={isChecked}
-                setIsChecked={setIsChecked}
-              />
+              <CartBox selectAllCheck={selectAllCheck} onCheckBoxChange={handleCheckBoxChange} cartItems={cartItems} handleCheckBoxSelection={handleCheckBoxSelection} isChecked={isChecked} />
             </CartBoxWrapper>
           </Cartcontents>
         </CartWrapper>
