@@ -6,7 +6,7 @@ import CartBox from '../components/Product/CartBox';
 import { RootState } from '../modules/reducer';
 import { removeSelectedFromCart } from '../modules/actions/cart';
 import { ButtonM } from '../components/common/button';
-import { CartItemType } from '../modules/initialStates/initialStateType';
+// import { CartItemType } from '../modules/initialStates/initialStateType';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch();
@@ -29,14 +29,15 @@ const ShoppingCart = () => {
   };
 
   const handleCheckBoxSelection = (index: number) => {
-    const selectedCartItem = cartItems[index];
-    displaySelectedCartItems(selectedCartItem);
+    // const selectedCartItem = cartItems[index];
+    // displaySelectedCartItems(selectedCartItem);
+    handleCheckBoxChange(index);
   };
 
-  const displaySelectedCartItems = (selectedCartItem: CartItemType) => {
-    console.log('선택가격', selectedCartItem.img.price);
-    console.log('선택수량', selectedCartItem.quantity);
-  };
+  // const displaySelectedCartItems = (selectedCartItem: CartItemType) => {
+  //   console.log('선택가격', selectedCartItem.img.price);
+  //   console.log('선택수량', selectedCartItem.quantity);
+  // };
   const handleSelectAllCheckChange = () => {
     const allChecked = !selectAllCheck;
     setSelectAllCheck(allChecked);
