@@ -107,8 +107,8 @@ const ShoesInfo = styled.span`
 
 const Title = styled.p`
   ${commonStyle}
-  letter-spacing: -1px;
-  width: 230px;
+  letter-spacing: 0px;
+  min-width: 230px;
   height: 110px;
   font-weight: bold;
   font-size: 14px;
