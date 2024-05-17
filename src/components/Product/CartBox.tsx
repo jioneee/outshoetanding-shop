@@ -70,10 +70,11 @@ const commonStyle = `
 `;
 
 const Container = styled.div`
-  color: #5b3f06;
+  resize: both;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #5b3f06;
+  color: #5b3f06;
   width: 100%;
   height: 140px;
   margin: 20px 0px;
@@ -106,10 +107,11 @@ const ShoesInfo = styled.span`
 
 const Title = styled.p`
   ${commonStyle}
+  letter-spacing: -1px;
   width: 230px;
   height: 110px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   color: #5b3f06;
   @media screen and (max-width: 768px) {
     font-size: 12px;
